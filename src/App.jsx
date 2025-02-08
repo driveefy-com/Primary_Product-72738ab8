@@ -1,10 +1,12 @@
 import React from 'react'
-import Login from './login_signup/login/Login'
+import { AllRoutes } from './routes/AllRoutes'
+import LanguageSwitcher from './languageSwitcher/LanguageSwitcher'
 
 function App() {
   return (
     <div>
-      <Login/>
+      {/* <LanguageSwitcher/> */}
+      <AllRoutes/>
     </div>
   )
 }

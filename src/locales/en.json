@@ -1,0 +1,17 @@
+{
+  "loginPage": {
+    "title": "Login to Driveefy",
+    "googleLogin": "Login with Google",
+    "emailLogin": "or login with email",
+    "forgot": "forgot password",
+    "login":"Login",
+    "createAccount":"Dont have an account?",
+    "linkText":"create account"
+  },
+  "signupPage": {
+    "title": "Signup Page",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "signupButton": "Sign Up"
+  }
+}
