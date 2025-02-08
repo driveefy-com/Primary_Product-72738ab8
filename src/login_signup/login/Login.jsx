@@ -27,7 +27,7 @@ function Login() {
           <img src={GoogleIcon} alt="" />
           {t("loginPage.googleLogin")}
         </Link>
-        <div className="login-midline-container">
+        <div className="login-with-email-container">
           <hr />
           <p>{t("loginPage.emailLogin")}</p>
         </div>

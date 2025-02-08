@@ -11,7 +11,7 @@ const initialState = {
     extraReducers: (builder) => {
         builder
         .addCase(
-            'SET_SNACKBAR_MESSAGE',(state, action) => {
+            'SET_SNACKBAR_SUCCESS_MESSAGE',(state, action) => {
                 state.snackbarMessage = action.payload.message;
                 state.severity = action.payload.severity;
                 }
@@ -29,6 +29,12 @@ const initialState = {
       'SUBSCRIBE_FAILURE' ,(state) => {
         state.loading = false;  
       })
+      .addCase(
+        'SET_SNACKBAR_ERROR_MESSAGE',(state, action) => {
+          state.snackbarMessage = action.payload.message;
+          state.severity = action.payload.severity
+        }
+      )
     }
 });
 

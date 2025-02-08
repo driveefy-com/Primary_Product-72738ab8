@@ -1,7 +1,6 @@
-import React from "react";
 import "./styles/SubmitButton.scss";
 
-function SubmitButton({ text, size }) {
+function SubmitButton({ text}) {
   return <button>{text}</button>;
 }
 

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import './styles/FormComponent.scss'
+import { useState } from 'react';
 
 export const FormComponents = ({ formData }) => {
   const [Focused, setFocused] = useState(false);

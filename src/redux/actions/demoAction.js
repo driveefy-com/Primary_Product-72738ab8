@@ -18,7 +18,7 @@ export const subscribe= (userEmail) => async (dispatch) => {
     if (response.status === 201) {
       dispatch({ type: 'SUBSCRIBE_SUCCESS' });
       dispatch({
-        type: "SET_SNACKBAR_MESSAGE",
+        type: "SET_SNACKBAR_SUCCESS_MESSAGE",
         payload: {message:"Thank you for Subscribing us",severity:'success'}
       });
     }
@@ -29,13 +29,13 @@ export const subscribe= (userEmail) => async (dispatch) => {
     });    
     if(error.status===400){
     dispatch({
-      type: "SET_SNACKBAR_MESSAGE",
-      payload:{message:"You are already subscribed!",severity:'error'}
+      type: "SET_SNACKBAR_ERROR_MESSAGE",
+      payload:{message:"You are already subscribed!",severity:'error'},
     });
   }
   else{
     dispatch({
-      type: "SET_SNACKBAR_MESSAGE",
+      type: "SET_SNACKBAR_ERROR_MESSAGE",
       payload:{message:"Retry after sometime!",severity:'error'}
     });
   }
