@@ -1,7 +1,7 @@
 import './styles/FormComponent.scss'
 import { useState } from 'react';
 
-export const FormComponents = ({ formData }) => {
+export const FormComponents = ({ formData,onChange }) => {
   const [Focused, setFocused] = useState(false);
   switch (formData.inputType) {
     case "textup":
@@ -14,6 +14,7 @@ export const FormComponents = ({ formData }) => {
               className={`input-field ${Focused ? "focused" : ""}`}
               onFocus={() => setFocused(true)}
               onBlur={(e) => setFocused(e.target.value !== "")}
+              onChange={onChange}
             />
             <div className="placeholder">{formData.placeholder}</div>
           </div>
@@ -26,6 +27,7 @@ export const FormComponents = ({ formData }) => {
                     type={formData.type}
                     required
                     placeholder={formData.placeholder}
+                    onChange={onChange}
                     />
                 </div>
         )
@@ -33,7 +35,7 @@ export const FormComponents = ({ formData }) => {
             return (
                 
                     <div className="input-container">
-                        <select name={formData.name} required>
+                        <select onChange={onChange} name={formData.name} required>
                             <option>
                                 gigi
                             </option>

@@ -11,6 +11,11 @@ import GoogleIcon from '../../assets/icons/GoogleIcon.svg'
 import driveefyLogo from '../../assets/icons/driveefy_logo.svg'
 function Login() {
   const {t} = useTranslation();
+  const [formData, setformData] = useState({});
+  const handleChange=(e)=>{
+    setformData({...formData,[e.target.name]:e.target.value});
+    console.log(formData); 
+  }
   return (
     <div className="login-main-container">
       <div className="login-img-container">
@@ -38,7 +43,9 @@ function Login() {
             return (
               <FormComponents 
               key={index}
-              formData={item}/>
+              onChange={handleChange}
+              formData={item}
+              />
               );
         })}
           <Link className="link">{t("loginPage.forgot")}</Link>
