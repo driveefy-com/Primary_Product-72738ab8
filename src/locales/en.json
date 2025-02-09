@@ -9,7 +9,7 @@
     "linkText":"create account"
   },
   "signupPage": {
-    "title": "Signup Page",
+    "title": "Create your Driveefy Account",
     "emailLabel": "Email",
     "passwordLabel": "Password",
     "signupButton": "Sign Up"

@@ -1,4 +1,3 @@
-import React from "react";
 import "./styles/Login.scss";
 import { useState } from "react";
 import loginIcon from "../../assets/icons/loginIcon.jpg";
@@ -54,7 +53,7 @@ function Login() {
           </div>
         </form>
         </div>
-        <h3>{t("loginPage.createAccount")}<Link className="create-account">{t("loginPage.linkText")}</Link></h3>
+        <h3>{t("loginPage.createAccount")}<Link to={'/signup'} className="create-account">{t("loginPage.linkText")}</Link></h3>
       </div>
     </div>
   );

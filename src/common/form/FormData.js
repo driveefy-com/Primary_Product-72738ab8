@@ -27,6 +27,12 @@ export const signupPage=[
         placeholder:'Last Name*',
     },
     {
+        name:'email',
+        type:'email',
+        inputType:'textup',
+        placeholder:'Email*',
+    },
+    {
         name:'phoneNumber',
         type:'number',
         inputType:'textup',

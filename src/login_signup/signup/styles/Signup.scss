@@ -1,0 +1,162 @@
+.signup-main-container{
+    display: flex;
+    .signup-img-container{
+        width: 33.33%;
+        height: 100vh;
+        background-image: url("../../../assets/images/loginImage.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        .driveefy-logo{
+          position: absolute;
+          display: flex;
+          margin-left: 5%;
+          margin-top: 5%;
+          @media (max-width: 1024px) {
+           width: 100px;
+          }
+  
+          @media (max-width: 768px) {
+            width: 50%;
+            // padding: 1% 4%;
+          }
+  
+          @media (max-width: 480px) {
+            width: 30%;
+            // padding: 8px 20px;
+          }
+        img {
+          margin: 5%;
+          position: absolute;
+          background-color: transparent;
+          @media (max-width: 1024px) {
+            width: 150px;
+            // padding: 1.2% 5%;
+          }
+  
+          @media (max-width: 768px) {
+            width: 120px;
+            // padding: 1% 4%;
+          }
+  
+          @media (max-width: 480px) {
+            width: 100px;
+            // padding: 8px 20px;
+          }
+        }
+      }
+    }
+    .signup-form-container{
+        // padding-top: 1%;
+        // padding-bottom: 1%;
+        width: 66.66%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width:1024px) {
+            justify-content: space-evenly;
+        }
+        .signup-form-logo{
+            height: 70px;
+            width: 70px;
+            margin-top: 1%;
+            // background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media (max-width: 1024px) {
+                height: 65px;
+                width: 65x;
+                margin-top: 3%;
+                // margin-top: 5%;
+                // padding: 1.2% 5%;
+              }
+      
+              @media (max-width: 768px) {
+                height: 50px;
+                width: 50px;
+                // padding: 1% 4%;
+              }
+      
+              @media (max-width: 480px) {
+                height: 40px;
+                width: 40px;
+                margin-bottom: 5%;
+                // padding: 8px 20px;
+              }
+        }
+        h1{
+            font-weight: 700;
+            font-size: 40px;
+            color: #292a6a;
+            @media (max-width: 1024px) {
+                font-size: 32px;
+                // padding: 1.2% 5%;
+              }
+              @media (max-width:860px) {
+                font-size: 26px;
+              }
+              @media (max-width: 768px) {
+                font-size: 22px;
+                // padding: 1% 4%;
+              }
+              @media (max-width:590px) {
+                font-size: 18px;
+              }
+      
+              @media (max-width: 480px) {
+                font-size: 14px;
+                // padding: 8px 20px;
+              }
+
+        }
+        .signup-input-container{
+            width: 80%;
+            .input-name-field{
+                display: flex;
+                gap: 5%;
+                align-items: flex-end;
+                @media (max-width:590px) {
+                  display: inline-block;
+                  width: 100%
+                }
+            }
+            .signup-form-button{
+                margin-top: 2%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        h3{
+            font-weight: 400;
+            font-size: 24px;
+            margin-bottom: 1%;
+            @media (max-width: 1024px) {
+                font-size: 22px;
+              }
+      
+              @media (max-width: 768px) {
+                font-size: 20px;
+              }
+              @media (max-width:540px) {
+                font-size: 16px;
+              }
+      
+              @media (max-width: 480px) {
+                font-size: 12px;
+                padding: 8px 20px;
+              }
+            .link{
+                color: #293b94;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
