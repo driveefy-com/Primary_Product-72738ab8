@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useState,useEffect} from 'react'
-=======
 import  { useState,useEffect} from 'react'
->>>>>>> c55a6b1b9566ec007e4b59c92662da88423927a3
 import './styles/Signup.scss'
 import { useTranslation } from 'react-i18next'
 import { FormComponents } from '../../common/form/FormComponents';
