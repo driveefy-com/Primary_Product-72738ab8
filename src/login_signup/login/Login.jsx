@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import React from "react";
+=======
+>>>>>>> c55a6b1b9566ec007e4b59c92662da88423927a3
 import "./styles/Login.scss";
 import { useState } from "react";
 import loginIcon from "../../assets/icons/loginIcon.jpg";

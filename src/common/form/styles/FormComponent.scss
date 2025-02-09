@@ -8,6 +8,7 @@
     @media (max-width: 1024px) {
       font-size: 20px;
     }
+<<<<<<< HEAD
     @media (max-width: 768px) {
       font-size: 15px;
     }
@@ -18,13 +19,20 @@
     }
     .input-field {
       width: 100%;
+=======
+    .input-field {
+>>>>>>> c55a6b1b9566ec007e4b59c92662da88423927a3
       border: 1px solid #565555;
       border-radius: 10px;
       outline: none;
       font-size: 20px;
       height: 55px;
       padding-left: 3%;
+<<<<<<< HEAD
  
+=======
+      width: 100%;
+>>>>>>> c55a6b1b9566ec007e4b59c92662da88423927a3
       background-color: #ffffff;
       @media (max-width: 1024px) {
         font-size: 15px;
