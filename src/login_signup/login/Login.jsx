@@ -13,7 +13,6 @@ function Login() {
   const [formData, setformData] = useState({});
   const handleChange=(e)=>{
     setformData({...formData,[e.target.name]:e.target.value});
-    console.log(formData); 
   }
   return (
     <div className="login-main-container">

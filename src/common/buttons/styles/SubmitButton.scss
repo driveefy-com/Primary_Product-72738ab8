@@ -1,5 +1,5 @@
 button{
-    padding: 2% 7% 2% 7%;
+    padding: 1.2% 5% 1.2% 5%;
     font-size:x-large;
     font-weight: 600;
     background-color: #292a6a;
@@ -7,9 +7,12 @@ button{
     border-radius: 48px;
     border: none;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media (max-width: 1024px) {
         font-size: 17px;
-        padding: 2% 7% 3% 7%;
+        padding: 1.4% 5.9% 1.4% 5.9%;
         margin-top: 5%;
         // padding: 2% 7% 2% 7%;
       }

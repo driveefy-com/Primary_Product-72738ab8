@@ -1,5 +1,5 @@
 {
-   "loginPage": {
+  "loginPage": {
     "title": "Iniciar sesión en Driveefy",
     "googleLogin": "Iniciar sesión con Google",
     "emailLogin": "O iniciar sesión con correo electrónico",
@@ -8,10 +8,10 @@
     "createAccount": "¿No tienes una cuenta?",
     "linkText": "Crear cuenta"
   },
-      "signupPage": {
-        "title": "Página de registro",
-        "emailLabel": "Correo electrónico",
-        "passwordLabel": "Contraseña",
-        "signupButton": "Registrarse"
-      }
+  "signupPage": {
+    "title": "Página de registro",
+    "signupButton": "Registrarse",
+    "loginLink": "¿Ya tienes una cuenta?",
+    "login": "Iniciar sesión"
+  }
 }

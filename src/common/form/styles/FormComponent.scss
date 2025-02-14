@@ -2,8 +2,8 @@
     position: relative;
     width: 100%;
     display: flex;
-    margin-top: 2.5%;
-    font-size: 25px;
+    margin-top: 3%;
+    font-size: 20px;
     background-color: #ffffff;
     @media (max-width: 1024px) {
       font-size: 20px;
@@ -13,23 +13,27 @@
       border-radius: 10px;
       outline: none;
       font-size: 20px;
-      height: 55px;
+      height: 48px;
       padding-left: 3%;
       width: 100%;
       background-color: #ffffff;
       @media (max-width: 1024px) {
         font-size: 15px;
-        height: 52px;
+        height: 44px;
       }
       @media (max-width: 768px) {
-        font-size: 15px;
-        height: 45px;
+        font-size: 13px;
+        height: 42px;
+      }
+      @media (max-width: 480px) {
+        font-size: 11px;
+        height: 40px;
       }
       &:focus + .placeholder,
       &.focused + .placeholder {
         top: 3px;
         @media (max-width: 1024px) {
-          top:3.5px
+          // top:3.5px
         }
 
       }
@@ -45,21 +49,27 @@
       pointer-events: none;
     padding: 0% 0.5% 0% 0.5%;
       background-color: #ffffff;
-      font-size: 25px;
+      font-size: 20px;
       font-weight: 400;
       @media (max-width: 1024px) {
-        font-size: 21px;
+        font-size: 18px;
         transform: translateY(-100%);
-        margin-top: 3%;
+        margin-top: 2%;
       }
 
       @media (max-width: 768px) {
-        font-size: 17px;
-        top:50%;
+        font-size: 15px;
+        // top:50%;
+      }
+      
+      @media (max-width: 590px) {
+        font-size: 13px;
+        // top:50%;
       }
 
       @media (max-width: 480px) {
-        font-size: 13px;
+        margin-top: 3%;
+        font-size: 12px;
       }
     }
   }

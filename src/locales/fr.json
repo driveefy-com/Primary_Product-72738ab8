@@ -9,7 +9,7 @@
   },
   "signupPage": {
     "title": "Page d'inscription",
-    "emailLabel": "Email",
-    "passwordLabel": "Mot de passe",
-    "signupButton": "S'inscrire"
+    "signupButton": "S'inscrire",
+    "loginLink": "Vous avez déjà un compte ?",
+    "login": "Se connecter"
   }}

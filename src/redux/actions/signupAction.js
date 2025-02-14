@@ -13,7 +13,6 @@ export const signupUser= (userData) => async (dispatch) => {
         },
       }
     );
-    console.log(response);
     
     if (response.status === 201) {
       dispatch({ type: 'SIGNUP_SUCCESS' });

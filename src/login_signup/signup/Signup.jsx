@@ -1,4 +1,4 @@
-import  { useState,useEffect} from 'react'
+import  { useState} from 'react'
 import './styles/Signup.scss'
 import { useTranslation } from 'react-i18next'
 import { FormComponents } from '../../common/form/FormComponents';
@@ -19,9 +19,6 @@ export const Signup = () => {
       e.preventDefault();
       dispatch({type:'SIGNUP',payload:formData})
     }
-    useEffect(() => {
-      console.log(formData); // ✅ Logs the latest value after state updates
-    }, [formData]);
   return (
     <div className="signup-main-container">
       <div className="signup-img-container">
@@ -46,11 +43,11 @@ export const Signup = () => {
               })}
             </div>
             <div className="signup-form-button">
-            <SubmitButton type={'submit'} text={'Sign up'}/>
+            <SubmitButton type={'submit'} text={t('signupPage.signupButton')}/>
             </div>
           </form>
         </div>
-        <h3>Already have an account ?<Link to={'/'} className='link'> Login</Link></h3>
+        <h3>{t('signupPage.loginLink')}<Link to={'/'} className='link'>{t('signupPage.login')}</Link></h3>
       </div>
     </div> 
   )
