@@ -65,7 +65,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-around;
       @media (max-width: 1024px) {
         justify-content: space-evenly;
         // padding: 5%;
@@ -106,16 +106,16 @@
       }
 
       h1 {
-        font-size: 40px;
+        font-size: 36px;
         font-weight: 700;
         color: #292a6a;
         @media (max-width: 1024px) {
-          font-size: 40px;
+          font-size: 36px;
           // padding: 1.2% 5%;
         }
 
         @media (max-width: 768px) {
-          font-size: 31px;
+          font-size: 28px;
           // padding: 1% 4%;
         }
 
@@ -132,7 +132,7 @@
         font-size: 20px;
         font-weight: 600;
         text-decoration: none;
-        padding: 1.3% 5.5% 1.3% 5.5%;
+        padding: 1% 5.2% 1% 5.2%;
         background-color: #292a6a;
         color: #ffffff;
         border-radius: 48px;
@@ -188,14 +188,14 @@
           padding-left: 15px;
           padding-right: 15px;
           background-color: #ffffff;
-          font-size: 25px;
+          font-size: 22px;
           font-weight: 400;
           align-self: center;
           text-align: center;
           // margin-top: 2%;
           // margin-bottom: 2%;
           @media (max-width: 1024px) {
-            font-size: 25px;
+            font-size: 22px;
             padding-left: 10px;
             padding-right: 10px;
             // margin-top: 3%;
@@ -218,9 +218,17 @@
 
       .login-input-container {
         display: flex;
-        width: 68.5%;
+        width: 50%;
         flex-direction: column;
         justify-content: space-between;
+        @media (max-width: 1024px) {
+          width: 70%;
+          // padding: 1.2% 5%;
+        }
+        @media (max-width: 768px) {
+          width: 80%;
+          // padding: 1% 4%;
+        }
         form {
           .link {
             text-decoration: none;
@@ -259,10 +267,10 @@
       h3 {
         text-align: center;
         font-weight: 400;
-        font-size: 30px;
+        font-size: 24px;
         margin-bottom: 1%;
         @media (max-width: 1024px) {
-          font-size: 28px;
+          font-size: 26px;
         }
 
         @media (max-width: 768px) {

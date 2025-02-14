@@ -13,7 +13,6 @@ export const subscribe= (userEmail) => async (dispatch) => {
         },
       }
     );
-    console.log(response);
     
     if (response.status === 201) {
       dispatch({ type: 'SUBSCRIBE_SUCCESS' });

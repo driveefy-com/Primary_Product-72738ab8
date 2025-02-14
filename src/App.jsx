@@ -1,6 +1,7 @@
 import { AllRoutes } from './routes/AllRoutes'
 import { Snackbar,Alert } from '@mui/material';
 import {useDispatch,useSelector} from 'react-redux';
+import LanguageSwitcher from './languageSwitcher/LanguageSwitcher';
 function App() {
   const dispatch=useDispatch();
   const {snackbarMessage}= useSelector(state => state.demo);
@@ -21,7 +22,7 @@ function App() {
   };
   return (
     <div>
-      {/* <LanguageSwitcher/> */}
+      <LanguageSwitcher/>
       <AllRoutes/>
       <Snackbar
           anchorOrigin={{ vertical: "top" , horizontal: "center"}}

@@ -3,15 +3,15 @@
     "title": "Login to Driveefy",
     "googleLogin": "Login with Google",
     "emailLogin": "or login with email",
-    "forgot": "forgot password",
+    "forgot": "forgot password ?",
     "login":"Login",
     "createAccount":"Dont have an account?",
     "linkText":"create account"
   },
   "signupPage": {
     "title": "Create your Driveefy Account",
-    "emailLabel": "Email",
-    "passwordLabel": "Password",
-    "signupButton": "Sign Up"
+    "signupButton": "Sign Up",
+    "loginLink": "Already have an account?",
+    "login":"Login"
   }
 }
