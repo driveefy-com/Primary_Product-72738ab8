@@ -23,6 +23,7 @@ export const FormComponents = ({ formData,onChange }) => {
         return (
                 <div className="input-container">
                     <input
+                    className='input-field'
                     name={formData.name}
                     type={formData.type}
                     required

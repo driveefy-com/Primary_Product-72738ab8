@@ -57,7 +57,7 @@ export const forgotPassword=[
         name:'forgotPassword',
         type:'password',
         inputType:'text',
-        placeholder:'Retype Password*',
+        placeholder:'enter your email',
     }
 ]
 export const setNewPassword=[

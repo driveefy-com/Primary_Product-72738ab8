@@ -46,7 +46,7 @@ function Login() {
               />
               );
         })}
-          <Link className="link">{t("loginPage.forgot")}</Link>
+          <Link className="link" to={'forgotPassword'}>{t("loginPage.forgot")}</Link>
           <div className="login-form-button-container">
           <SubmitButton text={t("loginPage.login")}/>
           </div>

@@ -13,5 +13,11 @@
     "signupButton": "Sign Up",
     "loginLink": "Already have an account?",
     "login":"Login"
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "message": "Please enter your email to reset password",
+    "email": "Your Email",
+    "submit": "Reset your Password"
   }
 }
