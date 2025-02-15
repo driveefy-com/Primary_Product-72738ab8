@@ -15,9 +15,9 @@
     "login":"Login"
   },
   "forgotPassword": {
-    "title": "Forgot Password",
-    "message": "Please enter your email to reset password",
-    "email": "Your Email",
-    "submit": "Reset your Password"
+    "title": "Olvidé la contraseña",
+    "message": "Por favor ingresa tu correo electrónico para restablecer la contraseña",
+    "email": "Tu correo electrónico",
+    "submit": "Restablecer tu contraseña"
   }
 }

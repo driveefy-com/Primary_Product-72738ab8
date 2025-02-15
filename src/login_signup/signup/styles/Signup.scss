@@ -119,17 +119,12 @@
                 display: flex;
                 gap: 5%;
                 align-items: flex-end;
-                @media (max-width:768px) {
-                    display: inline-block;
-                }
             }
             .signup-form-button{
                 margin-top: 2%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                // background-color: red;
-                font-size: 36px;
             }
         }
         h3{

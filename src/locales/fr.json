@@ -12,4 +12,11 @@
     "signupButton": "S'inscrire",
     "loginLink": "Vous avez déjà un compte ?",
     "login": "Se connecter"
-  }}
+  },
+  "forgotPassword": {
+    "title": "Mot de passe oublié",
+    "message": "Veuillez entrer votre email pour réinitialiser votre mot de passe",
+    "email": "Votre email",
+    "submit": "Réinitialiser votre mot de passe"
+  }
+}
