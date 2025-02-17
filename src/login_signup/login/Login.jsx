@@ -8,11 +8,18 @@ import { Link } from "react-router-dom";
 import SubmitButton from "../../common/buttons/SubmitButton";
 import GoogleIcon from '../../assets/icons/GoogleIcon.svg'
 import driveefyLogo from '../../assets/icons/driveefy_logo.svg'
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../redux/actions/loginAction";
 function Login() {
   const {t} = useTranslation();
   const [formData, setformData] = useState({});
+  const dispatch=useDispatch();
   const handleChange=(e)=>{
     setformData({...formData,[e.target.name]:e.target.value});
+  }
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    dispatch(loginUser(formData));
   }
   return (
     <div className="login-main-container">
@@ -35,7 +42,7 @@ function Login() {
           <p>{t("loginPage.emailLogin")}</p>
         </div>
         <div className="login-input-container">
-        <form action="">
+        <form onSubmit={(e)=>handleSubmit(e)}>
         {
           loginPage.map((item, index) => {
             return (
