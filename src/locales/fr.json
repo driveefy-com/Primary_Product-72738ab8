@@ -18,5 +18,11 @@
     "message": "Veuillez entrer votre email pour réinitialiser votre mot de passe",
     "email": "Votre email",
     "submit": "Réinitialiser votre mot de passe"
+  },
+  "checkEmail": {
+    "title": "Vérifiez votre email",
+    "message": "Nous avons envoyé un lien de réinitialisation à votre email, cliquez sur le lien pour réinitialiser votre mot de passe",
+    "resend": "Vous n'avez pas encore reçu l'email ?",
+    "resendLink": "Renvoyer l'email"
   }
 }
