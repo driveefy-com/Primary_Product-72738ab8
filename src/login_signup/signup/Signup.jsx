@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import GoogleIcon from '../../assets/icons/signupPageIcon.svg'
 import driveefyLogo from '../../assets/icons/driveefy_logo.svg'
 import {useDispatch} from 'react-redux';
+import { signupUser } from '../../redux/actions/signupAction';
 export const Signup = () => {
    const [formData, setformData] = useState({});
    const { t } = useTranslation();
@@ -17,7 +18,7 @@ export const Signup = () => {
     }
     const handleSubmit=(e)=>{
       e.preventDefault();
-      dispatch({type:'SIGNUP',payload:formData})
+      dispatch(signupUser(formData));
     }
   return (
     <div className="signup-main-container">

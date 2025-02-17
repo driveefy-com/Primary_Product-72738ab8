@@ -4,10 +4,10 @@ const initialState = {
     snackbarMessage: "",
     severity:'',
 };
- const signupSlice = createSlice({
+ const loginSlice = createSlice({
     initialState,
     reducers:{},
-    name:'signup',
+    name:'login',
     extraReducers: (builder) => {
         builder
         .addCase(
@@ -17,25 +17,25 @@ const initialState = {
                 }
         )
    .addCase(
-    'SIGNUP_REQUEST',(state) => {
+    'LOGIN_REQUEST',(state) => {
         state.loading = true;
       })
       .addCase(
-      'SIGNUP_SUCCESS', (state) => {
+      'LOGIN_SUCCESS', (state) => {
         state.loading = false;
         
       })
       .addCase(
-      'SIGNUP_FAILURE' ,(state) => {
+      'LOGIN_FAILURE' ,(state) => {
         state.loading = false;  
       })
       .addCase(
         'SET_SNACKBAR_ERROR_MESSAGE',(state, action) => {
           state.snackbarMessage = action.payload.message;
-          state.severity = action.payload.severity
+          state.severity = action.payload.severity;
         }
       )
     }
 });
 
-export default signupSlice.reducer;
+export default loginSlice.reducer;
