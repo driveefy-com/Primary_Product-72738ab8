@@ -1,16 +1,17 @@
 import './styles/FormComponent.scss'
 import { useState } from 'react';
 
-export const FormComponents = ({ formData,onChange }) => {
+export const FormComponents = ({ formData,onChange,value}) => {
   const [Focused, setFocused] = useState(false);
   switch (formData.inputType) {
-    case "textup":
+    case "movePlaceholderUp":
       return (
           <div className="input-container">
             <input
               name={formData.name}
               type={formData.type}
               required
+              value={value}
               className={`input-field ${Focused ? "focused" : ""}`}
               onFocus={() => setFocused(true)}
               onBlur={(e) => setFocused(e.target.value !== "")}

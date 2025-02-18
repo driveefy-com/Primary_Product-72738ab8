@@ -11,7 +11,7 @@
     height: 100vh;
 
     .login-img-container {
-      background-image: url("../../../assets/images/loginImage.jpg");
+      background-image: url("../../../assets/images/loginImage.webp");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -24,6 +24,7 @@
         display: flex;
         margin-top: 5%;
         margin-left: 5%;
+        width: 100px;
         @media (max-width: 1024px) {
          width: 100px;
         }

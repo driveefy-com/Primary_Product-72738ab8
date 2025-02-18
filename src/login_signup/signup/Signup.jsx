@@ -5,12 +5,13 @@ import { FormComponents } from '../../common/form/FormComponents';
 import { signupPage } from '../../common/form/FormData';
 import SubmitButton from '../../common/buttons/SubmitButton';
 import { Link } from 'react-router-dom';
-import GoogleIcon from '../../assets/icons/signupPageIcon.svg'
+import signupPageIcon from '../../assets/icons/signupPageIcon.svg'
 import driveefyLogo from '../../assets/icons/driveefy_logo.svg'
 import {useDispatch} from 'react-redux';
 import { signupUser } from '../../redux/actions/signupAction';
 export const Signup = () => {
    const [formData, setformData] = useState({});
+   const [error, seterror] = useState('')
    const { t } = useTranslation();
    const dispatch = useDispatch();
     const handleChange=(e)=>{
@@ -18,7 +19,13 @@ export const Signup = () => {
     }
     const handleSubmit=(e)=>{
       e.preventDefault();
-      dispatch(signupUser(formData));
+      console.log(formData.password,formData.retypePassword);
+      if(formData.password !== formData.retypePassword){
+        seterror('Password does not match');
+        return;
+      }
+      seterror('');
+      dispatch(signupUser(formData)); 
     }
   return (
     <div className="signup-main-container">
@@ -27,7 +34,7 @@ export const Signup = () => {
       </div>
       <div className="signup-form-container">
         <div className="signup-form-logo">
-        <img src={GoogleIcon} alt="" />
+        <img src={signupPageIcon} alt="" />
         </div>
         <h1>{t('signupPage.title')}</h1>
         <div className="signup-input-container">
@@ -42,6 +49,7 @@ export const Signup = () => {
                   <FormComponents formData={item} key={index} onChange={handleChange}/>
                 )
               })}
+              {error && <p style={{ color: "red" }}>{error}</p>}
             </div>
             <div className="signup-form-button">
             <SubmitButton type={'submit'} text={t('signupPage.signupButton')}/>

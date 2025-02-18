@@ -2,13 +2,13 @@ export const loginPage=[
     {
         name:'email',
         type:'email',
-        inputType:'textup',
+        inputType:'movePlaceholderUp',
         placeholder:'Email',
     },
     {
         name:'password',
         type:'password',
-        inputType:'textup',
+        inputType:'movePlaceholderUp',
         placeholder:'Password',
     }
 ]
@@ -17,37 +17,37 @@ export const signupPage=[
     {
         name:'firstName',
         type:'text',
-        inputType:'textup',
+        inputType:'movePlaceholderUp',
         placeholder:'First Name*',
     },
     {
         name:'lastName',
         type:'text',
-        inputType:'textup',
+        inputType:'movePlaceholderUp',
         placeholder:'Last Name*',
     },
     {
         name:'email',
         type:'email',
-        inputType:'textup',
+        inputType:'movePlaceholderUp',
         placeholder:'Email*',
     },
     {
         name:'phoneNumber',
         type:'number',
-        inputType:'textup',
+        inputType:'movePlaceholderUp',
         placeholder:'Phone Number*',
     },
     {
         name:'password',
         type:'password',
-        inputType:'textup',
+        inputType:'movePlaceholderUp',
         placeholder:'Password*',
     },
     {
         name:'retypePassword',
         type:'password',
-        inputType:'textup',
+        inputType:'movePlaceholderUp',
         placeholder:'Retype Password*',
     }
 ]
