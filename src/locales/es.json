@@ -1,0 +1,29 @@
+{
+  "loginPage": {
+    "title": "Iniciar sesión en Driveefy",
+    "googleLogin": "Iniciar sesión con Google",
+    "emailLogin": "O iniciar sesión con correo electrónico",
+    "forgot": "Olvidé mi contraseña",
+    "login": "Iniciar sesión",
+    "createAccount": "¿No tienes una cuenta?",
+    "linkText": "Crear cuenta"
+  },
+  "signupPage": {
+    "title": "Página de registro",
+    "signupButton": "Registrarse",
+    "loginLink": "¿Ya tienes una cuenta?",
+    "login": "Iniciar sesión"
+  },
+  "forgotPassword": {
+    "title": "Olvidé la contraseña",
+    "message": "Por favor ingresa tu correo electrónico para restablecer la contraseña",
+    "email": "Tu correo electrónico",
+    "submit": "Restablecer tu contraseña"
+  },
+  "checkEmail": {
+    "title": "Revisa tu correo electrónico",
+    "message": "Hemos enviado un enlace de restablecimiento a tu correo, haz clic en el enlace para restablecer tu contraseña",
+    "resend": "¿No has recibido el correo aún?",
+    "resendLink": "Reenviar correo"
+  }
+}
