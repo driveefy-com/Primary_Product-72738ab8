@@ -19,7 +19,6 @@ export const Signup = () => {
     }
     const handleSubmit=(e)=>{
       e.preventDefault();
-      console.log(formData.password,formData.retypePassword);
       if(formData.password !== formData.retypePassword){
         seterror('Password does not match');
         return;

@@ -24,7 +24,6 @@ export const signupUser= (userData) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: "SIGNUP_FAILURE",
-    //   payload: error.message,
     });    
     dispatch({
       type: "SET_SNACKBAR_ERROR_MESSAGE",
