@@ -77,38 +77,42 @@ export const setNewPassword=[
 
 export const organizationDetail=[
     {
-        name:'organizationName',
+        name:'Organization Name',
         type:'text',
         inputType:'text',
+        placeholder:'Enter organization name here'
     },
     {
-        name:'industryType',
+        name:'Industry Type',
         type:'text',
         inputType:'text',
+        placeholder:'Enter industry type here'
     },
     {
-        name:'experience',
+        name:'Experience',
         type:'text',
         inputType:'text',
+        placeholder:'Enter your experience'
     },
     {
-        name:'noOfTrucks',
+        name:'No. Of Trucks',
         type:'dropdown',
         inputType:'dropdown'
     },
     {
-        name:'noOfDrivers',
+        name:'No. Of Drivers',
         type:'dropdown',
         inputType:'dropdown'
     },
     {
-        name:'address',
-        type:'text',
-        inputType:'text',
-    },
-    {
-        name:"city",
+        name:"City",
         type:'dropdown',
         inputType:'dropdown',
+    },
+    {
+        name:'Address',
+        type:'text',
+        inputType:'text',
+        placeholder:'Enter address here'
     }
 ]
