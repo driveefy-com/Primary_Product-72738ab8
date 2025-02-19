@@ -1,0 +1,45 @@
+name: Node.js Setup and Build
+
+on:
+  push:
+    branches:
+      - '*'  # This will trigger the workflow on push events to any branch
+  pull_request:
+    branches:
+      - '*'  # This will trigger the workflow for pull requests on any branch
+
+jobs:
+  setupjob:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js with the desired version
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Updated to Node.js 20 for compatibility
+
+      # Step 3: Cache node modules
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      # Step 4: Install npm packages
+      - name: Install dependencies
+        run: npm install
+
+      # Step 5: Run linting
+      - name: Run linting
+        run: npm run lint
+
+      # Step 6: Build the project
+      - name: Build project
+        run: npm run build

@@ -23,7 +23,7 @@ export const loginUser = (userData) => async (dispatch) => {
         },
       });
     }
-  } catch (error) {
+  } catch {
     dispatch({
       type: "LOGIN_FAILURE",
     });

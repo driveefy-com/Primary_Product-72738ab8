@@ -21,7 +21,7 @@ export const signupUser= (userData) => async (dispatch) => {
         payload: {message:"Thank you for Subscribing us",severity:'success'}
       });
     }
-  } catch (error) {
+  } catch {
     dispatch({
       type: "SIGNUP_FAILURE",
     });    
