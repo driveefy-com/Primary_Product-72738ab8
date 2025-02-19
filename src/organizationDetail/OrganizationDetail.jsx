@@ -16,7 +16,7 @@ export const OrganizationDetail = () => {
           <form action=""  className="organization-form-container">
             {organizationDetail.map((item,index)=>{
               return(
-                <div className="grid-item">
+                <div key={index} className="grid-item">
                 <h1>{item.name}</h1>
                 <FormComponents key={index} formData={item} onChange={()=>{}}/>
                 </div>
