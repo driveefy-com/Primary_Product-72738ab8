@@ -36,13 +36,13 @@ export const FormComponents = ({ formData,onChange,value}) => {
         case 'dropdown':
             return (
                     <div className="input-container">
-                        <select onChange={onChange} name={formData.name} required>
-                            <option>
+                        <select className='input-field' onChange={onChange} name={formData.name} required>
+                            {/* <option>
                                 gigi
                             </option>
                             <option>
                                 popo
-                            </option>
+                            </option> */}
                         </select>
                     </div>
             )

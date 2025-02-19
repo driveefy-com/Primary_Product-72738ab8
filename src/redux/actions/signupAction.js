@@ -21,10 +21,9 @@ export const signupUser= (userData) => async (dispatch) => {
         payload: {message:"Thank you for Subscribing us",severity:'success'}
       });
     }
-  } catch (error) {
+  } catch {
     dispatch({
       type: "SIGNUP_FAILURE",
-    //   payload: error.message,
     });    
     dispatch({
       type: "SET_SNACKBAR_ERROR_MESSAGE",

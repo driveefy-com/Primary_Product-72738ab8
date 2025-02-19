@@ -1,0 +1,31 @@
+.organization-main-container{
+    // display: flex;
+    .organization-text-container{
+        // background-color: red;
+        .organization-title-container{
+
+        }
+        .organization-photo-container{
+
+        }
+        .organization-form-container{
+        //    display: flex;
+        //    background-color: red;
+        //    display: none;
+        //    width: 70%;
+        width: 80%;
+        height: 80%;
+        display: grid;
+        // align-items: center;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        .grid-item:nth-child(7){
+            grid-column:span 2;
+            // gap: px;
+        }
+        .organization-submit-button-container{
+            
+        }
+        }
+    }
+}

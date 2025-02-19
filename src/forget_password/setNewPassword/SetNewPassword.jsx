@@ -1,7 +1,7 @@
 import SubmitButton from '../../common/buttons/SubmitButton'
 import { FormComponents } from '../../common/form/FormComponents'
 import { setNewPassword } from '../../common/form/FormData'
-import './styles/SetNewPassword.scss'
+import './styles/setNewPassword.scss'
 export const SetNewPassword = () => {
   return (
     <div className="set-password-main-container">
