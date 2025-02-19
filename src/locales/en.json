@@ -1,0 +1,29 @@
+{
+  "loginPage": {
+    "title": "Login to Driveefy",
+    "googleLogin": "Login with Google",
+    "emailLogin": "or login with email",
+    "forgot": "forgot password ?",
+    "login": "Login",
+    "createAccount": "Dont have an account?",
+    "linkText": "create account"
+  },
+  "signupPage": {
+    "title": "Create your Driveefy Account",
+    "signupButton": "Sign Up",
+    "loginLink": "Already have an account?",
+    "login": "Login"
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "message": "Please enter your email to reset your password",
+    "email": "Your email",
+    "submit": "Reset your password"
+  },
+  "checkEmail": {
+    "title": "Check your email",
+    "message": "We have sent a reset link to your email,click the link to reset your password",
+    "resend":"Haven't got the mail yet?",
+    "resendLink":"Resend email"
+  }
+}

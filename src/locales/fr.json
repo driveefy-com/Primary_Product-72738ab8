@@ -1,0 +1,28 @@
+{"loginPage": {
+    "title": "Connexion à Driveefy",
+    "googleLogin": "Se connecter avec Google",
+    "emailLogin": "Ou connectez-vous avec votre email",
+    "forgot": "Mot de passe oublié",
+    "login": "Se connecter",
+    "createAccount": "Vous n'avez pas de compte ?",
+    "linkText": "Créer un compte"
+  },
+  "signupPage": {
+    "title": "Page d'inscription",
+    "signupButton": "S'inscrire",
+    "loginLink": "Vous avez déjà un compte ?",
+    "login": "Se connecter"
+  },
+  "forgotPassword": {
+    "title": "Mot de passe oublié",
+    "message": "Veuillez entrer votre email pour réinitialiser votre mot de passe",
+    "email": "Votre email",
+    "submit": "Réinitialiser votre mot de passe"
+  },
+  "checkEmail": {
+    "title": "Vérifiez votre email",
+    "message": "Nous avons envoyé un lien de réinitialisation à votre email, cliquez sur le lien pour réinitialiser votre mot de passe",
+    "resend": "Vous n'avez pas encore reçu l'email ?",
+    "resendLink": "Renvoyer l'email"
+  }
+}

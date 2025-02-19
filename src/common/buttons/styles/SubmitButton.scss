@@ -1,0 +1,31 @@
+button{
+    padding: 2% 5% 2% 5%;
+    font-weight: 600;
+    background-color: #292a6a;
+    color: #ffffff;
+    border-radius: 48px;
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:large;
+    @media (max-width: 1024px) {
+        margin-top: 5%;
+        font-size: medium;
+      }
+
+      @media (max-width: 768px) {
+        margin-top: 10%;
+        font-size: small;
+      }
+
+      @media (max-width: 480px) {
+        padding: 3% 6%;
+        font-size: 12px;
+      }
+    &:hover{
+        background-color: #263b94;
+        cursor: pointer;
+    }
+}
