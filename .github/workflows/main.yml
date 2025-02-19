@@ -22,8 +22,13 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Install Dependencies (CI)
         run: npm ci
+        continue-on-error: true
+
+      - name: Install Dependencies (Fallback)
+        if: failure()
+        run: npm install
 
       - name: Run Linting
         run: npm run lint
@@ -46,4 +51,4 @@ jobs:
   #   needs: build_and_test
   #   steps:
   #     - name: Deploy Project
-  #       run: echo 'Deploying...'
+  #       run: echo 'Deploying...
