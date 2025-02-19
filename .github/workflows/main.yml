@@ -15,27 +15,15 @@ jobs:
     steps:
       # Step 1: Checkout code
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Step 2: Set up Node.js with the desired version
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # You can adjust the Node.js version as needed
+          node-version: '20'  # Updated to Node.js 20 for compatibility
 
-      # Step 3: Install npm packages
-      - name: Install dependencies
-        run: npm install
-
-      # Step 4: Run linting (you can replace 'npm run lint' with your specific linting script)
-      - name: Run linting
-        run: npm run lint
-
-      # Step 5: Build the project
-      - name: Build project
-        run: npm run build
-
-      # Optional: If you want to cache npm dependencies to speed up the workflow, you can add:
+      # Step 3: Cache node modules
       - name: Cache node modules
         uses: actions/cache@v3
         with:
@@ -43,3 +31,15 @@ jobs:
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-modules-
+
+      # Step 4: Install npm packages
+      - name: Install dependencies
+        run: npm install
+
+      # Step 5: Run linting
+      - name: Run linting
+        run: npm run lint
+
+      # Step 6: Build the project
+      - name: Build project
+        run: npm run build
