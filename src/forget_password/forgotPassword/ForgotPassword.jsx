@@ -10,7 +10,7 @@ export const ForgotPassword = () => {
     const handleChange=(e)=>{
       setformData({...formData,[e.target.name]:e.target.value});
     }
-    const handleSubmit = (e) =>{}
+    const handleSubmit = () =>{}
   return (
    <div className="forgot-password-main-container">
     <div className="forgot-password-img-container"></div>
