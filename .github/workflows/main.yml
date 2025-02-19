@@ -3,10 +3,10 @@ name: Node.js Setup and Build
 on:
   push:
     branches:
-      - main
+      - '*'  # This will trigger the workflow on push events to any branch
   pull_request:
     branches:
-      - main
+      - '*'  # This will trigger the workflow for pull requests on any branch
 
 jobs:
   setupjob:
