@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./styles/CheckEmail.scss";
-import icon from '../../assets/icons/checkEmailIcon.webp'
+import icon from '../../../assets/icons/checkEmailIcon.webp'
 import { useTranslation } from "react-i18next";
 export const CheckEmail = () => {
   const { t } = useTranslation();

@@ -1,3 +1,4 @@
+
 * {
   margin: 0%;
   padding: 0%;
@@ -21,45 +22,31 @@
       @media (max-width:768px) {
         display: none;
       }
-      .driveefy-logo{
-        background-color: red;
-        position: absolute;
-        display: flex;
-        margin-top: 5%;
-        margin-left: 5%;
-        width: 100px;
-        @media (max-width: 1024px) {
-         width: 100px;
-
-        }
-
-        @media (max-width: 768px) {
-          width: 50%;
-          
-        }
-
-        @media (max-width: 480px) {
-          width: 30%;
-        }
-      img {
-        margin: 5%;
-        position: absolute;
-        background-color: transparent;
-        @media (max-width: 1024px) {
+    }
+    .driveefy-logo{
+      // background-color: red;
+      position: absolute;
+      // display: flex;
+      // margin-top: 5%;
+      // margin-left: 5%;
+      top:15px;
+      left: 15px;
+      // width: 100px;
+      img{
+        @media (max-width:1024px) {
           width: 150px;
         }
-
-        @media (max-width: 768px) {
+        @media (max-width:768px) {
           width: 120px;
         }
-
-        @media (max-width: 480px) {
+        @media (max-width:480px) {
           width: 100px;
+        }
+        @media (max-width:400px) {
+          width: 80px;
         }
       }
     }
-    }
-
     .login-form-container {
       width: 66.66%;
       height: 100%;

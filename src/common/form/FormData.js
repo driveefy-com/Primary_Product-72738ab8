@@ -1,3 +1,15 @@
+import { City } from "country-state-city";
+const indianCities=City.getCitiesOfCountry("IN");
+const cities = [];
+indianCities.map((item)=>{
+cities.push(item.name);
+})
+import Avatar1 from '../../assets/images/Avatar1.svg'
+import Avatar2 from '../../assets/images/Avatar2.svg'
+import Avatar3 from '../../assets/images/Avatar3.svg'
+import Avatar4 from '../../assets/images/Avatar4.svg'
+import Avatar5 from '../../assets/images/Avatar5.svg'
+import Avatar6 from '../../assets/images/Avatar6.svg'
 export const loginPage=[
     {
         name:'email',
@@ -79,40 +91,53 @@ export const organizationDetail=[
     {
         name:'Organization Name',
         type:'text',
-        inputType:'text',
+        inputType:'smallerText',
         placeholder:'Enter organization name here'
     },
     {
         name:'Industry Type',
         type:'text',
-        inputType:'text',
+        inputType:'smallerText',
         placeholder:'Enter industry type here'
     },
     {
         name:'Experience',
         type:'text',
-        inputType:'text',
+        inputType:'smallerText',
         placeholder:'Enter your experience'
     },
     {
         name:'No. Of Trucks',
         type:'dropdown',
-        inputType:'dropdown'
+        inputType:'dropdown',
+        placeholder:'Select',
+        options:[
+            '0-10','11-20','21-30','31-40','41-50'
+        ]
     },
     {
         name:'No. Of Drivers',
         type:'dropdown',
-        inputType:'dropdown'
+        inputType:'dropdown',
+        placeholder:'Select',
+        options:[
+            '0-10','11-20','21-30','31-40','41-50'
+        ]
     },
     {
         name:"City",
         type:'dropdown',
         inputType:'dropdown',
+        placeholder:'Select Cities',
+        options:cities
     },
     {
         name:'Address',
         type:'text',
-        inputType:'text',
+        inputType:'smallerText',
         placeholder:'Enter address here'
     }
+]
+export const organizationDetailAvatarList=[
+    Avatar1,Avatar2,Avatar3,Avatar4,Avatar5,Avatar6
 ]

@@ -2,6 +2,30 @@
   height: 100vh;
   display: grid;
   grid-template-rows: 60% 40%;
+  .driveefy-logo{
+    // background-color: red;
+    position: absolute;
+    // display: flex;
+    // margin-top: 5%;
+    // margin-left: 5%;
+    top:15px;
+    left: 15px;
+    // width: 100px;
+    img{
+      @media (max-width:1024px) {
+        width: 150px;
+      }
+      @media (max-width:768px) {
+        width: 120px;
+      }
+      @media (max-width:480px) {
+        width: 100px;
+      }
+      @media (max-width:400px) {
+        width: 80px;
+      }
+    }
+  }
   .verification-text-container {
     display: flex;
     flex-direction: column;
@@ -66,7 +90,7 @@
     }}
   }
   .verification-img-container {
-    background-image: url("../../assets/images/verficationPageImg.svg");
+    background-image: url("../../../assets/images/verficationPageImg.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -26,7 +26,6 @@ const LanguageSwitcher = () => {
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };

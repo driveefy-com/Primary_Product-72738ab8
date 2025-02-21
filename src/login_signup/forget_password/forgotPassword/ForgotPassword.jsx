@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next"
-import { forgotPassword } from "../../common/form/FormData";
-import { FormComponents } from "../../common/form/FormComponents";
-import SubmitButton from "../../common/buttons/SubmitButton";
+import { forgotPassword } from "../../../common/form/FormData";
+import { FormComponents } from "../../../common/form/FormComponents";
+import SubmitButton from "../../../common/buttons/SubmitButton";
+import driveefylogo from '../../../assets/icons/driveefy_logo.svg'
 import './styles/ForgotPassword.scss'
 import { useState } from "react";
 export const ForgotPassword = () => {
@@ -14,6 +15,9 @@ export const ForgotPassword = () => {
   return (
    <div className="forgot-password-main-container">
     <div className="forgot-password-img-container"></div>
+    <div className="driveefy-logo">
+      <img src={driveefylogo} alt="" />
+    </div>
     <div className="forgot-password-form-container">
       <div className="forgot-password-text-container">
       <h1>{t('forgotPassword.title')}</h1>

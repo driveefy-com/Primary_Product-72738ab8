@@ -1,11 +1,15 @@
-import SubmitButton from '../../common/buttons/SubmitButton'
-import { FormComponents } from '../../common/form/FormComponents'
-import { setNewPassword } from '../../common/form/FormData'
+import SubmitButton from '../../../common/buttons/SubmitButton'
+import { FormComponents } from '../../../common/form/FormComponents'
+import { setNewPassword } from '../../../common/form/FormData'
 import './styles/setNewPassword.scss'
+import driveefylogo from '../../../assets/icons/driveefy_logo.svg'
 export const SetNewPassword = () => {
   return (
     <div className="set-password-main-container">
       <div className="set-password-img-container">
+      </div>
+      <div className="driveefy-logo">
+        <img src={driveefylogo} alt="" />
       </div>
       <div className="set-password-text-container">
         <div className="set-password-form-container">

@@ -24,9 +24,9 @@ function Login() {
   return (
     <div className="login-main-container">
       <div className="login-img-container">
-        <div className="driveefy-logo">
-        <img src={driveefyLogo} alt="" />
-        </div>
+      </div>
+      <div className="driveefy-logo">
+      <img src={driveefyLogo} alt="" />
       </div>
       <div className="login-form-container">
         <div className="login-icon-container">
