@@ -92,8 +92,9 @@
   .verification-img-container {
     background-image: url("../../../assets/images/verficationPageImg.svg");
     background-size: cover;
+    // width: 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:center;
     position: relative;
   }
 }

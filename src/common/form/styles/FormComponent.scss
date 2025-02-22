@@ -42,10 +42,10 @@
     &.focused + .placeholder {
       top: 3px;
       @media (max-width: 1024px) {
-        top: 4px;
+        // top: 4px;
       }
       @media (max-width: 768px) {
-        top: 5px;
+        top: 2px;
       }
     }
   }

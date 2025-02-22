@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/PopUp.scss";
 // import dp from "../../../assets/icons/ProfilePictureIcon.svg";
+import cross from '../../../assets/icons/PopUpCross.svg'
 import { useSearchParams } from "react-router-dom";
 import AvatarPopUp from "../avatar/AvatarPopUp";
 import { useSelector } from "react-redux";
@@ -18,7 +19,7 @@ const PopUpComponent = ({ isOpen, onClose,avatarList }) => {
 
   return (
     <div className="organization-pop-up">
-      <p onClick={onClose}>🗙</p>
+      <img src={cross} alt="" onClick={onClose} className="pop-up-cross"/>
       <div className="dp-container">
         <img src={img} alt="" />
       </div>

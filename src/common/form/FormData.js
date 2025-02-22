@@ -141,3 +141,29 @@ export const organizationDetail=[
 export const organizationDetailAvatarList=[
     Avatar1,Avatar2,Avatar3,Avatar4,Avatar5,Avatar6
 ]
+export const languages=[
+    {
+        language:'English(United States)',
+        code:"EN",
+    },
+    {
+        language:'Hindi',
+        code:"EN",
+    },
+    {
+        language:'Gujarati',
+        code:"EN",
+    },
+    {
+        language:'Bengali',
+        code:"EN",
+    },
+    {
+        language:'Marathi',
+        code:"EN",
+    },
+    {
+        language:'Odia',
+        code:"EN",
+    },
+]

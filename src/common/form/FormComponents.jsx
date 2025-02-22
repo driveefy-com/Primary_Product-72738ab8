@@ -14,11 +14,9 @@ export const FormComponents = ({ formData, onChange, value }) => {
   const inputRef = useRef(null);
   const [isSelected, setisSelected] = useState(false);
   // console.log(Text);
-  console.log(tagValue);
+  // console.log(tagValue);
  const [selectedIndex, setSelectedIndex] = useState(null);
-  const setValue = (item) => {
-    console.log(inputRef.current.element);
-  };
+ const [Type, setType] = useState('');
   const handleChange = (e) => {
     console.log(e.target.value);
     setisOpen(true);
@@ -37,10 +35,6 @@ export const FormComponents = ({ formData, onChange, value }) => {
     settagValue(item);
     setSelectedIndex(index);
   }
-  const handleSelect = (index,item) => {
-    setSelectedIndex(index);
-    setimg(item)
-  };
   switch (formData.inputType) {
     case "movePlaceholderUp":
       return (
@@ -55,6 +49,7 @@ export const FormComponents = ({ formData, onChange, value }) => {
             onBlur={(e) => setFocused(e.target.value !== "")}
             onChange={onChange}
           />
+          {/* {formData.type==='password'?} */}
           <div className="placeholder">{formData.placeholder}</div>
         </div>
       );
