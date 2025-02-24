@@ -4,6 +4,7 @@ import greenCheck from "../../../assets/icons/greenCheckIcon.svg";
 import "./styles/AvatarPopUp.scss";
 import cross from "../../../assets/icons/AvatarPageCrossIcon.svg";
 import { useDispatch } from "react-redux";
+import { popUpAction } from "../../../redux/actions/popUpAction";
 function AvatarPopUp({ isOpen, onClose, avatarList }) {
   // console.log(avatarList);
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -12,7 +13,7 @@ function AvatarPopUp({ isOpen, onClose, avatarList }) {
   const handleClick = (item) => {
     // console.log(item);
     // setSelectedIndex(index === selectedIndex ? null : index);
-    dispatch({ type: "SET_PROFILE_PICTURE", payload: item });
+    dispatch(popUpAction(item));
     onClose();
   };
 

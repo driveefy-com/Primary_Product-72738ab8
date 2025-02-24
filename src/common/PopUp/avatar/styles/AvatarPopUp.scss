@@ -14,8 +14,8 @@
     // top:250px;
     // right: -65%;
     // top:-30%;
-    right: 30%;
-    top: 20%;
+    right:5%;
+    top: 5%;
     box-shadow: 0px 4px 12px 0px #969696;
     border-radius: 15px;
     @media (max-width:1250px) {
@@ -37,7 +37,7 @@
         // height: 100px;
         // width: 120px;
         // font-size: 8px;
-        top:15%;
+        top:10%;
       }
       @media (max-width: 680px) {
         // height: 80px;
@@ -48,12 +48,14 @@
         // height: 150px;
         // width: 200px;
         // top: 10%;
-        top:20%;
+        // top:20%;
+        right: 15%;
+        // width: 40vw;
       }
       @media (max-width: 390px) {
         // height: 130px;
         // width: 160px;
-        top:22%
+        // top:22%
       }
     .avatar-cross-icon{
         // width: 10%;

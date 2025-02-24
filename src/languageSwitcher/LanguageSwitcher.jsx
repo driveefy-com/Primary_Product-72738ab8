@@ -7,12 +7,15 @@ import blueCheck from '../assets/icons/BlueCheckSign.svg'
 const LanguageSwitcher = () => {
   const [isOpen, setisOpen] = useState(false);
   const { i18n } = useTranslation();
+  const {t}=useTranslation();
   const dropdownRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [chosenLanguage, setchosenLanguage] = useState('English(United States)');
+  const [chosenLanguage, setchosenLanguage] = useState('English (United States)');
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
+    console.log(lang);
+    
   };
 
   const toggleDiv = () => {
@@ -20,6 +23,7 @@ const LanguageSwitcher = () => {
   };
   const handleSelect = (index,languauge,code)=>{
     setSelectedIndex(index);
+    console.log(languauge);
     setchosenLanguage(languauge);
     changeLanguage(code);
     toggleDiv();
@@ -29,8 +33,9 @@ const LanguageSwitcher = () => {
     <div className="language-button-container">
       {/* Button to open/close div */}
       <div onClick={toggleDiv} className="language-toggle-button">
-        {chosenLanguage}
-        <img src={dropdown} alt="" className="language-blue-tick"/>
+        {t(chosenLanguage)
+        }
+        <img src={dropdown} alt="" className="language-dropdown"/>
       </div>
 
       {/* Main Div that appears when button is clicked */}
@@ -38,7 +43,7 @@ const LanguageSwitcher = () => {
         <div className="language-popup">
           {languages.map((item, index) => (
             <div key={index} className={`${item.language===chosenLanguage?'language-inner-div-blue':'language-inner-div'}`} onClick={()=>handleSelect(index,item.language,item.code)}>
-              <p>{item.language}</p>
+              <p>{t(item.language)}</p>
               {item.language===chosenLanguage && <img src={blueCheck} alt="" />}
             </div>
           ))}

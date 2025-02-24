@@ -13,6 +13,7 @@
   z-index: 20;
   right: 0;
   cursor: pointer;
+
   @media (max-width:1024px) {
     font-size: 18px;
   }
@@ -27,17 +28,22 @@
   }
   .language-toggle-button{
     display: flex;
+    align-items: center;
     // flex-direction: row;
     // flex-wrap: wrap;
     // justify-content;
     gap: 5px;
     // position: absolute;
-    .language-blue-tick{
+    .language-dropdown{
       // margin-left: %;
       // display: flex;
       // flex-wrap: wrap;
       // flex-direction: row;
       // justify-content: space-between;
+      @media (max-width:768px) {
+        height: 8px;
+        width: 8px;
+      }
     }
   }
   .language-popup{
@@ -47,6 +53,8 @@
     border: black solid 2px;
     background-color: #ffffff;
     margin-top: 10px;
+    border-radius: 5px;
+
       .language-inner-div{
         margin-top: 3%;
         &:hover{

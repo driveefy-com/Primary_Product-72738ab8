@@ -1,0 +1,36 @@
+.custom-snackbar {
+  align-items: center;
+  color: black;
+  transition: background 2s ease-in-out, color 2s ease-in-out;
+  border-radius: 5px;
+ .snackbar-container{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .snackbar-dot {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    // background-color: blue;
+    // height: 100%;
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+    @media (max-width: 480px) {
+      font-size: 8px;
+    }
+  }
+  .snackbar-cross-icon {
+    // margin-left: 5%;
+    // width: 20%;
+    // display: flex;
+    // background: red;
+    align-self: center;
+    // align-items: center;
+    height: 8%;
+    width: 8%;
+  }}
+}

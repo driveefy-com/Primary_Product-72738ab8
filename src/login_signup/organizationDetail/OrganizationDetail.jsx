@@ -9,14 +9,15 @@ import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 import PopUpComponent from "../../common/PopUp/popup/PopUpComponent";
 import { Avatar } from "@mui/material";
 import AvatarPopUp from "../../common/PopUp/avatar/AvatarPopUp";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import pen from '../../assets/icons/penIconOrganizationDetail.svg'
 export const OrganizationDetail = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  // const location=useLocation();
-  // const 
-
-  // Check if the query param "popup" is set
+  const {t}=useTranslation();
   const isPopupOpen = searchParams.get("popup") === 'true';
-
+// const [profilePicture, setprofilePicture] = useState(profilePicture);
+const {img}=useSelector(state=>state.popup);
   // Function to open the popup (adds query param)
   const openPopup = () => {
     setSearchParams({ popup: 'true' });
@@ -36,10 +37,11 @@ export const OrganizationDetail = () => {
       
       <div className="organization-text-container">
         <div className="organization-title-container">
-          <h1>Organization Detail</h1>
+          <h1>{t('organizationDetail.title')}</h1>
         </div>
         <div className="organization-photo-container">
-          <img src={profilePicture} alt="" onClick={openPopup} />
+          <img src={img} alt="" onClick={openPopup} />
+          {/* <img src={pen} className="organization-pen-icon" alt="" onClick={openPopup}/> */}
         </div>
         <div className="pop-up-container">
         <PopUpComponent isOpen={isPopupOpen} onClose={closePopup} avatarList={organizationDetailAvatarList}/>

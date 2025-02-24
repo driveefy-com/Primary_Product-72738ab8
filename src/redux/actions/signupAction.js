@@ -17,8 +17,8 @@ export const signupUser= (userData) => async (dispatch) => {
     if (response.status === 201) {
       dispatch({ type: 'SIGNUP_SUCCESS' });
       dispatch({
-        type: "SET_SNACKBAR_SUCCESS_MESSAGE",
-        payload: {message:"Thank you for Subscribing us",severity:'success'}
+        type: "SET_SNACKBAR_MESSAGE",
+        payload: {message:"Thank you for Subscribing us",color:'#565555'}
       });
     }
   } catch {
@@ -27,7 +27,7 @@ export const signupUser= (userData) => async (dispatch) => {
     });    
     dispatch({
       type: "SET_SNACKBAR_ERROR_MESSAGE",
-      payload:{message:"Retry after sometime!",severity:'error'}
+      payload:{message:"Retry after sometime!",color:'#f17d73'}
     });
   }
 };

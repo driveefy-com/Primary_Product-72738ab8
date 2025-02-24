@@ -1,7 +1,17 @@
-
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .signup-main-container{
     display: flex;
     height: 100vh;
+    overflow-y: clip;
     .signup-img-container{
         width: 33.33%;
         height: 100vh;
@@ -39,7 +49,7 @@
       }
     }
     .signup-form-container{
-      
+      animation:  pageEnter 0.5s ease-out forwards;
         width: 66.66%;
         height: 100vh;
         display: flex;

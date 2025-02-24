@@ -1,7 +1,10 @@
 import "./styles/Verification.scss";
 import icon from "../../assets/icons/verificationPageIcon.svg";
 import driveefylogo from "../../assets/icons/driveefy_logo.svg";
+import { useTransition } from "react";
+import { useTranslation } from "react-i18next";
 export const Verification = () => {
+  const {t}=useTranslation();
   return (
     <div className="verification-main-container">
       <div className="driveefy-logo">
@@ -12,10 +15,9 @@ export const Verification = () => {
           <div className="verification-logo-container">
             <img src={icon} alt="" />
           </div>
-          <h1>Verify Your Email</h1>
+          <h1>{t('verifyEmail.title')}</h1>
           <p>
-            Verification link has been sent to your email. Please verify your
-            email
+           {t('verifyEmail.message')}
           </p>
         </div>
       </div>

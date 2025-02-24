@@ -15,13 +15,13 @@ export const loginPage=[
         name:'email',
         type:'email',
         inputType:'movePlaceholderUp',
-        placeholder:'Email',
+        placeholder:'login.email',
     },
     {
         name:'password',
         type:'password',
         inputType:'movePlaceholderUp',
-        placeholder:'Password',
+        placeholder:'login.password',
     }
 ]
 
@@ -30,46 +30,46 @@ export const signupPage=[
         name:'firstName',
         type:'text',
         inputType:'movePlaceholderUp',
-        placeholder:'First Name*',
+        placeholder:'signup.firstName',
     },
     {
         name:'lastName',
         type:'text',
         inputType:'movePlaceholderUp',
-        placeholder:'Last Name*',
+        placeholder:'signup.lastName',
     },
     {
         name:'email',
         type:'email',
         inputType:'movePlaceholderUp',
-        placeholder:'Email*',
+        placeholder:'signup.email',
     },
     {
         name:'phoneNumber',
-        type:'number',
+        type:'text',
         inputType:'movePlaceholderUp',
-        placeholder:'Phone Number*',
+        placeholder:'signup.phoneNumber',
     },
     {
         name:'password',
         type:'password',
         inputType:'movePlaceholderUp',
-        placeholder:'Password*',
+        placeholder:'signup.password',
     },
     {
         name:'retypePassword',
         type:'password',
         inputType:'movePlaceholderUp',
-        placeholder:'Retype Password*',
+        placeholder:'signup.retypePassword',
     }
 ]
 
 export const forgotPassword=[
     {
         name:'forgotPassword',
-        type:'password',
+        type:'text',
         inputType:'text',
-        placeholder:'enter your email',
+        placeholder:'forgot.enterEmail',
     }
 ]
 export const setNewPassword=[
@@ -77,13 +77,13 @@ export const setNewPassword=[
         name:'newPassword',
         type:'password',
         inputType:'text',
-        placeholder:'Enter your new password',
+        placeholder:'setNew.newPassword',
     },
     {
         name:'recheckNewPassword',
         type:'password',
         inputType:'text',
-        placeholder:'Re-enter your new password',
+        placeholder:'setNew.recheckNewPassword',
     }
 ]
 
@@ -92,50 +92,46 @@ export const organizationDetail=[
         name:'Organization Name',
         type:'text',
         inputType:'smallerText',
-        placeholder:'Enter organization name here'
+        placeholder:'organization.organizationName'
     },
     {
         name:'Industry Type',
         type:'text',
         inputType:'smallerText',
-        placeholder:'Enter industry type here'
+        placeholder:'organization.industryType'
     },
     {
         name:'Experience',
         type:'text',
         inputType:'smallerText',
-        placeholder:'Enter your experience'
+        placeholder:'organization.experience'
     },
     {
         name:'No. Of Trucks',
         type:'dropdown',
         inputType:'dropdown',
-        placeholder:'Select',
-        options:[
-            '0-10','11-20','21-30','31-40','41-50'
-        ]
+        placeholder:'organization.numberOfTrucks',
+        options:'organization.trucksOptions'
     },
     {
         name:'No. Of Drivers',
         type:'dropdown',
         inputType:'dropdown',
-        placeholder:'Select',
-        options:[
-            '0-10','11-20','21-30','31-40','41-50'
-        ]
+        placeholder:'organization.numberOfDrivers',
+        options:'organization.driversOptions'
     },
     {
         name:"City",
         type:'dropdown',
         inputType:'dropdown',
-        placeholder:'Select Cities',
+        placeholder:'organization.city',
         options:cities
     },
     {
         name:'Address',
         type:'text',
         inputType:'smallerText',
-        placeholder:'Enter address here'
+        placeholder:'organization.address'
     }
 ]
 export const organizationDetailAvatarList=[
@@ -143,27 +139,27 @@ export const organizationDetailAvatarList=[
 ]
 export const languages=[
     {
-        language:'English(United States)',
-        code:"EN",
+        language:'languages.english',
+        code:"en",
     },
     {
-        language:'Hindi',
-        code:"EN",
+        language:'languages.hindi',
+        code:"hi",
     },
     {
-        language:'Gujarati',
-        code:"EN",
+        language:'languages.gujarati',
+        code:"gu",
     },
     {
-        language:'Bengali',
-        code:"EN",
+        language:'languages.bengali',
+        code:"bn",
     },
     {
-        language:'Marathi',
-        code:"EN",
+        language:'languages.marathi',
+        code:"mr",
     },
     {
-        language:'Odia',
-        code:"EN",
+        language:'languages.odia',
+        code:"or",
     },
 ]

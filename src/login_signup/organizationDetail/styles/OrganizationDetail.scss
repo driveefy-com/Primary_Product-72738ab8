@@ -1,5 +1,17 @@
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .organization-main-container {
   height: 100vh;
+  overflow-y: clip;
+
   background-image: url("../../../assets/images/OrganizationDetailImg.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -7,7 +19,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   .driveefy-logo {
     position: absolute;
     top: 15px;
@@ -30,6 +41,8 @@
   }
  
   .organization-text-container {
+    animation: pageEnter 0.5s ease-out forwards;
+
     background-color: #ffffff;
     box-shadow: 0px 4px 12px 0px #969696;
     width: 45%;
@@ -77,29 +90,30 @@
       align-items: center;
       margin-top: 2%;
       img {
-        width: 80%;
-        height: 80%;
+        width: 80px;
+        height: 80px;
         @media (max-width: 1024px) {
-          width: 60%;
-          height: 60%;
+          width: 60px;
+          height: 60px;
         }
         @media (max-width: 768px) {
-          width: 50%;
-          height: 50%;
+          width: 50px;
+          height: 50px;
         }
         @media (max-width: 480px) {
-          width: 40%;
-          height: 40%;
+          width: 40px;
+          height: 40px;
         }
       }
     }
     .pop-up-container{
       position:absolute;
-      right: 30%;
-      top:15%;
+      // right: 30%;
+      // top:15%;
       z-index: 20;
+      top: 12%;
       @media (max-width:768px) {
-        top: 10%;
+        top: 8%;
       }
     }
     .organization-form-container {
