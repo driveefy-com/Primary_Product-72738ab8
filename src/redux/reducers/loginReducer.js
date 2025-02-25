@@ -2,7 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   snackbarMessage: "",
-  severity: "",
+  endColor:'',
+  startColor:'',
+  isNavigateOrganization:false,
 };
 const loginSlice = createSlice({
   initialState,
@@ -16,15 +18,24 @@ const loginSlice = createSlice({
         state.endColor = action.payload.endColor;
         state.startColor=action.payload.startColor;
       })
-      .addCase("LOGIN_REQUEST", (state) => {
-        state.loading = true;
-      })
-      .addCase("LOGIN_SUCCESS", (state) => {
-        state.loading = false;
-      })
-      .addCase("LOGIN_FAILURE", (state) => {
-        state.loading = false;
-      });
+      .addCase("SET_NAVIGATE_ORGANIZATION", (state, action) => {
+        console.log(action.payload);      
+        state.isNavigateOrganization = action.payload;
+        });
+      // .addCase("SET_LOGIN_DATA",(state,action)=>{
+      //   state.data=action.payload;
+      //   localStorage.setItem("token",action.payload.token);
+      // })
+      // .addCase("LOGIN")
+      // .addCase("LOGIN_REQUEST", (state) => {
+      //   state.loading = true;
+      // })
+      // .addCase("LOGIN_SUCCESS", (state) => {
+      //   state.loading = false;
+      // })
+      // .addCase("LOGIN_FAILURE", (state) => {
+      //   state.loading = false;
+      // });
   },
 });
 

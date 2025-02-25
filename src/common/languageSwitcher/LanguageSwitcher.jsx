@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import "./styles/LanguageSwitcher.scss";
 import { useRef, useState, useEffect } from "react";
-import { languages } from "../common/form/FormData";
-import dropdown from '../assets/icons/TranslationDropdown.svg'
-import blueCheck from '../assets/icons/BlueCheckSign.svg'
+import { languages } from "../../common/form/FormData";
+import dropdown from '../../assets/icons/TranslationDropdown.svg'
+import blueCheck from '../../assets/icons/BlueCheckSign.svg'
 const LanguageSwitcher = () => {
   const [isOpen, setisOpen] = useState(false);
   const { i18n } = useTranslation();

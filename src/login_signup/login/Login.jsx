@@ -4,7 +4,7 @@ import loginIcon from "../../assets/icons/loginIcon.jpg";
 import { useTranslation } from "react-i18next";
 import { loginPage } from "../../common/form/FormData";
 import { FormComponents } from "../../common/form/FormComponents";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SubmitButton from "../../common/buttons/SubmitButton";
 import GoogleIcon from "../../assets/icons/GoogleIcon.svg";
 import driveefyLogo from "../../assets/icons/driveefy_logo.svg";
@@ -16,13 +16,21 @@ function Login() {
   const [formData, setformData] = useState({});
   const dispatch = useDispatch();
   const {loading}=useSelector(state=>state.loader);
+  // const Navigate = useNavigate();
+  const {isNavigateOrganization}=useSelector(state=>state.login);
+  const navigate=useNavigate();
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser(formData));
+    console.log(isNavigateOrganization);
+
   };
+  useEffect(() => {
+    isNavigateOrganization?navigate('/organizationDetail'):''
+    }, []);
  return (
     <div className="login-main-container">
       <div className="login-img-container"></div>
@@ -57,7 +65,7 @@ function Login() {
               {t("loginPage.forgot")}
             </Link>
             <div className="login-form-button-container">
-              <SubmitButton text={t("loginPage.login")} />
+              <SubmitButton text={t("loginPage.login")} type={'submit'}/>
             </div>
           </form>
         </div>

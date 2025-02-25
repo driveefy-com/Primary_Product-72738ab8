@@ -1,26 +1,27 @@
 import axios from "axios";
 
-
-export const signupUser= (userData) => async (dispatch) => {
+export const forgot = (userData) => async (dispatch) => {
   try {
-    // dispatch({type: "SIGNUP_REQUEST"});
     console.log(userData);
     dispatch({
       type:"SET_LOADER",payload:true
     })
-    const response = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/api/v1/authentication/register`,
+    // dispatch({ type: "LOGIN_REQUEST" });
+    const response = await axios.get(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v1/authentication/forgetpassword`,
       userData,
       {
         headers: {
           "Content-type": "application/json",
         },
+        query:{
+
+        }
       }
     );
-    
-    if (response.success) {
-      // dispatch({ type: 'SIGNUP_SUCCESS' });
-      localStorage.setItem("data",JSON.stringify(response.data.data));
+    console.log(response.data);
+    if (response.data.success) {
+    //   localStorage.setItem("data",JSON.stringify(response.data));
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",
         payload: {
@@ -33,13 +34,17 @@ export const signupUser= (userData) => async (dispatch) => {
         type:"SET_LOADER",payload:false
       })
     }
-  } catch {
+  } catch(error) {
+    // dispatch({
+    //   type: "LOGIN_FAILURE",
+    // });
+    // console.log('hh');
     dispatch({
       type:"SET_LOADER",payload:false
     })
     dispatch({
       type: "SET_SNACKBAR_MESSAGE",
-      payload: { message: "Retry after sometime!", endColor: "#f17d73",startColor:"#ffe2e0" },
+      payload: { message:error.message, endColor: "#f17d73",startColor:"#ffe2e0" },
     });
   }
 };

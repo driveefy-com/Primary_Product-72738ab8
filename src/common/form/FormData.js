@@ -45,7 +45,7 @@ export const signupPage=[
         placeholder:'signup.email',
     },
     {
-        name:'phoneNumber',
+        name:'primaryMobile',
         type:'text',
         inputType:'movePlaceholderUp',
         placeholder:'signup.phoneNumber',
@@ -66,7 +66,7 @@ export const signupPage=[
 
 export const forgotPassword=[
     {
-        name:'forgotPassword',
+        name:'email',
         type:'text',
         inputType:'text',
         placeholder:'forgot.enterEmail',

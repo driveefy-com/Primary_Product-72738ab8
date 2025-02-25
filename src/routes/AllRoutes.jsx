@@ -10,10 +10,11 @@ import PrivateRoute from './PrivateRoute';
 import { useState } from 'react';
 export const AllRoutes = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("token") // Example: Check if token exists
+    !!localStorage.getItem("token")
   );
   return (
    <Routes>
+    {/* <Route path='/s' element=/> */}
     <Route path='/' element={<Login/>}/>
     <Route path='/signup' element={<Signup/>}/>
     <Route path='/forgotPassword' element={<ForgotPassword/>}/>
