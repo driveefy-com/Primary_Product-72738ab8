@@ -2,7 +2,7 @@ import {  useRef } from "react";
 import "./styles/PopUp.scss";
 import arrow from "../../../assets/icons/PopUpGreaterThanArrow.svg";
 import dp from "../../../assets/icons/ProfilePictureIcon.svg";
-import cross from "../../../assets/icons/PopUpCross.svg";
+import cross from "../../../assets/icons/popUpCross.svg";
 import { useSearchParams } from "react-router-dom";
 import AvatarPopUp from "../avatar/AvatarPopUp";
 import { useDispatch, useSelector } from "react-redux";
