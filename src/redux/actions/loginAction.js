@@ -1,6 +1,11 @@
 import axios from "axios";
 import { isLoading } from "./loaderAction";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
+=======
+
+
+>>>>>>> 8af0768aa0aa989613cdd477a02086805c862a58
 export const loginUser = (userData) => async (dispatch) => {
   // const Navigate = useNavigate();
   try {

@@ -8,13 +8,14 @@ import { Verification } from '../login_signup/verification/Verification';
 import { OrganizationDetail } from '../login_signup/organizationDetail/OrganizationDetail';
 import PrivateRoute from './PrivateRoute';
 import { useState } from 'react';
+import Fleet from '../fleet/Fleet';
 export const AllRoutes = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
     !!localStorage.getItem("token")
   );
   return (
    <Routes>
-    {/* <Route path='/s' element=/> */}
+    <Route path='/fleet' element={<Fleet/>}/>
     <Route path='/' element={<Login/>}/>
     <Route path='/signup' element={<Signup/>}/>
     <Route path='/forgotPassword' element={<ForgotPassword/>}/>

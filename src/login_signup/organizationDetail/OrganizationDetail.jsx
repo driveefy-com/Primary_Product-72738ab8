@@ -11,7 +11,7 @@ import { Avatar } from "@mui/material";
 import AvatarPopUp from "../../common/PopUp/avatar/AvatarPopUp";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import pen from '../../assets/icons/penIconOrganizationDetail.svg'
+import pen from '../../assets/icons/editProfilePictureIcon.svg'
 export const OrganizationDetail = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const {t}=useTranslation();
@@ -40,8 +40,8 @@ const {img}=useSelector(state=>state.popup);
           <h1>{t('organizationDetail.title')}</h1>
         </div>
         <div className="organization-photo-container">
-          <img src={img} alt="" onClick={openPopup} />
-          {/* <img src={pen} className="organization-pen-icon" alt="" onClick={openPopup}/> */}
+          <img src={img} alt="" className="organization-dp-container"/>
+          <img src={pen} className="organization-pen-icon" alt="" onClick={openPopup}/>
         </div>
         <div className="pop-up-container">
         <PopUpComponent isOpen={isPopupOpen} onClose={closePopup} avatarList={organizationDetailAvatarList}/>
