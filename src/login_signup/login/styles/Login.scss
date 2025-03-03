@@ -33,14 +33,10 @@
       }
     }
     .driveefy-logo{
-      // background-color: red;
       position: absolute;
-      // display: flex;
-      // margin-top: 5%;
-      // margin-left: 5%;
+    
       top:15px;
       left: 15px;
-      // width: 100px;
       img{
         @media (max-width:1024px) {
           width: 150px;
@@ -63,7 +59,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
-      // will-change: transform;
+       will-change: transform;
       animation:  pageEnter 0.5s ease-out forwards;
       @media (max-width: 1024px) {
     

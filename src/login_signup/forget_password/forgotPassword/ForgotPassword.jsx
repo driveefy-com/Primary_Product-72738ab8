@@ -13,7 +13,6 @@ export const ForgotPassword = () => {
   const [formData, setformData] = useState({});
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
   };
   const handleSubmit = (e) => {
     e.preventDefault();

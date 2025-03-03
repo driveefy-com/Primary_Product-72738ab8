@@ -1,13 +1,9 @@
 .language-button-container {
   position: absolute;
-  // right: 10%;
-  // width: 150px;
-  // height: 150px;
+ 
   top:2%;
-  // background-color: white;
   font-size: 22px;
   font-weight: 500;
-  // display: flex;
   padding-left: 2%;
   padding-right: 2%;
   z-index: 20;
@@ -29,17 +25,10 @@
   .language-toggle-button{
     display: flex;
     align-items: center;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // justify-content;
+
     gap: 5px;
-    // position: absolute;
     .language-dropdown{
-      // margin-left: %;
-      // display: flex;
-      // flex-wrap: wrap;
-      // flex-direction: row;
-      // justify-content: space-between;
+     
       @media (max-width:768px) {
         height: 8px;
         width: 8px;
@@ -47,7 +36,6 @@
     }
   }
   .language-popup{
-    // gap: 15px;
     padding: 1%;
     width: 100%;
     border: black solid 2px;

@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import defaultImg from '../../assets/icons/ProfilePictureIcon.svg'
 const initialState = {
    loading:false,
 };

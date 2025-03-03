@@ -10,13 +10,10 @@ import GoogleIcon from "../../assets/icons/GoogleIcon.svg";
 import driveefyLogo from "../../assets/icons/driveefy_logo.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../redux/actions/loginAction";
-import { isLoading } from "../../redux/actions/loaderAction";
 function Login() {
   const { t } = useTranslation();
   const [formData, setformData] = useState({});
   const dispatch = useDispatch();
-  const {loading}=useSelector(state=>state.loader);
-  // const Navigate = useNavigate();
   const {isNavigateOrganization}=useSelector(state=>state.login);
   const navigate=useNavigate();
   const handleChange = (e) => {
@@ -25,12 +22,10 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser(formData));
-    console.log(isNavigateOrganization);
-
   };
   useEffect(() => {
     isNavigateOrganization?navigate('/organizationDetail'):''
-    }, []);
+    }, [isNavigateOrganization, navigate]);
  return (
     <div className="login-main-container">
       <div className="login-img-container"></div>

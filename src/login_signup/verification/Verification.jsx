@@ -1,7 +1,6 @@
 import "./styles/Verification.scss";
 import icon from "../../assets/icons/verificationPageIcon.svg";
 import driveefylogo from "../../assets/icons/driveefy_logo.svg";
-import { useTransition } from "react";
 import { useTranslation } from "react-i18next";
 export const Verification = () => {
   const {t}=useTranslation();

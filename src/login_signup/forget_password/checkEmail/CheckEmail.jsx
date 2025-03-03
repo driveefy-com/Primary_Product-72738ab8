@@ -13,9 +13,7 @@ export const CheckEmail = () => {
         <p>
          {t('checkEmail.message')}
         </p>
-        {/* <div className="check-email-logo-container"> */}
           <img src={icon} alt="" />
-        {/* </div> */}
         <h3 className="check-email-resend-email">
          {t('checkEmail.resend')}
           <Link to={'/'} className="Link"> {t('checkEmail.resendLink')}</Link>

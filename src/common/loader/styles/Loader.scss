@@ -9,22 +9,20 @@
 .loader-container{
     display: flex;
     position: fixed;
-    // left: 50%;
     z-index: 30;
-    // top:45%;
   align-items: center;
   justify-content: center;
   width: 100%;
   min-height: 100vh;
-  background-color: #f3f4f6; /* Equivalent to Tailwind's bg-gray-100 */
+  background-color: #f3f4f6;
     .loader{
         display: inline-block;
-        height: 3rem; /* h-12 = 12 * 4px */
-        width: 3rem; /* w-12 = 12 * 4px */
-        border-radius: 50%; /* rounded-full */
-        border-top: 4px solid rgba(59, 130, 246, 0.75); /* border-blue-500 with opacity-75 */
-        border-top-color: #3b82f6; /* Solid blue top border */
-        animation: spin 1s linear infinite; /* animate-spin */
+        height: 3rem; 
+        width: 3rem; 
+        border-radius: 50%; 
+        border-top: 4px solid rgba(59, 130, 246, 0.75); 
+        border-top-color: #3b82f6; 
+        animation: spin 1s linear infinite; 
         @media (max-width:1024px) {
             height: 40px;
             width: 40px;

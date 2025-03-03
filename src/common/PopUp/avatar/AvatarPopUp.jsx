@@ -1,18 +1,15 @@
-import React, { useState } from "react";
-import SubmitButton from "../../buttons/SubmitButton";
+import  { useState } from "react";
 import greenCheck from "../../../assets/icons/greenCheckIcon.svg";
 import "./styles/AvatarPopUp.scss";
 import cross from "../../../assets/icons/AvatarPageCrossIcon.svg";
 import { useDispatch } from "react-redux";
 import { popUpAction } from "../../../redux/actions/popUpAction";
 function AvatarPopUp({ isOpen, onClose, avatarList }) {
-  // console.log(avatarList);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [img, setimg] = useState();
   const dispatch = useDispatch();
   const handleClick = (item) => {
-    // console.log(item);
-    // setSelectedIndex(index === selectedIndex ? null : index);
+   
     dispatch(popUpAction(item));
     onClose();
   };
@@ -29,13 +26,10 @@ function AvatarPopUp({ isOpen, onClose, avatarList }) {
       <div className="avatar-container">
         {avatarList.map((item, index) => {
           return (
-            <div className="img-container">
+            <div  key={index} className="img-container">
               <img
                 src={item}
                 alt=""
-                key={index}
-                // onSelect={handleClick(item)}
-                // onClick={()=>handleClick(item,index)}
                 onClick={() => handleSelect(index, item)}
               />
               {selectedIndex === index && (

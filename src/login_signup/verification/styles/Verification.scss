@@ -16,14 +16,10 @@
   overflow-y: clip;
 
   .driveefy-logo{
-    // background-color: red;
     position: absolute;
-    // display: flex;
-    // margin-top: 5%;
-    // margin-left: 5%;
+  
     top:15px;
     left: 15px;
-    // width: 100px;
     img{
       @media (max-width:1024px) {
         width: 150px;
@@ -106,12 +102,9 @@
   .verification-img-container {
     background-image: url("../../../assets/images/verficationPageImg.svg");
     background-size: cover;
-    // width: 100vh;
     background-repeat: no-repeat;
     background-position: bottom;
-    // position: relative;
-    width: 100%; /* Full width */
-  // height: 45vh;
-    // zoom: -15;
+    width: 100%; 
+ 
   }
 }

@@ -3,8 +3,6 @@ import axios from "axios";
 
 export const signupUser= (userData) => async (dispatch) => {
   try {
-    // dispatch({type: "SIGNUP_REQUEST"});
-    console.log(userData);
     dispatch({
       type:"SET_LOADER",payload:true
     })
@@ -19,7 +17,6 @@ export const signupUser= (userData) => async (dispatch) => {
     );
     
     if (response.success) {
-      // dispatch({ type: 'SIGNUP_SUCCESS' });
       localStorage.setItem("data",JSON.stringify(response.data.data));
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",

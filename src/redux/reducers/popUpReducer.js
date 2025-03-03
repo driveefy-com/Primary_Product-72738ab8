@@ -11,7 +11,6 @@ const initialState = {
         builder
         .addCase(
             'SET_PROFILE_PICTURE',(state, action) => {
-                console.log(action.payload);
                 state.img = action.payload;
                 }
         )

@@ -51,14 +51,9 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    // position: relative;
-    @media (max-width: 768px) {
-      // width: 50%;
-      // height: 80%;
-    }
+
     @media (max-width: 480px) {
       width: 60%;
-      // height: 80%;
     }
     .organization-title-container {
       text-align: center;
@@ -107,7 +102,6 @@
         }
       }
       .organization-pen-icon{
-        // align-self: end;
         right:0;;
         position: absolute;
         height:30%;
@@ -117,8 +111,7 @@
     }
     .pop-up-container{
       position:absolute;
-      // right: 30%;
-      // top:15%;
+  
       z-index: 20;
       top: 12%;
       @media (max-width:768px) {
@@ -139,29 +132,20 @@
       @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
-        // grid-template-columns: 2fr;
-        // grid-column: span 2;
-        // grid-template-columns: 1fr !important;
-        // grid-template-columns:repeat(,1fr);
-        // column-gap: 0px;
+       
       }
       .grid-item {
         display: flex;
         flex-direction: column;
         width: 100%;
-        // position: absolute;
         h1 {
-          //   margin-bottom: -12px;
           @media (max-width: 1024px) {
             margin-bottom: 0%;
           }
           @media (max-width: 768px) {
-            // font-size: 24px;
             margin-bottom: -3%;
           }
-          @media (max-width: 480px) {
-            // font-size: 16px;
-          }
+          
         }
       }
       .grid-item:nth-child(7) {
@@ -192,22 +176,12 @@
       .organization-submit-button-container {
         display: flex;
         grid-column: span 2;
-        // margin-top: 1%;
         margin-bottom: 2%;
         align-items: center;
         justify-content: center;
         width: 100%;
         @media (max-width: 768px) {
-          // margin-bottom: 1%;
           margin-top: -10%;
-          // background-color: red;
-          // display: inline-block;
-          // display: flex;
-          // align-items: center;
-          // height: 100px;
-          // height: %;
-          // display: flex;
-          // align-items: end;
         }
       }
     }

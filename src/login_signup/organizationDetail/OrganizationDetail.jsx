@@ -3,12 +3,8 @@ import { FormComponents } from "../../common/form/FormComponents";
 import { organizationDetail, organizationDetailAvatarList } from "../../common/form/FormData";
 import "./styles/OrganizationDetail.scss";
 import driveefylogo from "../../assets/icons/driveefy_logo.svg";
-import profilePicture from "../../assets/icons/profilePicture.svg";
-import React from "react";
-import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import PopUpComponent from "../../common/PopUp/popup/PopUpComponent";
-import { Avatar } from "@mui/material";
-import AvatarPopUp from "../../common/PopUp/avatar/AvatarPopUp";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import pen from '../../assets/icons/editProfilePictureIcon.svg'
@@ -16,17 +12,12 @@ export const OrganizationDetail = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const {t}=useTranslation();
   const isPopupOpen = searchParams.get("popup") === 'true';
-// const [profilePicture, setprofilePicture] = useState(profilePicture);
 const {img}=useSelector(state=>state.popup);
-  // Function to open the popup (adds query param)
   const openPopup = () => {
     setSearchParams({ popup: 'true' });
-    console.log(searchParams);
   };
-  // Function to close the popup (removes query param)
   const closePopup = () => {
-    // searchParams.delete("popup");
-    // setSearchParams(searchParams);
+ 
     setSearchParams({});
   };
   return (

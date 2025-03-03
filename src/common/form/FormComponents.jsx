@@ -1,5 +1,5 @@
 import "./styles/FormComponent.scss";
-import { useRef, useState, useTransition } from "react";
+import { useState } from "react";
 import check from "../../assets/icons/CheckSign.svg";
 import arrowDown from "../../assets/icons/ArrowDown.svg";
 import arrowUp from "../../assets/icons/ArrowUp.svg";
@@ -12,33 +12,20 @@ export const FormComponents = ({ formData, onChange, value }) => {
   const [Focused, setFocused] = useState(false);
   const [isOpen, setisOpen] = useState(false);
   const [tagValue, settagValue] = useState("");
-  const [Text, setText] = useState("");
-  const [options, setoptions] = useState(formData.options);
+  const options = formData.options;
   const [filteredOptions, setfilteredOptions] = useState(options);
-  const inputRef = useRef(null);
-  const [isSelected, setisSelected] = useState(false);
-  const [Password, setPassword] = useState(false);
   const [isEyeOpen, setisEyeOpen] = useState(false);
-  // const [formType, setformType] = useState(second)
-  // console.log(Text);
-  // console.log(tagValue);
+  
  const [selectedIndex, setSelectedIndex] = useState(null);
- const [Type, setType] = useState('');
  const [formType, setformType] = useState(formData.type)
   const handleChange = (e) => {
-    console.log(e.target.value);
     setisOpen(true);
     settagValue(e.target.value);
     const filteredData = options.filter((item) =>
       item.toLowerCase().includes(e.target.value.toString().toLowerCase())
     );
-    //  console.log(filteredData);
     setfilteredOptions(filteredData);
-    console.log(filteredOptions);
   };
-  const togglePassword=()=>{
-    setPassword(true);
-  }
   const toggleDropdown = () => {
     setisOpen(!isOpen);
   };
@@ -57,7 +44,6 @@ setformType('password');
   switch (formData.inputType) {
     case "movePlaceholderUp":
      {if(formData.type=='password'){
-      // console.log(formData.placeholder);
       
       return (<div className="input-container">
       <input
@@ -126,11 +112,9 @@ setformType('password');
         <div className="input-organization" onClick={toggleDropdown}>
           <div
             className="input-dropdown"
-            // value={tagValue}
-            // ref={inputRef}
+          
           >
-            {/* {console.log(formData.options) */}
-            {/* } */}
+          
             <input
               type="text"
               onChange={handleChange}
@@ -139,7 +123,6 @@ setformType('password');
               autoComplete="off"
               placeholder={t(formData.placeholder)}
             />
-            {/* <span className="placeholder">{tagValue}</span> */}
             {isOpen && (
               <div className="dropdown-select">
                 {filteredOptions.map((item, index) => {

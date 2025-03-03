@@ -1,5 +1,4 @@
 import { AllRoutes } from "./routes/AllRoutes";
-import { Snackbar, Alert } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import CustomSnackbar from "./common/customSnackbar/customSnackbar";
 import LanguageSwitcher from "./common/languageSwitcher/LanguageSwitcher";
@@ -11,9 +10,7 @@ function App() {
   const { snackbarMessage } = useSelector(state => state.login);
   const { endColor } = useSelector(state => state.login);
   const {startColor}= useSelector(state=>state.login);
-  // console.log(snackbarMessage,color);
   const {loading}=useSelector(state=>state.loader);
-  // console.log(loading);
   const handleClose = () => {
       dispatch({
           type: "SET_SNACKBAR_MESSAGE",
@@ -25,10 +22,8 @@ function App() {
     setTimeout(() => {
       dispatch(isLoading(false));
     }, 2000);
-  }, []);
-  // if (loading) {
-  //   return }
-
+  }, [dispatch]);
+  
  if(loading)return <Loader/>;
   return (
     <div>

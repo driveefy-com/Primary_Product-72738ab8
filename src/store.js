@@ -13,7 +13,6 @@ const store =configureStore({
         setNewPassword:setNewPasswordReducer,
         popup:popUpReducer,
         loader:loaderReducer,
-        forgotPassword:forgotPasswordReducer,
     }
 })
 
