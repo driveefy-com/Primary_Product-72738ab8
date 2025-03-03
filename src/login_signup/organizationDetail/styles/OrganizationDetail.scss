@@ -88,8 +88,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
       margin-top: 2%;
-      img {
+      .organization-dp-container {
         width: 80px;
         height: 80px;
         @media (max-width: 1024px) {
@@ -104,6 +105,14 @@
           width: 40px;
           height: 40px;
         }
+      }
+      .organization-pen-icon{
+        // align-self: end;
+        right:0;;
+        position: absolute;
+        height:30%;
+        width:30%;      
+        top:70%;
       }
     }
     .pop-up-container{

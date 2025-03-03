@@ -1,0 +1,33 @@
+.sidebar-main-container{
+    width: 20%;
+    height: 100%;
+    // padding-left: 2% ;
+    // padding-top: 2%;
+    // padding-right: 2%;
+    box-shadow: 0px 0px 12px 0px #969696;
+    .logo-dashboard-container{
+        .logo-container{
+            // position: absolute;
+      // display: flex;
+      // margin-top: 5%;
+      // margin-left: 5%;
+    //   top:15px;
+    //   left: 15px;
+      // width: 100px;
+      img{
+        @media (max-width:1024px) {
+          width: 150px;
+        }
+        @media (max-width:768px) {
+          width: 120px;
+        }
+        @media (max-width:480px) {
+          width: 100px;
+        }
+        @media (max-width:400px) {
+          width: 80px;
+        }
+      }
+        }
+    }
+}
