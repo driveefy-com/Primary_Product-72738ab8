@@ -1,6 +1,6 @@
 import  { useEffect, useState } from "react";
 import { Snackbar, Alert } from "@mui/material";
-import "./styles/CustomSnackbar.scss"; 
+import "./styles/customSnackbar.scss"; 
 import cross from "../../assets/icons/AvatarPageCrossIcon.svg";
 const CustomSnackbar = ({ message,startColor,endColor,open,onClose}) => {
   const [progress, setProgress] = useState(0);
