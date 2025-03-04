@@ -1,41 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    snackbarMessage: "",
-    severity:'',
+  snackbarMessage: "",
+  endColor:'',
+  startColor:'',
+  isNavigateOrganization:false,
 };
- const loginSlice = createSlice({
-    initialState,
-    reducers:{},
-    name:'login',
-    extraReducers: (builder) => {
-        builder
-        .addCase(
-            'SET_SNACKBAR_SUCCESS_MESSAGE',(state, action) => {
-                state.snackbarMessage = action.payload.message;
-                state.severity = action.payload.severity;
-                }
-        )
-   .addCase(
-    'LOGIN_REQUEST',(state) => {
-        state.loading = true;
+const loginSlice = createSlice({
+  initialState,
+  reducers: {},
+  name: "login",
+  extraReducers: (builder) => {
+    builder
+      .addCase("SET_SNACKBAR_MESSAGE", (state, action) => {
+        state.snackbarMessage = action.payload.message;
+        state.endColor = action.payload.endColor;
+        state.startColor=action.payload.startColor;
       })
-      .addCase(
-      'LOGIN_SUCCESS', (state) => {
-        state.loading = false;
-        
-      })
-      .addCase(
-      'LOGIN_FAILURE' ,(state) => {
-        state.loading = false;  
-      })
-      .addCase(
-        'SET_SNACKBAR_ERROR_MESSAGE',(state, action) => {
-          state.snackbarMessage = action.payload.message;
-          state.severity = action.payload.severity;
-        }
-      )
-    }
+      .addCase("SET_NAVIGATE_ORGANIZATION", (state, action) => {
+        state.isNavigateOrganization = action.payload;
+        });
+      
+  },
 });
 
 export default loginSlice.reducer;

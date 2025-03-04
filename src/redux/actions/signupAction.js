@@ -3,9 +3,11 @@ import axios from "axios";
 
 export const signupUser= (userData) => async (dispatch) => {
   try {
-    dispatch({type: "SIGNUP_REQUEST"});
+    dispatch({
+      type:"SET_LOADER",payload:true
+    })
     const response = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/api/v1/contactus/subscribe`,
+      `${import.meta.env.VITE_BACKEND_URL}/api/v1/authentication/register`,
       userData,
       {
         headers: {
@@ -14,20 +16,27 @@ export const signupUser= (userData) => async (dispatch) => {
       }
     );
     
-    if (response.status === 201) {
-      dispatch({ type: 'SIGNUP_SUCCESS' });
+    if (response.success) {
+      localStorage.setItem("data",JSON.stringify(response.data.data));
       dispatch({
-        type: "SET_SNACKBAR_SUCCESS_MESSAGE",
-        payload: {message:"Thank you for Subscribing us",severity:'success'}
+        type: "SET_SNACKBAR_MESSAGE",
+        payload: {
+          message:response.data.message,
+          endColor: "#acffa5",
+          startColor:"#effeed"
+        },
       });
+      dispatch({
+        type:"SET_LOADER",payload:false
+      })
     }
   } catch {
     dispatch({
-      type: "SIGNUP_FAILURE",
-    });    
+      type:"SET_LOADER",payload:false
+    })
     dispatch({
-      type: "SET_SNACKBAR_ERROR_MESSAGE",
-      payload:{message:"Retry after sometime!",severity:'error'}
+      type: "SET_SNACKBAR_MESSAGE",
+      payload: { message: "Retry after sometime!", endColor: "#f17d73",startColor:"#ffe2e0" },
     });
   }
 };

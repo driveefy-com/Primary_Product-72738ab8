@@ -1,36 +1,35 @@
 import { AllRoutes } from "./routes/AllRoutes";
-import { Snackbar, Alert } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import LanguageSwitcher from "./languageSwitcher/LanguageSwitcher";
+import CustomSnackbar from "./common/customSnackbar/customSnackbar";
+import LanguageSwitcher from "./common/languageSwitcher/LanguageSwitcher";
+import Loader from "./common/loader/Loader";
+import { isLoading } from "./redux/actions/loaderAction";
+import { useEffect } from "react";
 function App() {
   const dispatch = useDispatch();
-  const { snackbarMessage } = useSelector(state => state.signup);
-  const { severity } = useSelector(state => state.signup);
+  const { snackbarMessage } = useSelector(state => state.login);
+  const { endColor } = useSelector(state => state.login);
+  const {startColor}= useSelector(state=>state.login);
+  const {loading}=useSelector(state=>state.loader);
   const handleClose = () => {
-    severity === "success"
-      ? dispatch({
-          type: "SET_SNACKBAR_SUCCESS_MESSAGE",
-          payload: { message: "", severity: '' },
+      dispatch({
+          type: "SET_SNACKBAR_MESSAGE",
+          payload: { message: "", startColor:"",endColor:"" },
         })
-      : dispatch({
-          type: "SET_SNACKBAR_ERROR_MESSAGE",
-          payload: { message: "", severity: '' },
-        });
   };
+  useEffect(() => {
+    dispatch(isLoading(true));
+    setTimeout(() => {
+      dispatch(isLoading(false));
+    }, 2000);
+  }, [dispatch]);
+  
+ if(loading)return <Loader/>;
   return (
     <div>
       <LanguageSwitcher />
       <AllRoutes />
-      <Snackbar
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        open={snackbarMessage !== ""}
-        autoHideDuration={3000}
-        onClose={handleClose}
-      >
-        <Alert onClose={handleClose} severity={severity}>
-          {snackbarMessage}
-        </Alert>
-      </Snackbar>
+      <CustomSnackbar open={snackbarMessage !== ''} onClose={handleClose} message={snackbarMessage} startColor={startColor} endColor={endColor} />
     </div>
   );
 }

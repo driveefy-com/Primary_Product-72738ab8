@@ -1,6 +1,17 @@
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .signup-main-container{
     display: flex;
     height: 100vh;
+    overflow-y: clip;
     .signup-img-container{
         width: 33.33%;
         height: 100vh;
@@ -12,42 +23,28 @@
         @media (max-width:768px) {
           display: none;
         }
-        .driveefy-logo{
-          position: absolute;
-          display: flex;
-          margin-left: 5%;
-          margin-top: 5%;
-          @media (max-width: 1024px) {
-           width: 100px;
-          }
-  
-          @media (max-width: 768px) {
-            width: 50%;
-          }
-  
-          @media (max-width: 480px) {
-            width: 50%;
-          }
-        img {
-          margin: 5%;
-          position: absolute;
-          background-color: transparent;
-          @media (max-width: 1024px) {
-            width: 150px;
-          }
-  
-          @media (max-width: 768px) {
-            width: 120px;
-          }
-  
-          @media (max-width: 480px) {
-            width: 100px;
-          }
+    }
+    .driveefy-logo{
+      position: absolute;
+      top:15px;
+      left: 15px;
+      img{
+        @media (max-width:1024px) {
+          width: 150px;
+        }
+        @media (max-width:768px) {
+          width: 120px;
+        }
+        @media (max-width:480px) {
+          width: 100px;
+        }
+        @media (max-width:400px) {
+          width: 80px;
         }
       }
     }
     .signup-form-container{
-      
+      animation:  pageEnter 0.5s ease-out forwards;
         width: 66.66%;
         height: 100vh;
         display: flex;

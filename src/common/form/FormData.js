@@ -1,15 +1,27 @@
+import { City } from "country-state-city";
+const indianCities=City.getCitiesOfCountry("IN");
+const cities = [];
+indianCities.map((item)=>{
+cities.push(item.name);
+})
+import Avatar1 from '../../assets/images/Avatar1.svg'
+import Avatar2 from '../../assets/images/Avatar2.svg'
+import Avatar3 from '../../assets/images/Avatar3.svg'
+import Avatar4 from '../../assets/images/Avatar4.svg'
+import Avatar5 from '../../assets/images/Avatar5.svg'
+import Avatar6 from '../../assets/images/Avatar6.svg'
 export const loginPage=[
     {
         name:'email',
         type:'email',
         inputType:'movePlaceholderUp',
-        placeholder:'Email',
+        placeholder:'login.email',
     },
     {
         name:'password',
         type:'password',
         inputType:'movePlaceholderUp',
-        placeholder:'Password',
+        placeholder:'login.password',
     }
 ]
 
@@ -18,46 +30,46 @@ export const signupPage=[
         name:'firstName',
         type:'text',
         inputType:'movePlaceholderUp',
-        placeholder:'First Name*',
+        placeholder:'signup.firstName',
     },
     {
         name:'lastName',
         type:'text',
         inputType:'movePlaceholderUp',
-        placeholder:'Last Name*',
+        placeholder:'signup.lastName',
     },
     {
         name:'email',
         type:'email',
         inputType:'movePlaceholderUp',
-        placeholder:'Email*',
+        placeholder:'signup.email',
     },
     {
-        name:'phoneNumber',
-        type:'number',
+        name:'primaryMobile',
+        type:'text',
         inputType:'movePlaceholderUp',
-        placeholder:'Phone Number*',
+        placeholder:'signup.phoneNumber',
     },
     {
         name:'password',
         type:'password',
         inputType:'movePlaceholderUp',
-        placeholder:'Password*',
+        placeholder:'signup.password',
     },
     {
         name:'retypePassword',
         type:'password',
         inputType:'movePlaceholderUp',
-        placeholder:'Retype Password*',
+        placeholder:'signup.retypePassword',
     }
 ]
 
 export const forgotPassword=[
     {
-        name:'forgotPassword',
-        type:'password',
+        name:'email',
+        type:'text',
         inputType:'text',
-        placeholder:'enter your email',
+        placeholder:'forgot.enterEmail',
     }
 ]
 export const setNewPassword=[
@@ -65,13 +77,13 @@ export const setNewPassword=[
         name:'newPassword',
         type:'password',
         inputType:'text',
-        placeholder:'Enter your new password',
+        placeholder:'setNew.newPassword',
     },
     {
         name:'recheckNewPassword',
         type:'password',
         inputType:'text',
-        placeholder:'Re-enter your new password',
+        placeholder:'setNew.recheckNewPassword',
     }
 ]
 
@@ -79,40 +91,75 @@ export const organizationDetail=[
     {
         name:'Organization Name',
         type:'text',
-        inputType:'text',
-        placeholder:'Enter organization name here'
+        inputType:'smallerText',
+        placeholder:'organization.organizationName'
     },
     {
         name:'Industry Type',
         type:'text',
-        inputType:'text',
-        placeholder:'Enter industry type here'
+        inputType:'smallerText',
+        placeholder:'organization.industryType'
     },
     {
         name:'Experience',
         type:'text',
-        inputType:'text',
-        placeholder:'Enter your experience'
+        inputType:'smallerText',
+        placeholder:'organization.experience'
     },
     {
         name:'No. Of Trucks',
         type:'dropdown',
-        inputType:'dropdown'
+        inputType:'dropdown',
+        placeholder:'organization.numberOfTrucks',
+        options:'organization.trucksOptions'
     },
     {
         name:'No. Of Drivers',
         type:'dropdown',
-        inputType:'dropdown'
+        inputType:'dropdown',
+        placeholder:'organization.numberOfDrivers',
+        options:'organization.driversOptions'
     },
     {
         name:"City",
         type:'dropdown',
         inputType:'dropdown',
+        placeholder:'organization.city',
+        options:cities
     },
     {
         name:'Address',
         type:'text',
-        inputType:'text',
-        placeholder:'Enter address here'
+        inputType:'smallerText',
+        placeholder:'organization.address'
     }
+]
+export const organizationDetailAvatarList=[
+    Avatar1,Avatar2,Avatar3,Avatar4,Avatar5,Avatar6
+]
+export const languages=[
+    {
+        language:'languages.english',
+        code:"en",
+    },
+    {
+        language:'languages.hindi',
+        code:"hi",
+    },
+    {
+        language:'languages.gujarati',
+        code:"gu",
+    },
+    {
+        language:'languages.bengali',
+        code:"bn",
+    },
+    {
+        language:'languages.marathi',
+        code:"mr",
+    },
+    {
+        language:'languages.odia',
+        code:"or",
+    },
 ]

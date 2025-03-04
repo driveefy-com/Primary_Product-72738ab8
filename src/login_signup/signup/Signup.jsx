@@ -29,7 +29,9 @@ export const Signup = () => {
   return (
     <div className="signup-main-container">
       <div className="signup-img-container">
-        <img src={driveefyLogo} alt="" className='driveefy-logo'/>
+      </div>
+      <div className="driveefy-logo">
+        <img src={driveefyLogo} alt="" />
       </div>
       <div className="signup-form-container">
         <div className="signup-form-logo">
