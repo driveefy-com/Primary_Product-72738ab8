@@ -15,7 +15,7 @@ const CustomSnackbar = ({ message, startColor, endColor, open, onClose }) => {
 
       const animate = (currentTime) => {
         const elapsedTime = currentTime - startTime;
-        const newProgress = Math.min((elapsedTime / 2500) * 100, 100); // Progress over 3s
+        const newProgress = Math.min((elapsedTime / 2500) * 100, 100); 
 
         setProgress(newProgress);
 

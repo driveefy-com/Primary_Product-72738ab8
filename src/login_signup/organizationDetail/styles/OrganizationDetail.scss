@@ -89,10 +89,8 @@
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background-size: cover;
-        // background-position: center;
+        background-size: contain;
         background-repeat: no-repeat;
-        // border: 2px blue solid;
         @media (max-width: 1024px) {
           width: 60px;
           height: 60px;

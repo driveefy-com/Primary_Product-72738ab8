@@ -70,8 +70,8 @@ const PopUpComponent = ({ isOpen, onClose, avatarList }) => {
   return (
     <div className="organization-pop-up">
       <img src={cross} alt="Close" onClick={onClose} className="pop-up-cross" />
-      <div className="dp-container">
-        {img && <img src={img} alt="Profile" />}
+      <div className="dp-container" >
+        <div className="profile-picture"   style={{ backgroundImage: img ? `url(${img})` : "none" }}></div>
       </div>
       <hr />
       <div className="popup-options-container">
