@@ -3,14 +3,13 @@ import greenCheck from "../../../assets/icons/greenCheckIcon.svg";
 import "./styles/AvatarPopUp.scss";
 import cross from "../../../assets/icons/AvatarPageCrossIcon.svg";
 import { useDispatch } from "react-redux";
-import { popUpAction } from "../../../redux/actions/popUpAction";
+import { previewImage, uploadImage } from "../../../redux/actions/popUpAction";
 function AvatarPopUp({ isOpen, onClose, avatarList }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [img, setimg] = useState();
   const dispatch = useDispatch();
   const handleClick = (item) => {
-   
-    dispatch(popUpAction(item));
+   dispatch(previewImage(item));
     onClose();
   };
 

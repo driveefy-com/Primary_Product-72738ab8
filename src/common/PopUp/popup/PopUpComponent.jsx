@@ -6,22 +6,40 @@ import cross from "../../../assets/icons/popUpCross.svg";
 import { useSearchParams } from "react-router-dom";
 import AvatarPopUp from "../avatar/AvatarPopUp";
 import { useDispatch, useSelector } from "react-redux";
-import { popUpAction } from "../../../redux/actions/popUpAction";
+import {  uploadImage } from "../../../redux/actions/popUpAction";
 
 const PopUpComponent = ({ isOpen, onClose, avatarList }) => {
-  const img = useSelector((state) => state?.popup?.img) || "";
+  const { img } = useSelector((state) => state?.popup) || "";
+  const { isFirstUpload } = useSelector((state) => state?.popup);
   const [searchParams, setSearchParams] = useSearchParams();
   const fileInputRef = useRef(null);
   const dispatch = useDispatch();
-
+  
   const handleButtonClick = () => {
     fileInputRef.current?.click();
   };
 
   const setPicture = (item) => {
     if (item) {
-      dispatch(popUpAction(item));
+      dispatch(uploadImage(item));
     }
+    isFirstUpload?
+    dispatch({
+      type: "SET_SNACKBAR_MESSAGE",
+      payload: {
+        message: "Image Uploaded Succesfully",
+        endColor: "#acffa5",
+        startColor: "#effeed",
+      },
+    }):
+    dispatch({
+      type: "SET_SNACKBAR_MESSAGE",
+      payload: {
+        message: "Image Updated Succesfully",
+        endColor: "#acffa5",
+        startColor: "#effeed",
+      },
+    })
     setSearchParams({ popup: "false" });
   };
 
@@ -43,7 +61,7 @@ const PopUpComponent = ({ isOpen, onClose, avatarList }) => {
 
     const reader = new FileReader();
     const allowedTypes = ["image/jpeg", "image/png"];
-    
+
     if (!allowedTypes.includes(file.type)) {
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",
@@ -60,18 +78,21 @@ const PopUpComponent = ({ isOpen, onClose, avatarList }) => {
     reader.onloadend = () => {
       const baseString = reader.result;
       if (baseString) {
-        dispatch({ type: "SET_PROFILE_PICTURE", payload: baseString });
+        dispatch({ type: "PREVIEW_PROFILE_PICTURE", payload: baseString });
       }
     };
-    
+
     reader.readAsDataURL(file);
   };
 
   return (
     <div className="organization-pop-up">
       <img src={cross} alt="Close" onClick={onClose} className="pop-up-cross" />
-      <div className="dp-container" >
-        <div className="profile-picture"   style={{ backgroundImage: img ? `url(${img})` : "none" }}></div>
+      <div className="dp-container">
+        <div
+          className="profile-picture"
+          style={{ backgroundImage: img ? `url(${img})` : "none" }}
+        ></div>
       </div>
       <hr />
       <div className="popup-options-container">
@@ -99,7 +120,11 @@ const PopUpComponent = ({ isOpen, onClose, avatarList }) => {
       </div>
       <div className="avatar-container">
         {isAvatarOpen && (
-          <AvatarPopUp isOpen={isAvatarOpen} onClose={closeAvatar} avatarList={avatarList} />
+          <AvatarPopUp
+            isOpen={isAvatarOpen}
+            onClose={closeAvatar}
+            avatarList={avatarList}
+          />
         )}
       </div>
     </div>
