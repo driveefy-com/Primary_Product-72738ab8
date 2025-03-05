@@ -1,18 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import signupReducer from '../src/redux/reducers/signupReducer';
-import loginReducer from '../src/redux/reducers/loginReducer';
-import setNewPasswordReducer from "../src/redux/reducers/setNewPasswordReducer";
-import popUpReducer from './redux/reducers/popUpReducer'
-import loaderReducer from './redux/reducers/loaderReducer'
-import forgotPasswordReducer from './redux/reducers/forgotPasswordReducer'
+import login_signup_Reducer from './redux/reducers/login_signup_Reducer'
 const store =configureStore({
     reducer:{
-        signup:signupReducer,
-        login:loginReducer,
-        forgotPassword:forgotPasswordReducer,
-        setNewPassword:setNewPasswordReducer,
-        popup:popUpReducer,
-        loader:loaderReducer,
+        login_signup:login_signup_Reducer,
     }
 })
 

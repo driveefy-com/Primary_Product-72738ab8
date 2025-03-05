@@ -8,8 +8,8 @@ import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
-  const { snackbarMessage = "", startColor = "", endColor = "" } = useSelector(state => state.login || {});
-  const { loading = false } = useSelector(state => state.loader || {});
+  const { snackbarMessage = "", startColor = "", endColor = "" } = useSelector(state => state.login_signup || {});
+  const { loading} = useSelector(state => state.loader || false);
 
   const handleClose = () => {
     dispatch({

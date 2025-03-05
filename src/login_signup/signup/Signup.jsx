@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import signupPageIcon from '../../assets/icons/signupPageIcon.svg'
 import driveefyLogo from '../../assets/icons/driveefy_logo.svg'
 import {useDispatch} from 'react-redux';
-import { signupUser } from '../../redux/actions/signupAction';
+import { signupUser } from '../../redux/actions/login_signup_Actions';
 export const Signup = () => {
    const [formData, setformData] = useState({});
    const [error, seterror] = useState('')

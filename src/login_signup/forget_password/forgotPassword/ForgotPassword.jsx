@@ -5,8 +5,8 @@ import SubmitButton from "../../../common/buttons/SubmitButton";
 import driveefylogo from "../../../assets/icons/driveefy_logo.svg";
 import "./styles/ForgotPassword.scss";
 import { useState } from "react";
-import { forgot } from "../../../redux/actions/forgotPasswordAction";
 import { useDispatch } from "react-redux";
+import { forgot } from "../../../redux/actions/login_signup_Actions";
 export const ForgotPassword = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
