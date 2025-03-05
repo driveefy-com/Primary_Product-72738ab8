@@ -1,4 +1,5 @@
 import axios from "axios";
+import { forgotPasswordApi } from "../../api/forgotPassword/forgotPasswordApi";
 
 export const forgot = (userData) => async (dispatch) => {
   try {
@@ -6,7 +7,7 @@ export const forgot = (userData) => async (dispatch) => {
       type:"SET_LOADER",payload:true
     })
     const response = await axios.get(
-      `${import.meta.env.VITE_BACKEND_URL}/api/v1/authentication/forgetpassword`,
+      forgotPasswordApi,
       userData,
       {
         headers: {

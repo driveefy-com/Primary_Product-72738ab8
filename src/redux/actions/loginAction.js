@@ -1,13 +1,14 @@
 import axios from "axios";
+import { loginApi } from "../../api/login/loginApi";
 
-export const loginUser = (userData) => async (dispatch) => {
+export const loginUser = (userData) => async (dispatch) => {  
   try {
     dispatch({
       type: "SET_LOADER",
       payload: true,
     });
     const response = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/api/v1/authentication/login`,
+      loginApi,
       userData,
       {
         headers: {

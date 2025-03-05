@@ -9,7 +9,7 @@ import EyeClose from "../../assets/icons/EyeClose.svg";
 import { useTranslation } from "react-i18next";
 import ClickAwayListener from "react-click-away-listener";
 
-export const FormComponents = ({ formData, onChange, value }) => {
+export const FormComponents = ({ formData, onChange }) => {
   const { t } = useTranslation();
   const [Focused, setFocused] = useState(false);
   const [isOpen, setisOpen] = useState(false);
@@ -51,7 +51,6 @@ export const FormComponents = ({ formData, onChange, value }) => {
             name={formData.name}
             type={formType}
             required
-            value={value || ""}
             className={`input-field ${Focused ? "focused" : ""}`}
             onFocus={() => setFocused(true)}
             onBlur={(e) => setFocused(e.target.value !== "")}

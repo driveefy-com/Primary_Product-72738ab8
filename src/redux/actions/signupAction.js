@@ -1,4 +1,5 @@
 import axios from "axios";
+import { signupApi } from "../../api/signup/signupApi";
 
 
 export const signupUser= (userData) => async (dispatch) => {
@@ -7,7 +8,7 @@ export const signupUser= (userData) => async (dispatch) => {
       type:"SET_LOADER",payload:true
     })
     const response = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/api/v1/authentication/register`,
+      signupApi,
       userData,
       {
         headers: {
