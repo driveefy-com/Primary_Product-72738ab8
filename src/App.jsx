@@ -5,31 +5,34 @@ import LanguageSwitcher from "./common/languageSwitcher/LanguageSwitcher";
 import Loader from "./common/loader/Loader";
 import { isLoading } from "./redux/actions/loaderAction";
 import { useEffect } from "react";
+
 function App() {
   const dispatch = useDispatch();
-  const { snackbarMessage } = useSelector(state => state.login);
-  const { endColor } = useSelector(state => state.login);
-  const {startColor}= useSelector(state=>state.login);
-  const {loading}=useSelector(state=>state.loader);
+  const { snackbarMessage = "", startColor = "", endColor = "" } = useSelector(state => state.login || {});
+  const { loading = false } = useSelector(state => state.loader || {});
+
   const handleClose = () => {
-      dispatch({
-          type: "SET_SNACKBAR_MESSAGE",
-          payload: { message: "", startColor:"",endColor:"" },
-        })
+    dispatch({
+      type: "SET_SNACKBAR_MESSAGE",
+      payload: { message: "", startColor: "", endColor: "" },
+    });
   };
+
   useEffect(() => {
     dispatch(isLoading(true));
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       dispatch(isLoading(false));
     }, 2000);
+    return () => clearTimeout(timer);
   }, [dispatch]);
-  
- if(loading)return <Loader/>;
+
+  if (loading) return <Loader />;
+
   return (
     <div>
       <LanguageSwitcher />
       <AllRoutes />
-      <CustomSnackbar open={snackbarMessage !== ''} onClose={handleClose} message={snackbarMessage} startColor={startColor} endColor={endColor} />
+      <CustomSnackbar open={snackbarMessage !== ""} onClose={handleClose} message={snackbarMessage} startColor={startColor} endColor={endColor} />
     </div>
   );
 }

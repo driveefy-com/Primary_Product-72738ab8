@@ -111,14 +111,14 @@ export const organizationDetail=[
         type:'dropdown',
         inputType:'dropdown',
         placeholder:'organization.numberOfTrucks',
-        options:'organization.trucksOptions'
+        options:['0-10','11-20','21-30','31-40','41-50']
     },
     {
         name:'No. Of Drivers',
         type:'dropdown',
         inputType:'dropdown',
         placeholder:'organization.numberOfDrivers',
-        options:'organization.driversOptions'
+        options:['0-10','11-20','21-30','31-40','41-50']
     },
     {
         name:"City",
