@@ -7,51 +7,62 @@ import { useSearchParams } from "react-router-dom";
 import PopUpComponent from "../../common/PopUp/popup/PopUpComponent";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import pen from '../../assets/icons/editProfilePictureIcon.svg'
+import pen from "../../assets/icons/editProfilePictureIcon.svg";
+
 export const OrganizationDetail = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const {t}=useTranslation();
-  const isPopupOpen = searchParams.get("popup") === 'true';
-const {img}=useSelector(state=>state.popup);
+  const { t } = useTranslation();
+  const isPopupOpen = searchParams.get("popup") === "true";
+  const img = useSelector((state) => state?.popup?.img) || ""; // Ensure safe access
+
   const openPopup = () => {
-    setSearchParams({ popup: 'true' });
+    setSearchParams({ popup: "true" });
   };
+
   const closePopup = () => {
- 
     setSearchParams({});
   };
+
   return (
     <div className="organization-main-container">
       <div className="driveefy-logo">
-        <img src={driveefylogo} alt="" />
+        <img src={driveefylogo} alt="Driveefy Logo" />
       </div>
       
       <div className="organization-text-container">
-        <div className="organization-title-container" >
-          <h1>{t('organizationDetail.title')}</h1>
+        <div className="organization-title-container">
+          <h1>{t("organizationDetail.title")}</h1>
         </div>
         <div className="organization-photo-container">
-          <div className="organization-dp-container" style={{ backgroundImage: `url(${img})` }}></div>
-          <img src={pen} className="organization-pen-icon" alt="" onClick={openPopup}/>
+          <div 
+            className="organization-dp-container" 
+            style={{ backgroundImage: img ? `url(${img})` : "none" }}
+          ></div>
+          <img 
+            src={pen} 
+            className="organization-pen-icon" 
+            alt="Edit Profile" 
+            onClick={openPopup}
+          />
         </div>
         <div className="pop-up-container">
-        <PopUpComponent isOpen={isPopupOpen} onClose={closePopup} avatarList={organizationDetailAvatarList}/>
+          <PopUpComponent isOpen={isPopupOpen} onClose={closePopup} avatarList={organizationDetailAvatarList} />
         </div>
         <form action="" className="organization-form-container">
-          {organizationDetail.map((item, index) => {
-            return (
+          {Array.isArray(organizationDetail) && organizationDetail.map((item, index) => (
+            item ? (
               <div key={index} className="grid-item">
-                <h1>{item.name}</h1>
+                <h1>{item.name || ""}</h1>
                 <FormComponents
                   key={index}
                   formData={item}
                   onChange={() => {}}
                 />
               </div>
-            );
-          })}
+            ) : null
+          ))}
           <div className="organization-submit-button-container">
-            <SubmitButton text={"Submit"} />
+            <SubmitButton text="Submit" />
           </div>
         </form>
       </div>
