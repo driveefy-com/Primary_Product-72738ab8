@@ -7,7 +7,6 @@ import blueCheck from '../../assets/icons/BlueCheckSign.svg'
 const LanguageSwitcher = () => {
   const [isOpen, setisOpen] = useState(false);
   const { i18n } = useTranslation();
-  const {t}=useTranslation();
   const [chosenLanguage, setchosenLanguage] = useState('English (United States)');
 
   const changeLanguage = (lang) => {
@@ -27,7 +26,7 @@ const LanguageSwitcher = () => {
   return (
     <div className="language-button-container">
       <div onClick={toggleDiv} className="language-toggle-button">
-        {t(chosenLanguage)
+        {chosenLanguage
         }
         <img src={dropdown} alt="" className="language-dropdown"/>
       </div>
@@ -36,7 +35,7 @@ const LanguageSwitcher = () => {
         <div className="language-popup">
           {languages.map((item, index) => (
             <div key={index} className={`${item.language===chosenLanguage?'language-inner-div-blue':'language-inner-div'}`} onClick={()=>handleSelect(index,item.language,item.code)}>
-              <p>{t(item.language)}</p>
+              <p>{item.language}</p>
               {item.language===chosenLanguage && <img src={blueCheck} alt="" />}
             </div>
           ))}

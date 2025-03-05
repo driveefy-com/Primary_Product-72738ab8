@@ -139,27 +139,27 @@ export const organizationDetailAvatarList=[
 ]
 export const languages=[
     {
-        language:'languages.english',
+        language:'English(United States)',
         code:"en",
     },
     {
-        language:'languages.hindi',
+        language:'हिंदी',
         code:"hi",
     },
     {
-        language:'languages.gujarati',
+        language:'ગુજરાતી',
         code:"gu",
     },
     {
-        language:'languages.bengali',
+        language:'বাংলা',
         code:"bn",
     },
     {
-        language:'languages.marathi',
+        language:'मराठी',
         code:"mr",
     },
     {
-        language:'languages.odia',
+        language:'ଓଡ଼ିଆ',
         code:"or",
     },
 ]
