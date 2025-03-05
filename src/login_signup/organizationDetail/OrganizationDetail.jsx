@@ -27,11 +27,11 @@ const {img}=useSelector(state=>state.popup);
       </div>
       
       <div className="organization-text-container">
-        <div className="organization-title-container">
+        <div className="organization-title-container" >
           <h1>{t('organizationDetail.title')}</h1>
         </div>
         <div className="organization-photo-container">
-          <img src={img} alt="" className="organization-dp-container"/>
+          <div className="organization-dp-container" style={{ backgroundImage: `url(${img})` }}></div>
           <img src={pen} className="organization-pen-icon" alt="" onClick={openPopup}/>
         </div>
         <div className="pop-up-container">
