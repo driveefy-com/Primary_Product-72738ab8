@@ -3,7 +3,7 @@ import greenCheck from "../../../assets/icons/greenCheckIcon.svg";
 import "./styles/AvatarPopUp.scss";
 import cross from "../../../assets/icons/AvatarPageCrossIcon.svg";
 import { useDispatch } from "react-redux";
-import { previewImage, uploadImage } from "../../../redux/actions/popUpAction";
+import { previewImage } from "../../../redux/actions/popUpAction";
 function AvatarPopUp({ isOpen, onClose, avatarList }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [img, setimg] = useState();
