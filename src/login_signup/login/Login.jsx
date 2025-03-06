@@ -9,12 +9,13 @@ import SubmitButton from "../../common/buttons/SubmitButton";
 import GoogleIcon from "../../assets/icons/GoogleIcon.svg";
 import driveefyLogo from "../../assets/icons/driveefy_logo.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../redux/actions/loginAction";
+import { loginUser } from "../../redux/actions/login_signup_Actions";
 function Login() {
   const { t } = useTranslation();
   const [formData, setformData] = useState({});
   const dispatch = useDispatch();
-  const {isNavigateOrganization}=useSelector(state=>state.login);
+  const {isNavigateOrganization}=useSelector(state=>state.login_signup || {});
+  
   const navigate=useNavigate();
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
