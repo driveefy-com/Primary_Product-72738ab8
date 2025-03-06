@@ -47,7 +47,6 @@ export const forgot = (userData) => async (dispatch) => {
 
 export const loginUser = (userData) => async (dispatch) => {  
   try {
-    console.log(userData);
     dispatch({
       type: "SET_LOADER",
       payload: true,
@@ -97,7 +96,6 @@ export const loginUser = (userData) => async (dispatch) => {
 
 export const signupUser= (userData) => async (dispatch) => {
   try {
-    console.log(userData);
     dispatch({
       type:"SET_LOADER",payload:true
     })
@@ -138,7 +136,6 @@ export const signupUser= (userData) => async (dispatch) => {
 
 export const resetPassword = (userData) => async (dispatch) => {  
   try {
-    console.log(userData);
     dispatch({
       type: "SET_LOADER",
       payload: true,
@@ -152,7 +149,6 @@ export const resetPassword = (userData) => async (dispatch) => {
         },
       }
     );
-    console.log(response);
     if (response.data.success) {
       localStorage.setItem("data", JSON.stringify(response.data.data));
       dispatch({

@@ -57,12 +57,14 @@ export const FormComponents = ({ formData, onChange }) => {
             onChange={onChange}
           />
           <div className="placeholder">{t(formData.placeholder)}</div>
-          <img
-            className="password-eye"
-            src={isEyeOpen ? EyeOpen : EyeClose}
-            onClick={handleEyeToggle}
-            alt="toggle visibility"
-          />
+          {formData?.type === "password" && (
+            <img
+              className="password-eye"
+              src={isEyeOpen ? EyeOpen : EyeClose}
+              onClick={handleEyeToggle}
+              alt="toggle visibility"
+            />
+          )}
         </div>
       );
     }

@@ -5,7 +5,7 @@ import './styles/setNewPassword.scss'
 import driveefylogo from '../../../assets/icons/driveefy_logo.svg'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
-import { resetPassword } from '../../../'
+import { resetPassword } from '../../../redux/actions/login_signup_Actions'
 import { useState } from 'react'
 export const SetNewPassword = () => {
   const { t } = useTranslation();
