@@ -13,7 +13,7 @@ export const OrganizationDetail = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { t } = useTranslation();
   const isPopupOpen = searchParams.get("popup") === "true";
-  const img = useSelector((state) => state?.popup?.img) || ""; // Ensure safe access
+  const {savedImage} = useSelector((state) => state?.popup) || "";
 
   const openPopup = () => {
     setSearchParams({ popup: "true" });
@@ -36,7 +36,7 @@ export const OrganizationDetail = () => {
         <div className="organization-photo-container">
           <div 
             className="organization-dp-container" 
-            style={{ backgroundImage: img ? `url(${img})` : "none" }}
+            style={{ backgroundImage: savedImage ? `url(${savedImage})` : "none" }}
           ></div>
           <img 
             src={pen} 
