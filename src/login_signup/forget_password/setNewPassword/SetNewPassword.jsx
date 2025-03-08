@@ -17,10 +17,6 @@ export const SetNewPassword = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (formData.newPassword !== formData.rechekNewPassword){
-    //   seterror('Password does not match');
-    //   return;
-    // }
     seterror('');
     dispatch(resetPassword(formData));
   }

@@ -5,7 +5,6 @@ import { signupApi } from "../../api/login_signup/login_signup";
 
 
 export const forgot = (userData) => async (dispatch) => {
-  console.log(userData.email);
   try {
     dispatch({
       type:"SET_LOADER",payload:true
@@ -19,10 +18,7 @@ export const forgot = (userData) => async (dispatch) => {
         }
       }
     );
-    console.log(userData.email);
-    
-    console.log(response);
-    
+  
     if (response.data.success) {
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",
@@ -37,7 +33,6 @@ export const forgot = (userData) => async (dispatch) => {
       })
     }
   } catch(error) {
-    console.log(error.response);
     dispatch({
       type:"SET_LOADER",payload:false
     })
@@ -51,7 +46,6 @@ export const forgot = (userData) => async (dispatch) => {
 
 export const loginUser = (userData) => async (dispatch) => {  
   try {
-    console.log(userData);
     dispatch({
       type: "SET_LOADER",
       payload: true,
@@ -65,7 +59,6 @@ export const loginUser = (userData) => async (dispatch) => {
         },
       }
     );
-console.log(response);
 
     if (response.data.success) {
       localStorage.setItem("data", JSON.stringify(response.data.data));
@@ -84,7 +77,6 @@ console.log(response);
       dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:true});
     }
   } catch(error) {
-    console.log(error.response);
     
     dispatch({
       type: "SET_LOADER",
@@ -116,7 +108,6 @@ export const signupUser= (userData) => async (dispatch) => {
         },
       }
     );
-    console.log(response);
     
     if (response.data.success) {
       localStorage.setItem("data",JSON.stringify(response.data.data));
@@ -133,7 +124,6 @@ export const signupUser= (userData) => async (dispatch) => {
       })
     }
   } catch(error) {
-    console.log(error);
     dispatch({
       type:"SET_LOADER",payload:false
     })
@@ -146,7 +136,6 @@ export const signupUser= (userData) => async (dispatch) => {
 
 export const resetPassword = (userData) => async (dispatch) => { 
   const updatedUserData={...userData,'resetPasswordToken':JSON.parse(localStorage.getItem("data")).token}; 
-  console.log(updatedUserData);
   try {
     dispatch({
       type: "SET_LOADER",
@@ -194,7 +183,6 @@ export const resetPassword = (userData) => async (dispatch) => {
 };
 
 export const verifyEmail = (userData) => async (dispatch) => { 
-  console.log(userData);
   try {
     dispatch({
       type: "SET_LOADER",
@@ -212,9 +200,7 @@ export const verifyEmail = (userData) => async (dispatch) => {
         }
       }
     );
-    console.log(response);
     if (response.data.success) {
-      // localStorage.setItem("data", JSON.stringify(response.data.data));
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",
         payload: {

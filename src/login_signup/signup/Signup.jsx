@@ -31,8 +31,6 @@ export const Signup = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    // if(!validateForm) return;
     if (formData?.password !== formData?.secondPassword) {
       seterror('Password does not match');
       return;

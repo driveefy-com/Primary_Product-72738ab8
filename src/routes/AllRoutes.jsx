@@ -8,9 +8,7 @@ import { Verification } from "../login_signup/verification/Verification";
 import { OrganizationDetail } from "../login_signup/organizationDetail/OrganizationDetail";
 import PrivateRoute from "./PrivateRoute";
 export const AllRoutes = () => {
-  // console.log(localStorage.getItem(("data.token")));  
   const isAuthenticated = !!JSON.parse(localStorage.getItem("data")).token;
-  // console.log(isAuthenticated);
   
   return (
     <Routes>
