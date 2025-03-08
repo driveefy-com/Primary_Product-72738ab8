@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import './styles/Signup.scss'
 import { useTranslation } from 'react-i18next'
 import { FormComponents } from '../../common/form/FormComponents';
@@ -10,7 +10,6 @@ import driveefyLogo from '../../assets/icons/driveefy_logo.svg'
 import { useDispatch } from 'react-redux';
 import { signupUser } from '../../redux/actions/login_signup_Actions';
 export const Signup = () => {
-  const [email, setEmail] = useState("");
   const Navigate=useNavigate();
   JSON.parse(localStorage.getItem("data")).token?Navigate('/verifyEmail'):'';
   const [formData, setformData] = useState({
