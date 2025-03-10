@@ -9,7 +9,7 @@ import SubmitButton from "../../common/buttons/SubmitButton";
 import GoogleIcon from "../../assets/icons/GoogleIcon.svg";
 import driveefyLogo from "../../assets/icons/driveefy_logo.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../redux/actions/login_signup_Actions";
+import { googleLogin, loginUser } from "../../redux/actions/login_signup_Actions";
 function Login() {
   const { t } = useTranslation();
   const [formData, setformData] = useState({});
@@ -24,6 +24,9 @@ function Login() {
     e.preventDefault();
     dispatch(loginUser(formData));
   };
+  const handleLoginWithGoogle=()=>{
+    dispatch(googleLogin());
+  }
   useEffect(() => {
     isNavigateOrganization?navigate('/organizationDetail'):''
     }, [isNavigateOrganization, navigate]);
@@ -38,10 +41,10 @@ function Login() {
           <img src={loginIcon} alt="" />
         </div>
         <h1>{t("loginPage.title")}</h1>
-        <Link className="login-with-google">
+        <button className="login-with-google" onClick={handleLoginWithGoogle}>
           <img src={GoogleIcon} alt="" />
           {t("loginPage.googleLogin")}
-        </Link>
+        </button>
         <div className="login-with-email-container">
           <hr />
           <p>{t("loginPage.emailLogin")}</p>

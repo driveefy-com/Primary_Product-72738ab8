@@ -1,13 +1,11 @@
 import axios from "axios";
-import { forgotPasswordApi, resetPasswordApi, verifyEmailApi } from "../../api/login_signup/login_signup";
+import { forgotPasswordApi, googleLoginApi, resetPasswordApi, verifyEmailApi } from "../../api/login_signup/login_signup";
 import { loginApi } from "../../api/login_signup/login_signup";
 import { signupApi } from "../../api/login_signup/login_signup";
-
-
 export const forgot = (userData) => async (dispatch) => {
   try {
     dispatch({
-      type:"SET_LOADER",payload:true
+      type: "SET_LOADER", payload: true
     })
     const response = await axios.get(
       forgotPasswordApi,
@@ -18,33 +16,36 @@ export const forgot = (userData) => async (dispatch) => {
         }
       }
     );
-  
+    console.log(response);
+
     if (response.data.success) {
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",
         payload: {
-          message:response.data.message,
+          message: response.data.message,
           endColor: "#acffa5",
-          startColor:"#effeed"
+          startColor: "#effeed"
         },
       });
       dispatch({
-        type:"SET_LOADER",payload:false
+        type: "SET_LOADER", payload: false
       })
     }
-  } catch(error) {
+  } catch (error) {
+    console.log(error);
+
     dispatch({
-      type:"SET_LOADER",payload:false
+      type: "SET_LOADER", payload: false
     })
     dispatch({
       type: "SET_SNACKBAR_MESSAGE",
-      payload: { message:error.response.data.errors[0].message, endColor: "#f17d73",startColor:"#ffe2e0" },
+      payload: { message: error.response.data.errors[0].message, endColor: "#f17d73", startColor: "#ffe2e0" },
     });
 
   }
 };
 
-export const loginUser = (userData) => async (dispatch) => {  
+export const loginUser = (userData) => async (dispatch) => {
   try {
     dispatch({
       type: "SET_LOADER",
@@ -74,10 +75,10 @@ export const loginUser = (userData) => async (dispatch) => {
         type: "SET_LOADER",
         payload: false,
       });
-      dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:true});
+      dispatch({ type: "SET_NAVIGATE_ORGANIZATION", payload: true });
     }
-  } catch(error) {
-    
+  } catch (error) {
+
     dispatch({
       type: "SET_LOADER",
       payload: false,
@@ -94,10 +95,10 @@ export const loginUser = (userData) => async (dispatch) => {
 };
 
 
-export const signupUser= (userData) => async (dispatch) => {
+export const signupUser = (userData) => async (dispatch) => {
   try {
     dispatch({
-      type:"SET_LOADER",payload:true
+      type: "SET_LOADER", payload: true
     })
     const response = await axios.post(
       signupApi,
@@ -108,35 +109,37 @@ export const signupUser= (userData) => async (dispatch) => {
         },
       }
     );
-    
+
     if (response.data.success) {
-      localStorage.setItem("data",JSON.stringify(response.data.data));
+      localStorage.setItem("data", JSON.stringify(response.data.data));
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",
         payload: {
-          message:response.data.message,
+          message: response.data.message,
           endColor: "#acffa5",
-          startColor:"#effeed"
+          startColor: "#effeed"
         },
       });
       dispatch({
-        type:"SET_LOADER",payload:false
+        type: "SET_LOADER", payload: false
       })
     }
-  } catch(error) {
+  } catch (error) {
     dispatch({
-      type:"SET_LOADER",payload:false
+      type: "SET_LOADER", payload: false
     })
     dispatch({
       type: "SET_SNACKBAR_MESSAGE",
-      payload: { message: error.response.data.error.explanation, endColor: "#f17d73",startColor:"#ffe2e0" },
+      payload: { message: error.response.data.error.explanation, endColor: "#f17d73", startColor: "#ffe2e0" },
     });
   }
 };
 
-export const resetPassword = (userData) => async (dispatch) => { 
-  const updatedUserData={...userData,'resetPasswordToken':JSON.parse(localStorage.getItem("data")).token}; 
+export const resetPassword = (userData) => async (dispatch) => {
+  const updatedUserData = { ...userData, 'resetPasswordToken': JSON.parse(localStorage.getItem("data")).token };
   try {
+    console.log(updatedUserData);
+
     dispatch({
       type: "SET_LOADER",
       payload: true,
@@ -164,7 +167,7 @@ export const resetPassword = (userData) => async (dispatch) => {
         type: "SET_LOADER",
         payload: false,
       });
-      dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:true});
+      dispatch({ type: "SET_NAVIGATE_ORGANIZATION", payload: true });
     }
   } catch {
     dispatch({
@@ -182,7 +185,7 @@ export const resetPassword = (userData) => async (dispatch) => {
   }
 };
 
-export const verifyEmail = (userData) => async (dispatch) => { 
+export const verifyEmail = (userData) => async (dispatch) => {
   try {
     dispatch({
       type: "SET_LOADER",
@@ -195,8 +198,8 @@ export const verifyEmail = (userData) => async (dispatch) => {
         headers: {
           "Content-type": "application/json",
         },
-        query:{
-          token:JSON.parse(localStorage.setItem("data")).tokena
+        query: {
+          token: JSON.parse(localStorage.setItem("data")).tokena
         }
       }
     );
@@ -213,7 +216,7 @@ export const verifyEmail = (userData) => async (dispatch) => {
         type: "SET_LOADER",
         payload: false,
       });
-      dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:true});
+      dispatch({ type: "SET_NAVIGATE_ORGANIZATION", payload: true });
     }
   } catch {
     dispatch({
@@ -230,3 +233,50 @@ export const verifyEmail = (userData) => async (dispatch) => {
     });
   }
 };
+
+
+export const googleLogin = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: "SET_LOADER",
+      payload: true,
+    });
+    const response = await axios.get(
+      googleLoginApi,
+      {
+          withCredentials: true, // ✅ Allow credentials (cookies)
+        
+      }
+    );
+    if (response.data.success) {
+      dispatch({
+        type: "SET_SNACKBAR_MESSAGE",
+        payload: {
+          message: response.data.message,
+          endColor: "#acffa5",
+          startColor: "#effeed",
+        },
+      });
+      dispatch({
+        type: "SET_LOADER",
+        payload: false,
+      });
+      dispatch({ type: "SET_NAVIGATE_ORGANIZATION", payload: true });
+    }
+  } catch (error) {
+    console.log(error);
+    dispatch({
+      type: "SET_LOADER",
+      payload: false,
+    });
+    dispatch({
+      type: "SET_SNACKBAR_MESSAGE",
+      payload: {
+        message: "Retry after sometime!",
+        endColor: "#f17d73",
+        startColor: "#ffe2e0",
+      },
+    });
+  }
+};
+
