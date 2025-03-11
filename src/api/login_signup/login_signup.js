@@ -10,4 +10,6 @@ export const resetPasswordApi=`${importMeta}/api/v1/authentication/reset-passwor
 
 export const verifyEmailApi = `${importMeta}/api/v1/authentication/verify-email`
 
-export const googleLoginApi=`${importMeta}/api/v1/authentication/signin-with-google`
+export const googleLoginApi=`${importMeta}/api/v1/authentication/auth/google`
+
+export const userOrganizationApi=`${importMeta}/api/v1/authentication/organisation-profile`

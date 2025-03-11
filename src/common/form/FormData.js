@@ -10,6 +10,15 @@ import Avatar3 from '../../assets/images/Avatar3.svg'
 import Avatar4 from '../../assets/images/Avatar4.svg'
 import Avatar5 from '../../assets/images/Avatar5.svg'
 import Avatar6 from '../../assets/images/Avatar6.svg'
+import fleet from '../../assets/icons/sidebarFleetOperationIcon.svg'
+import vendor from '../../assets/icons/sidebarVendorManagement.svg'
+import order from '../../assets/icons/sidebarOrderManagementIcon.svg'
+import hr from '../../assets/icons/sidebarHRIcon.svg'
+import maintenance from '../../assets/icons/sidebarMaintenanceManagementIcon.svg'
+import fuel from '../../assets/icons/sidebarFuelMonitoringIcon.svg'
+import business from '../../assets/icons/sidebarBusinessAnalyticsIcon.svg'
+import accounts from '../../assets/icons/sidebarAccountsOfBusinessIcon.svg'
+import invoice from '../../assets/icons/sidebarInvoiceGenerationIcon.svg'
 export const loginPage=[
     {
         name:'email',
@@ -162,4 +171,44 @@ export const languages=[
         language:'ଓଡ଼ିଆ',
         code:"or",
     },
+]
+
+export const sidebarItems = [
+    {
+        img: fleet,
+        title: 'Fleet Operation'
+    },
+    {
+        img: vendor,
+        title: 'Vendor Management'
+    },
+    {
+        img: order,
+        title: 'Order Management'
+    },
+    {
+        img: hr,
+        title: 'HR Management'
+    },
+    {
+        img: maintenance,
+        title: 'Maintenance Management'
+    },
+    {
+        img: fuel,
+        title: 'Fuel Monitoring'
+    },
+    {
+        img: business,
+        title: 'Business Analytics'
+    },
+    {
+        img: accounts,
+        title: 'Accounts of Business'
+    },
+    {
+        img: invoice,
+        title: 'Invoice Management'
+
+    }
 ]

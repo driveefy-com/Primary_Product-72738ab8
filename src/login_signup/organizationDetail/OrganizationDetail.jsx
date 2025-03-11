@@ -6,15 +6,16 @@ import driveefylogo from "../../assets/icons/driveefy_logo.svg";
 import { useSearchParams } from "react-router-dom";
 import PopUpComponent from "../../common/PopUp/popup/PopUpComponent";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import pen from "../../assets/icons/editProfilePictureIcon.svg";
+import { userOrganization } from "../../redux/actions/login_signup_Actions";
 
 export const OrganizationDetail = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { t } = useTranslation();
   const isPopupOpen = searchParams.get("popup") === "true";
   const {savedImage} = useSelector((state) => state?.popup) || "";
-
+  const dispatch = useDispatch();
   const openPopup = () => {
     setSearchParams({ popup: "true" });
   };
@@ -22,6 +23,12 @@ export const OrganizationDetail = () => {
   const closePopup = () => {
     setSearchParams({});
   };
+
+  const handleSubmit = (e) => {
+    console.log('rrr');
+    // e.preventDefault();
+    dispatch(userOrganization());
+  }
 
   return (
     <div className="organization-main-container">
@@ -48,7 +55,7 @@ export const OrganizationDetail = () => {
         <div className="pop-up-container">
           <PopUpComponent isOpen={isPopupOpen} onClose={closePopup} avatarList={organizationDetailAvatarList} />
         </div>
-        <form action="" className="organization-form-container">
+        <form onSubmit={handleSubmit} className="organization-form-container">
           {Array.isArray(organizationDetail) && organizationDetail.map((item, index) => (
             item ? (
               <div key={index} className="grid-item">
@@ -62,7 +69,7 @@ export const OrganizationDetail = () => {
             ) : null
           ))}
           <div className="organization-submit-button-container">
-            <SubmitButton text="Submit" />
+            <SubmitButton text="Submit" type={'submit'}/>
           </div>
         </form>
       </div>

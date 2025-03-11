@@ -1,5 +1,5 @@
 import axios from "axios";
-import { forgotPasswordApi, googleLoginApi, resetPasswordApi, verifyEmailApi } from "../../api/login_signup/login_signup";
+import { forgotPasswordApi, googleLoginApi, resetPasswordApi, userOrganizationApi, verifyEmailApi } from "../../api/login_signup/login_signup";
 import { loginApi } from "../../api/login_signup/login_signup";
 import { signupApi } from "../../api/login_signup/login_signup";
 export const forgot = (userData) => async (dispatch) => {
@@ -199,7 +199,7 @@ export const verifyEmail = (userData) => async (dispatch) => {
           "Content-type": "application/json",
         },
         query: {
-          token: JSON.parse(localStorage.setItem("data")).tokena
+          token: JSON.parse(localStorage.setItem("data")).token
         }
       }
     );
@@ -241,28 +241,29 @@ export const googleLogin = () => async (dispatch) => {
       type: "SET_LOADER",
       payload: true,
     });
-    const response = await axios.get(
-      googleLoginApi,
-      {
-          withCredentials: true, // ✅ Allow credentials (cookies)
-        
-      }
-    );
-    if (response.data.success) {
-      dispatch({
-        type: "SET_SNACKBAR_MESSAGE",
-        payload: {
-          message: response.data.message,
-          endColor: "#acffa5",
-          startColor: "#effeed",
-        },
-      });
-      dispatch({
-        type: "SET_LOADER",
-        payload: false,
-      });
-      dispatch({ type: "SET_NAVIGATE_ORGANIZATION", payload: true });
-    }
+    // const response = await axios.get(
+    //   googleLoginApi,
+    //   {
+    //     withCredentials: true,
+    //   }
+    // );
+    window.location.href = "http://localhost:5001/api/v1/authentication/auth/google";
+
+    // if (response.data.success) {  
+    //   dispatch({
+    //     type: "SET_SNACKBAR_MESSAGE",
+    //     payload: {
+    //       message: response.data.message,
+    //       endColor: "#acffa5",
+    //       startColor: "#effeed",
+    //     },
+    //   });
+    //   dispatch({
+    //     type: "SET_LOADER",
+    //     payload: false,
+    //   });
+    //   dispatch({ type: "SET_NAVIGATE_ORGANIZATION", payload: true });
+    // }
   } catch (error) {
     console.log(error);
     dispatch({
@@ -280,3 +281,50 @@ export const googleLogin = () => async (dispatch) => {
   }
 };
 
+export const userOrganization = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: "SET_LOADER",
+      payload: true,
+    });
+    const response = await axios.post(userOrganizationApi,
+      {},
+      {
+        headers: {
+          "Content-type": "application/json",
+          "Authorization":JSON.parse(localStorage.getItem("data")).token,
+        }
+      }
+    );
+    console.log(response);
+    if (response.data.success) {
+      dispatch({
+        type: "SET_SNACKBAR_MESSAGE",
+        payload: {
+          message: response.data.message,
+          endColor: "#acffa5",
+          startColor: "#effeed",
+        },
+      });
+      dispatch({
+        type: "SET_LOADER",
+        payload: false,
+      });
+      dispatch({ type: "SET_NAVIGATE_ORGANIZATION", payload: true });
+    }
+  } catch (error){
+    console.log(error);
+    dispatch({
+      type: "SET_LOADER",
+      payload: false,
+    });
+    dispatch({
+      type: "SET_SNACKBAR_MESSAGE",
+      payload: {
+        message: "Retry after sometime!",
+        endColor: "#f17d73",
+        startColor: "#ffe2e0",
+      },
+    });
+  }
+};

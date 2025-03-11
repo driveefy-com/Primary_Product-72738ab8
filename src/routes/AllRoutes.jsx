@@ -7,6 +7,7 @@ import { SetNewPassword } from "../login_signup/forget_password/setNewPassword/S
 import { Verification } from "../login_signup/verification/Verification";
 import { OrganizationDetail } from "../login_signup/organizationDetail/OrganizationDetail";
 import PrivateRoute from "./PrivateRoute";
+import { fleetOperation } from "./FleetOperationRoutes";
 export const AllRoutes = () => {
   const isAuthenticated = !!JSON.parse(localStorage.getItem("data")).token;
   
