@@ -14,19 +14,19 @@ export function Navbar() {
       <img src={logo} alt="" />
      </div>
      <div className="navbar-links-container">
-      <img src={bell} alt="" className='bell'/>
+      <img src={bell} alt="" />
       <div className="user-profile">
-        <img src={dp} alt="" className='profile-picture' />
+        <img src={dp} alt="" />
         <div className="user-name">
           <h1>Moni Roy</h1>
           <p>User</p>
         </div>
         <img src={dropdown} alt="" />
       </div>
-      <img src={settings} alt="" className='settings'/>
+      <img src={settings} alt="" />
      </div>
     </div>
-    <Sidebar/>
+    {/* <Sidebar/> */}
     </>
   )
 }

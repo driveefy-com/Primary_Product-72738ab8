@@ -5,11 +5,12 @@ import LanguageSwitcher from "./common/languageSwitcher/LanguageSwitcher";
 import Loader from "./common/loader/Loader";
 import { isLoading } from "./redux/actions/loaderAction";
 import { useEffect } from "react";
+import "./App.css";
 import FleetOperationRoutes from "./routes/FleetOperationRoutes";
 function App() {
   const dispatch = useDispatch();
   const { snackbarMessage = "", startColor = "", endColor = "" } = useSelector(state => state.login_signup || {});
-  const { loading} = useSelector(state => state.loader || false);
+  const { loading } = useSelector(state => state.loader || false);
 
   const handleClose = () => {
     dispatch({
@@ -30,9 +31,10 @@ function App() {
 
   return (
     <div>
-      <LanguageSwitcher />
-      <AllRoutes />
-      <FleetOperationRoutes/>
+      <div className="language-switcher-container">
+        <LanguageSwitcher />
+      </div>
+      <AllRoutes/>
       <CustomSnackbar open={snackbarMessage !== ""} onClose={handleClose} message={snackbarMessage} startColor={startColor} endColor={endColor} />
     </div>
   );

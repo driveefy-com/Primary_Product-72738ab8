@@ -247,8 +247,11 @@ export const googleLogin = () => async (dispatch) => {
     //     withCredentials: true,
     //   }
     // );
-    window.location.href = "http://localhost:5001/api/v1/authentication/auth/google";
-
+    // window.location.href = "http://localhost:5001/api/v1/authentication/auth/google";
+    fetch('http://localhost:5001/api/v1/authentication/auth/google', {
+      method: 'GET',
+      credentials: 'include'
+      });
     // if (response.data.success) {  
     //   dispatch({
     //     type: "SET_SNACKBAR_MESSAGE",

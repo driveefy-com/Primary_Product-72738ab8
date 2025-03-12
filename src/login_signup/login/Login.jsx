@@ -10,12 +10,32 @@ import GoogleIcon from "../../assets/icons/GoogleIcon.svg";
 import driveefyLogo from "../../assets/icons/driveefy_logo.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { googleLogin, loginUser } from "../../redux/actions/login_signup_Actions";
+import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
+import axios from "axios";
 function Login() {
+  const CLIENT_ID='567105166418-g82vkbc3tc88fk57tuo5cutbuc1rcdje.apps.googleusercontent.com'
+  console.log(CLIENT_ID);
+  
   const { t } = useTranslation();
   const [formData, setformData] = useState({});
   const dispatch = useDispatch();
   const {isNavigateOrganization}=useSelector(state=>state.login_signup || {});
-  
+  const handleLoginSuccess = async (credentialResponse) => {
+    try {
+      const { credential } = credentialResponse;
+      console.log("Google Credential Token:", credential);
+
+      // Send the token to the backend
+      const response = await axios.get(
+        "http://localhost:5001/api/v1/authentication/auth/google",
+        { token: credential }
+      );
+
+      console.log("Backend Response:", response.data);
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
   const navigate=useNavigate();
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
@@ -31,6 +51,7 @@ function Login() {
     isNavigateOrganization?navigate('/organizationDetail'):''
     }, [isNavigateOrganization, navigate]);
  return (
+  <GoogleOAuthProvider clientId={CLIENT_ID}>
     <div className="login-main-container">
       <div className="login-img-container"></div>
       <div className="driveefy-logo">
@@ -41,10 +62,14 @@ function Login() {
           <img src={loginIcon} alt="" />
         </div>
         <h1>{t("loginPage.title")}</h1>
-        <button className="login-with-google" onClick={handleLoginWithGoogle}>
+        {/* <button className="login-with-google">
           <img src={GoogleIcon} alt="" />
           {t("loginPage.googleLogin")}
-        </button>
+        </button> */}
+        <GoogleLogin
+          onSuccess={handleLoginSuccess}
+          onError={() => console.error("Login Failed")}
+        />
         <div className="login-with-email-container">
           <hr />
           <p>{t("loginPage.emailLogin")}</p>
@@ -76,6 +101,7 @@ function Login() {
         </h3>
       </div>
     </div>
+    </GoogleOAuthProvider>
   )};
 
 export default Login;

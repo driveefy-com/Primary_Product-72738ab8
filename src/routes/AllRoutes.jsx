@@ -7,10 +7,14 @@ import { SetNewPassword } from "../login_signup/forget_password/setNewPassword/S
 import { Verification } from "../login_signup/verification/Verification";
 import { OrganizationDetail } from "../login_signup/organizationDetail/OrganizationDetail";
 import PrivateRoute from "./PrivateRoute";
-import { fleetOperation } from "./FleetOperationRoutes";
+import FleetOperationRoutes from "./FleetOperationRoutes";
+import ProfilePage from "../fleet_operations/profilePage/ProfilePage";
+
 export const AllRoutes = () => {
-  const isAuthenticated = !!JSON.parse(localStorage.getItem("data")).token;
-  
+  const storedData = localStorage.getItem("data");
+  const parsedData = storedData ? JSON.parse(storedData) : null;
+  const isAuthenticated = parsedData?.token ? true : false;
+
   return (
     <Routes>
       <Route path="/" element={<Login />} />
@@ -21,6 +25,9 @@ export const AllRoutes = () => {
         <Route path="/setPassword" element={<SetNewPassword />} />
         <Route path="/verifyEmail" element={<Verification />} />
         <Route path="/organizationDetail" element={<OrganizationDetail />} />
+      </Route>
+      <Route path="/fleet" element={<FleetOperationRoutes />} >
+        <Route path="profilePage" element={<ProfilePage />} />
       </Route>
     </Routes>
   );

@@ -1,0 +1,6 @@
+.language-switcher-container{
+    position: absolute;
+    top:2%;
+    right: 1%;
+    display: flex;
+}

@@ -7,7 +7,7 @@ function Sidebar() {
   return (
     <div className="sidebar-main-container">
       <div className="sidebar-dashboard-container">
-      <img src={dashboard} alt="" />
+      <img src={dashboard} alt="" className='sidebar-img'/>
       <p>Dashboard</p>
       </div>
       <hr/>
@@ -16,7 +16,7 @@ function Sidebar() {
           sidebarItems.map((item, index) => {
             return (
               <div key={index} className='sidebar-item'>
-                <img src={item.img} alt="" />
+                <img src={item.img} alt="" className='sidebar-img'/>
                 <p>{item.title}</p>
               </div>
             )
@@ -24,7 +24,7 @@ function Sidebar() {
         }
         </div>
         <div className="sidebar-footer-container">
-          <img src={questionMark} alt="" />
+          <img src={questionMark} alt="" className='sidebar-img'/>
           <h1>Need help?</h1>
           <p>Please reach out to us</p>
           <button>Contact Us</button>
