@@ -122,6 +122,7 @@ export const signupUser= (userData) => async (dispatch) => {
       dispatch({
         type:"SET_LOADER",payload:false
       })
+      dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:true});
     }
   } catch(error) {
     dispatch({

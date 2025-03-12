@@ -15,7 +15,6 @@ function Login() {
   const [formData, setformData] = useState({});
   const dispatch = useDispatch();
   const {isNavigateOrganization}=useSelector(state=>state.login_signup || {});
-  
   const navigate=useNavigate();
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });

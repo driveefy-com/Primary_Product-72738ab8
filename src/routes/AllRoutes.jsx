@@ -7,9 +7,19 @@ import { SetNewPassword } from "../login_signup/forget_password/setNewPassword/S
 import { Verification } from "../login_signup/verification/Verification";
 import { OrganizationDetail } from "../login_signup/organizationDetail/OrganizationDetail";
 import PrivateRoute from "./PrivateRoute";
+
 export const AllRoutes = () => {
-  const isAuthenticated = !!JSON.parse(localStorage.getItem("data")).token;
-  
+  // Safely parse localStorage data
+  const storedData = localStorage.getItem("data");
+  let isAuthenticated = false;
+
+  try {
+    const parsedData = storedData ? JSON.parse(storedData) : null;
+    isAuthenticated = parsedData?.token ? true : false;
+  } catch (error) {
+    console.error("Error parsing localStorage data:", error);
+  }
+
   return (
     <Routes>
       <Route path="/" element={<Login />} />
