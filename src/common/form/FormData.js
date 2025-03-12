@@ -57,7 +57,7 @@ export const signupPage=[
         placeholder:'signup.password',
     },
     {
-        name:'retypePassword',
+        name:'secondPassword',
         type:'password',
         inputType:'movePlaceholderUp',
         placeholder:'signup.retypePassword',

@@ -9,7 +9,7 @@ import { resetPassword } from '../../../redux/actions/login_signup_Actions'
 import { useState } from 'react'
 export const SetNewPassword = () => {
   const { t } = useTranslation();
-  const [formData, setformData] = useState({})
+  const [formData, setformData] = useState({});
   const dispatch = useDispatch();
   const [error, seterror] = useState('');
   const handleChange = (e) => {
@@ -17,10 +17,6 @@ export const SetNewPassword = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.newPassword !== formData.rechekNewPassword) {
-      seterror('Password does not match');
-      return;
-    }
     seterror('');
     dispatch(resetPassword(formData));
   }
@@ -36,14 +32,14 @@ export const SetNewPassword = () => {
           <h1>{t('setNewPassword.title')}</h1>
           <p>{t('setNewPassword.message')}</p>
           <div className="set-password-input-container">
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <form onSubmit={handleSubmit}>
               <h3>{t('setNewPassword.password')}</h3>
               <FormComponents onChange={handleChange} formData={setNewPassword[0]} />
               <h3>{t('setNewPassword.confirm')}</h3>
               <FormComponents onChange={handleChange} formData={setNewPassword[1]} />
               {error && <p style={{ color: "red", marginTop: "5px" }}>{error}</p>}
               <div className="set-password-button-container">
-                <SubmitButton type='submit' text={'Update Password'} />
+                <SubmitButton type={'submit'} text={'Update Password'} />
               </div>
             </form>
           </div>

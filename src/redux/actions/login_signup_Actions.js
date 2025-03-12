@@ -1,5 +1,5 @@
 import axios from "axios";
-import { forgotPasswordApi, resetPasswordApi } from "../../api/login_signup/login_signup";
+import { forgotPasswordApi, resetPasswordApi, verifyEmailApi } from "../../api/login_signup/login_signup";
 import { loginApi } from "../../api/login_signup/login_signup";
 import { signupApi } from "../../api/login_signup/login_signup";
 
@@ -15,12 +15,10 @@ export const forgot = (userData) => async (dispatch) => {
       {
         headers: {
           "Content-type": "application/json",
-        },
-        query:{
-
         }
       }
     );
+  
     if (response.data.success) {
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",
@@ -40,8 +38,9 @@ export const forgot = (userData) => async (dispatch) => {
     })
     dispatch({
       type: "SET_SNACKBAR_MESSAGE",
-      payload: { message:error.message, endColor: "#f17d73",startColor:"#ffe2e0" },
+      payload: { message:error.response.data.errors[0].message, endColor: "#f17d73",startColor:"#ffe2e0" },
     });
+
   }
 };
 
@@ -77,7 +76,8 @@ export const loginUser = (userData) => async (dispatch) => {
       });
       dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:true});
     }
-  } catch {
+  } catch(error) {
+    
     dispatch({
       type: "SET_LOADER",
       payload: false,
@@ -85,7 +85,7 @@ export const loginUser = (userData) => async (dispatch) => {
     dispatch({
       type: "SET_SNACKBAR_MESSAGE",
       payload: {
-        message: "Retry after sometime!",
+        message: error.response.data.error.explanation,
         endColor: "#f17d73",
         startColor: "#ffe2e0",
       },
@@ -123,18 +123,19 @@ export const signupUser= (userData) => async (dispatch) => {
         type:"SET_LOADER",payload:false
       })
     }
-  } catch {
+  } catch(error) {
     dispatch({
       type:"SET_LOADER",payload:false
     })
     dispatch({
       type: "SET_SNACKBAR_MESSAGE",
-      payload: { message: "Retry after sometime!", endColor: "#f17d73",startColor:"#ffe2e0" },
+      payload: { message: error.response.data.error.explanation, endColor: "#f17d73",startColor:"#ffe2e0" },
     });
   }
 };
 
-export const resetPassword = (userData) => async (dispatch) => {  
+export const resetPassword = (userData) => async (dispatch) => { 
+  const updatedUserData={...userData,'resetPasswordToken':JSON.parse(localStorage.getItem("data")).token}; 
   try {
     dispatch({
       type: "SET_LOADER",
@@ -142,7 +143,7 @@ export const resetPassword = (userData) => async (dispatch) => {
     });
     const response = await axios.post(
       resetPasswordApi,
-      userData,
+      updatedUserData,
       {
         headers: {
           "Content-type": "application/json",
@@ -151,6 +152,55 @@ export const resetPassword = (userData) => async (dispatch) => {
     );
     if (response.data.success) {
       localStorage.setItem("data", JSON.stringify(response.data.data));
+      dispatch({
+        type: "SET_SNACKBAR_MESSAGE",
+        payload: {
+          message: response.data.message,
+          endColor: "#acffa5",
+          startColor: "#effeed",
+        },
+      });
+      dispatch({
+        type: "SET_LOADER",
+        payload: false,
+      });
+      dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:true});
+    }
+  } catch {
+    dispatch({
+      type: "SET_LOADER",
+      payload: false,
+    });
+    dispatch({
+      type: "SET_SNACKBAR_MESSAGE",
+      payload: {
+        message: "Retry after sometime!",
+        endColor: "#f17d73",
+        startColor: "#ffe2e0",
+      },
+    });
+  }
+};
+
+export const verifyEmail = (userData) => async (dispatch) => { 
+  try {
+    dispatch({
+      type: "SET_LOADER",
+      payload: true,
+    });
+    const response = await axios.get(
+      verifyEmailApi,
+      userData,
+      {
+        headers: {
+          "Content-type": "application/json",
+        },
+        query:{
+          token:JSON.parse(localStorage.setItem("data")).tokena
+        }
+      }
+    );
+    if (response.data.success) {
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",
         payload: {
