@@ -16,21 +16,22 @@ export const AllRoutes = () => {
   try {
     const parsedData = storedData ? JSON.parse(storedData) : null;
     isAuthenticated = parsedData?.token ? true : false;
+    (isAuthenticated);
   } catch (error) {
-    console.error("Error parsing localStorage data:", error);
-  }
+  console.error("Error parsing localStorage data:", error);
+}
 
-  return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/forgotPassword" element={<ForgotPassword />} />
-      <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
-        <Route path="/checkEmail" element={<CheckEmail />} />
-        <Route path="/setPassword" element={<SetNewPassword />} />
-        <Route path="/verifyEmail" element={<Verification />} />
-        <Route path="/organizationDetail" element={<OrganizationDetail />} />
-      </Route>
-    </Routes>
-  );
+return (
+  <Routes>
+    <Route path="/" element={<Login />} />
+    <Route path="/signup" element={<Signup />} />
+    <Route path="/forgotPassword" element={<ForgotPassword />} />
+    <Route path="/verifyEmail" element={<Verification />} />
+    <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
+      <Route path="/checkEmail" element={<CheckEmail />} />
+      <Route path="/setPassword" element={<SetNewPassword />} />
+      <Route path="/organizationDetail" element={<OrganizationDetail />} />
+    </Route>
+  </Routes>
+);
 };

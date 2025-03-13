@@ -14,11 +14,11 @@ export const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const {isNavigateOrganization}=useSelector(state=>state.login_signup || {});
-  // Check if user is already logged in
+  const { isNavigateVerifyEmail } = useSelector(state => state.login_signup || {});
   useEffect(() => {
-    isNavigateOrganization?navigate('/verifyEmail'):''
-    }, [isNavigateOrganization, navigate]);
+    isNavigateVerifyEmail ? navigate('/verifyEmail') : ''
+    dispatch({ type: "SET_NAVIGATE_VERIFICATION", payload: false });
+  }, [isNavigateVerifyEmail,navigate]);
 
   const [formData, setFormData] = useState({
     role: "Admin",

@@ -25,6 +25,7 @@ function Login() {
   };
   useEffect(() => {
     isNavigateOrganization?navigate('/organizationDetail'):''
+    dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:false});
     }, [isNavigateOrganization, navigate]);
  return (
     <div className="login-main-container">
