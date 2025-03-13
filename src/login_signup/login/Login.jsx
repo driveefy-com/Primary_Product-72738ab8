@@ -15,7 +15,6 @@ function Login() {
   const [formData, setformData] = useState({});
   const dispatch = useDispatch();
   const {isNavigateOrganization}=useSelector(state=>state.login_signup || {});
-  
   const navigate=useNavigate();
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
@@ -26,6 +25,7 @@ function Login() {
   };
   useEffect(() => {
     isNavigateOrganization?navigate('/organizationDetail'):''
+    dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:false});
     }, [isNavigateOrganization, navigate]);
  return (
     <div className="login-main-container">
