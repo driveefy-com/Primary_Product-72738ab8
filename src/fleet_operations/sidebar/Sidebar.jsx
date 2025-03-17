@@ -25,8 +25,8 @@ function Sidebar() {
         </div>
         <div className="sidebar-footer-container">
           <img src={questionMark} alt="" className='sidebar-img'/>
-          <h1>Need help?</h1>
-          <p>Please reach out to us</p>
+          <h1 className='sidebar-header'>Need help?</h1>
+          <p className='sidebar-content'>Please reach out to us</p>
           <button>Contact Us</button>
         </div>
     </div>

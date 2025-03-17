@@ -9,7 +9,7 @@ import EyeClose from "../../assets/icons/EyeClose.svg";
 import { useTranslation } from "react-i18next";
 import ClickAwayListener from "react-click-away-listener";
 
-export const FormComponents = ({ formData, onChange }) => {
+export const FormComponents = ({ formData, onChange,isEditable }) => {
   const { t } = useTranslation();
   const [Focused, setFocused] = useState(false);
   const [isOpen, setisOpen] = useState(false);
@@ -102,6 +102,7 @@ export const FormComponents = ({ formData, onChange }) => {
                 name={formData?.name}
                 autoComplete="off"
                 placeholder={t(formData?.placeholder) || ""}
+                disabled={isEditable}
               />
               {isOpen && (
                 <div className="dropdown-select">
@@ -117,7 +118,7 @@ export const FormComponents = ({ formData, onChange }) => {
                   ))}
                 </div>
               )}
-              <img src={isOpen ? arrowUp : arrowDown} alt="toggle dropdown" />
+             {isEditable?'':<img src={isOpen ? arrowUp : arrowDown} alt="toggle dropdown" />}
             </div>
           </div>
         </ClickAwayListener>
@@ -132,6 +133,7 @@ export const FormComponents = ({ formData, onChange }) => {
             required
             placeholder={t(formData?.placeholder) || ""}
             onChange={onChange}
+            disabled={isEditable}
           />
         </div>
       );

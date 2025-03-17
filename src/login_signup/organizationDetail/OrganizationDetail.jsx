@@ -63,6 +63,7 @@ export const OrganizationDetail = () => {
                 <FormComponents
                   key={index}
                   formData={item}
+                  isEditable={false}
                   onChange={() => {}}
                 />
               </div>

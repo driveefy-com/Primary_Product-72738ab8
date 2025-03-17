@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles/ProfilePage.scss'
 import { personalDetails } from '../../common/form/FormData'
 import { FormComponents } from '../../common/form/FormComponents'
@@ -6,7 +6,25 @@ import { organizationDetail } from '../../common/form/FormData'
 import { useSelector } from 'react-redux'
 import SubmitButton from '../../common/buttons/SubmitButton'
 function ProfilePage() {
-    const {savedImage} = useSelector((state) => state?.popup) || "";
+    const { savedImage } = useSelector((state) => state?.popup) || "";
+    const [edit, setedit] = useState(false);
+    const handleEditClick = (event) => {
+        console.log('nn');
+        event.preventDefault(); 
+        setedit(true);
+    };
+
+    const handleSaveClick = (event) => {
+        event.preventDefault(); 
+        setedit(false);
+        // Handle saving logic here
+    };
+
+    const handleCancelClick = (event) => {
+        event.preventDefault(); 
+        setedit(false);
+        // Optionally reset form data
+    };
     return (
         <div className="profile-page-container">
             <div className="profile-page-background-container">
@@ -18,9 +36,12 @@ function ProfilePage() {
                             className="organization-dp-container"
                             style={{ backgroundImage: savedImage ? `url(${savedImage})` : "none" }}
                         ></div>
-                        <div className="submit-button-container">
-                            <SubmitButton text={'Edit'} type={'submit'} />
-                        </div>
+                        {edit ? <div className="submit-button-container" onClick={(e)=>handleSaveClick(e)}>
+                            <SubmitButton text={'Save'} type={'Submit'} />
+                             <button className='cancel-button'>Cancel</button>
+                        </div> : <div  className="submit-button-container" onClick={(e)=>handleEditClick(e)}>
+                            <SubmitButton text={'Edit'} type={'button'} />
+                        </div>}
                     </div>
                     <div className="personal-details-container">
                         {personalDetails.map((item, index) => (
@@ -29,6 +50,7 @@ function ProfilePage() {
                                 <FormComponents
                                     key={index}
                                     formData={item}
+                                    isEditable={!edit}
                                     onChange={() => { }}
                                 />
                             </div>
@@ -43,6 +65,7 @@ function ProfilePage() {
                                     <FormComponents
                                         key={index}
                                         formData={item}
+                                        isEditable={!edit}
                                         onChange={() => { }}
                                     />
                                 </div>
