@@ -1,11 +1,9 @@
-import React from 'react'
 import './styles/Navbar.scss'
 import logo from '../../assets/icons/driveefy_logo.svg'
 import bell from '../../assets/icons/bellIcon.svg'
 import dp from '../../assets/icons/dashboardUserPicture.svg'
 import dropdown from '../../assets/icons/dashboardDropdownIcon.svg'
 import settings from '../../assets/icons/settingsIcon.svg'
-import Sidebar from '../sidebar/Sidebar'
 export function Navbar() {
   return (
     <>

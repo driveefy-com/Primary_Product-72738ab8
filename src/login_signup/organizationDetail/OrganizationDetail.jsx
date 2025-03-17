@@ -26,7 +26,7 @@ export const OrganizationDetail = () => {
 
   const handleSubmit = (e) => {
     console.log('rrr');
-    // e.preventDefault();
+    e.preventDefault();
     dispatch(userOrganization());
   }
 

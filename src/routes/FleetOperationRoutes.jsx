@@ -1,6 +1,4 @@
-import React from 'react'
-import { Routes, Route, Router, Outlet } from 'react-router-dom'
-import ProfilePage from '../fleet_operations/profilePage/ProfilePage'
+import { Outlet } from 'react-router-dom'
 import './styles/FleetOperationRoutes.scss'
 import Sidebar from '../fleet_operations/sidebar/Sidebar'
 import { Navbar } from '../fleet_operations/Navbar/Navbar'

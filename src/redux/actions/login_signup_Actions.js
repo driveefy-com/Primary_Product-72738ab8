@@ -1,5 +1,5 @@
 import axios from "axios";
-import { forgotPasswordApi, googleLoginApi, resetPasswordApi, userOrganizationApi, verifyEmailApi } from "../../api/login_signup/login_signup";
+import { forgotPasswordApi, resetPasswordApi, userOrganizationApi, verifyEmailApi } from "../../api/login_signup/login_signup";
 import { loginApi } from "../../api/login_signup/login_signup";
 import { signupApi } from "../../api/login_signup/login_signup";
 export const forgot = (userData) => async (dispatch) => {

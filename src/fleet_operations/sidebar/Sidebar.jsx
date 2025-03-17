@@ -1,4 +1,3 @@
-import React from 'react'
 import './styles/Sidebar.scss'
 import { sidebarItems } from '../../common/form/FormData'
 import dashboard from '../../assets/icons/sidebarDashboardIcon.svg'

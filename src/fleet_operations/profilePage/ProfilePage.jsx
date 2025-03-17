@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './styles/ProfilePage.scss'
 import { personalDetails } from '../../common/form/FormData'
 import { FormComponents } from '../../common/form/FormComponents'
@@ -20,11 +20,11 @@ function ProfilePage() {
         // Handle saving logic here
     };
 
-    const handleCancelClick = (event) => {
-        event.preventDefault(); 
-        setedit(false);
-        // Optionally reset form data
-    };
+    // const handleCancelClick = (event) => {
+    //     event.preventDefault(); 
+    //     setedit(false);
+    //     // Optionally reset form data
+    // };
     return (
         <div className="profile-page-container">
             <div className="profile-page-background-container">

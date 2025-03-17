@@ -6,7 +6,6 @@ import Loader from "./common/loader/Loader";
 import { isLoading } from "./redux/actions/loaderAction";
 import { useEffect } from "react";
 import "./App.css";
-import FleetOperationRoutes from "./routes/FleetOperationRoutes";
 function App() {
   const dispatch = useDispatch();
   const { snackbarMessage = "", startColor = "", endColor = "" } = useSelector(state => state.login_signup || {});
