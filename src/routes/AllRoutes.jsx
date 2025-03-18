@@ -9,6 +9,7 @@ import { OrganizationDetail } from "../login_signup/organizationDetail/Organizat
 import PrivateRoute from "./PrivateRoute";
 import FleetOperationRoutes from "./FleetOperationRoutes";
 import ProfilePage from "../fleet_operations/profilePage/ProfilePage";
+import FleetOperationDashboard from "../fleet_operations/fleet_operation_dashboard/fleetOperationDashboard";
 
 export const AllRoutes = () => {
   const storedData = localStorage.getItem("data");
@@ -28,6 +29,7 @@ export const AllRoutes = () => {
       </Route>
       <Route path="/fleet" element={<FleetOperationRoutes />} >
         <Route path="profilePage" element={<ProfilePage />} />
+        <Route path="dashboard" element={<FleetOperationDashboard />} />
       </Route>
     </Routes>
   );

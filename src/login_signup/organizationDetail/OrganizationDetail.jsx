@@ -9,8 +9,9 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import pen from "../../assets/icons/editProfilePictureIcon.svg";
 import { userOrganization } from "../../redux/actions/login_signup_Actions";
-
+import { useState } from "react";
 export const OrganizationDetail = () => {
+  const [formData, setformData] = useState({})
   const [searchParams, setSearchParams] = useSearchParams();
   const { t } = useTranslation();
   const isPopupOpen = searchParams.get("popup") === "true";
@@ -19,7 +20,9 @@ export const OrganizationDetail = () => {
   const openPopup = () => {
     setSearchParams({ popup: "true" });
   };
-
+  const handleChange = (e) => {
+    setformData({ ...formData, [e.target.name]: e.target.value });
+  };
   const closePopup = () => {
     setSearchParams({});
   };
@@ -27,7 +30,7 @@ export const OrganizationDetail = () => {
   const handleSubmit = (e) => {
     console.log('rrr');
     e.preventDefault();
-    dispatch(userOrganization());
+    dispatch(userOrganization(formData));
   }
 
   return (
@@ -64,7 +67,7 @@ export const OrganizationDetail = () => {
                   key={index}
                   formData={item}
                   isEditable={false}
-                  onChange={() => {}}
+                  onChange={handleChange}
                 />
               </div>
             ) : null

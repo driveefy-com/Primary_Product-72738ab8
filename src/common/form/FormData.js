@@ -235,3 +235,38 @@ export const personalDetails = [
         inputType: 'smallerText'
     }
 ]
+
+export const fleetOperationDashboardBoxes=[
+    {
+        title: 'Total Fleet',
+        img:'',
+        value: 250,
+        type:'button',
+        buttonText:'+ Add Fleet'
+    },
+    {
+        title: 'Fleet Groups',
+        img:'',
+        value: '',
+        type:'button',
+        buttonText:'+ Create Group'
+    },
+    {
+        title: 'Total Journeys',
+        img:'',
+        value: '',
+        type:'graph',
+        buttonText:''
+    },
+    {
+        title: 'Earnings',
+        img:'',
+        value: '',
+        type:'graph',
+        buttonText:'15.3% Up from last month'
+    }
+]
+
+export const fleetHistoryTable=[
+    'PROFILE','FLEET NO:','LOAD LIMIT','GROUP','CURRENT LOCATION','JOURNEYS','ALERT','STATUS','ACTIONS'
+]

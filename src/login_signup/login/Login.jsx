@@ -65,10 +65,10 @@ function Login() {
           <img src={GoogleIcon} alt="" />
           {t("loginPage.googleLogin")}
         </button> */}
-        <GoogleLogin
+        {/* <GoogleLogin
           onSuccess={handleLoginSuccess}
           onError={() => console.error("Login Failed")}
-        />
+        /> */}
         <div className="login-with-email-container">
           <hr />
           <p>{t("loginPage.emailLogin")}</p>

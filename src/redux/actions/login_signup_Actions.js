@@ -2,6 +2,7 @@ import axios from "axios";
 import { forgotPasswordApi, resetPasswordApi, userOrganizationApi, verifyEmailApi } from "../../api/login_signup/login_signup";
 import { loginApi } from "../../api/login_signup/login_signup";
 import { signupApi } from "../../api/login_signup/login_signup";
+import { use } from "react";
 export const forgot = (userData) => async (dispatch) => {
   try {
     dispatch({
@@ -284,14 +285,16 @@ export const googleLogin = () => async (dispatch) => {
   }
 };
 
-export const userOrganization = () => async (dispatch) => {
+export const userOrganization = (userData) => async (dispatch) => {
   try {
+    console.log(userData);
+    
     dispatch({
       type: "SET_LOADER",
       payload: true,
     });
     const response = await axios.post(userOrganizationApi,
-      {},
+      {userData},
       {
         headers: {
           "Content-type": "application/json",
