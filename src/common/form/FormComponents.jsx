@@ -1,5 +1,5 @@
 import "./styles/FormComponent.scss";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import check from "../../assets/icons/CheckSign.svg";
 import arrowDown from "../../assets/icons/ArrowDown.svg";
 import arrowUp from "../../assets/icons/ArrowUp.svg";
@@ -19,7 +19,6 @@ export const FormComponents = ({ formData, onChange,isEditable }) => {
   const [isEyeOpen, setisEyeOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [formType, setformType] = useState(formData?.type || "text");
-  const [inputValue, setInputValue] = useState("");
   const inputRef=useRef(null);
 
   // useEffect(() => {
@@ -29,10 +28,6 @@ export const FormComponents = ({ formData, onChange,isEditable }) => {
   //   }
   //   // onChange(inputRef.current)
   // }, [tagValue])
-  const changeHandle=()=>{
-    console.log('fff');
-    
-  }
   const handleChange = (e) => {
     setisOpen(true);
     settagValue(e.target.value);

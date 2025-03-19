@@ -1,4 +1,3 @@
-import React from 'react'
 import './styles/DashboardBoxes.scss'
 
 function DashboardBoxes({ title, img, number, type, button }) {

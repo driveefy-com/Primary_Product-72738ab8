@@ -9,8 +9,8 @@ import SubmitButton from "../../common/buttons/SubmitButton";
 import driveefyLogo from "../../assets/icons/driveefy_logo.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {  loginUser } from "../../redux/actions/login_signup_Actions";
-import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
-import axios from "axios";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+// import axios from "axios";
 function Login() {
   const CLIENT_ID='567105166418-g82vkbc3tc88fk57tuo5cutbuc1rcdje.apps.googleusercontent.com'
   console.log(CLIENT_ID);
@@ -19,22 +19,22 @@ function Login() {
   const [formData, setformData] = useState({});
   const dispatch = useDispatch();
   const {isNavigateOrganization}=useSelector(state=>state.login_signup || {});
-  const handleLoginSuccess = async (credentialResponse) => {
-    try {
-      const { credential } = credentialResponse;
-      console.log("Google Credential Token:", credential);
+  // const handleLoginSuccess = async (credentialResponse) => {
+  //   try {
+  //     const { credential } = credentialResponse;
+  //     console.log("Google Credential Token:", credential);
 
-      // Send the token to the backend
-      const response = await axios.get(
-        "http://localhost:5001/api/v1/authentication/auth/google",
-        { token: credential }
-      );
+  //     // Send the token to the backend
+  //     const response = await axios.get(
+  //       "http://localhost:5001/api/v1/authentication/auth/google",
+  //       { token: credential }
+  //     );
 
-      console.log("Backend Response:", response.data);
-    } catch (error) {
-      console.error("Error during login:", error);
-    }
-  };
+  //     console.log("Backend Response:", response.data);
+  //   } catch (error) {
+  //     console.error("Error during login:", error);
+  //   }
+  // };
   const navigate=useNavigate();
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });

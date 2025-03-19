@@ -1,4 +1,3 @@
-import React from 'react'
 import './styles/FleetOperationDashboard.scss'
 import DashboardBoxes from './components/DashboardBoxes'
 import { fleetOperationDashboardBoxes } from '../../common/form/FormData'

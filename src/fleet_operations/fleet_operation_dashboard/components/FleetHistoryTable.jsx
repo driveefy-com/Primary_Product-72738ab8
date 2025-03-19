@@ -4,10 +4,9 @@ import sort from '../../../assets/icons/sortOption.svg'
 import reset from '../../../assets/icons/resetOption.svg'
 import { fleetHistoryTable, fleetListTable } from '../../../common/form/FormData'
 import ReactPaginate from 'react-paginate'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import left from '../../../assets/icons/lessThanSign.svg'
 import right from '../../../assets/icons/greaterThanSign.svg'
-import breakLabel from '../../../assets/icons/breakLabel.svg'
 import search from '../../../assets/icons/searchIcon.svg'
 function FleetHistoryTable() {
   const dataArray = Array.from({ length: 60 }, (_, index) => ({
