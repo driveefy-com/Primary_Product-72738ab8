@@ -2,12 +2,13 @@ import './styles/FleetHistoryTable.scss'
 import filter from '../../../assets/icons/filterOption.svg'
 import sort from '../../../assets/icons/sortOption.svg'
 import reset from '../../../assets/icons/resetOption.svg'
-import { fleetHistoryTable } from '../../../common/form/FormData'
+import { fleetHistoryTable, fleetListTable } from '../../../common/form/FormData'
 import ReactPaginate from 'react-paginate'
 import React, { useState } from 'react'
 import left from '../../../assets/icons/lessThanSign.svg'
 import right from '../../../assets/icons/greaterThanSign.svg'
 import breakLabel from '../../../assets/icons/breakLabel.svg'
+import search from '../../../assets/icons/searchIcon.svg'
 function FleetHistoryTable() {
   const dataArray = Array.from({ length: 60 }, (_, index) => ({
     id: index + 1,
@@ -40,18 +41,20 @@ function FleetHistoryTable() {
     <>
       <div className="fleet-list-history-container">
         <div className="fleet-options">
-          {/* ❌ FIXED: Avoid <p> inside <p> */}
           <div className="list-history-options" onClick={toggleListHistory}>
             <p className={activeTab === "fleetList" ? "active-tab" : ""}
               onClick={() => setActiveTab("fleetList")}>Fleet List</p>
             <p className={activeTab === "fleetHistory" ? "active-tab" : ""}
               onClick={() => setActiveTab("fleetHistory")}>Fleet History</p>
           </div>
-          <input type="text" className='search-fleet-no' />
+          <div className="fleet-search-component">
+            <input type="text" className='search-fleet-no' placeholder='Search by Fleet No.' />
+            <img src={search} alt="" className='search-icon' />
+          </div>
           <div className="options-container">
-            <img src={filter} alt="Filter" />
-            <img src={sort} alt="Sort" />
-            <img src={reset} alt="Reset" />
+            <img src={filter} alt="Filter" className='filter-sort-img' />
+            <img src={sort} alt="Sort" className='filter-sort-img' />
+            <img src={reset} alt="Reset" className='filter-sort-img' />
           </div>
         </div>
 
@@ -59,9 +62,12 @@ function FleetHistoryTable() {
           <table className="custom-table">
             <thead>
               <tr>
-                {fleetHistoryTable.map((item, index) => (
+                {activeTab === 'fleetList' ? fleetListTable.map((item, index) => (
                   <th key={index}>{item}</th> // ✅ FIXED: Added key={index}
+                )):fleetHistoryTable.map((item, index) => (
+                <th key={index}>{item}</th> // ✅ FIXED: Added key={index}
                 ))}
+
               </tr>
             </thead>
             <tbody>
@@ -86,8 +92,8 @@ function FleetHistoryTable() {
       </div>
       <div className="pagination-container">
         <ReactPaginate
-          previousLabel={<img src={left} />}
-          nextLabel={<img src={right} />}
+          previousLabel={<img src={left} className='left-right-icon'/>}
+          nextLabel={<img src={right} className='left-right-icon'/>}
           breakLabel={"..."}
           pageCount={pageCount}
           marginPagesDisplayed={2}

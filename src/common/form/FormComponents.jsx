@@ -1,5 +1,5 @@
 import "./styles/FormComponent.scss";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import check from "../../assets/icons/CheckSign.svg";
 import arrowDown from "../../assets/icons/ArrowDown.svg";
 import arrowUp from "../../assets/icons/ArrowUp.svg";
@@ -19,7 +19,20 @@ export const FormComponents = ({ formData, onChange,isEditable }) => {
   const [isEyeOpen, setisEyeOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [formType, setformType] = useState(formData?.type || "text");
+  const [inputValue, setInputValue] = useState("");
+  const inputRef=useRef(null);
 
+  // useEffect(() => {
+  //   if (inputRef.current) {
+  //     onChange(inputRef.current)
+  //     console.log("Input name:", inputRef.current.name); // Ensure it's available
+  //   }
+  //   // onChange(inputRef.current)
+  // }, [tagValue])
+  const changeHandle=()=>{
+    console.log('fff');
+    
+  }
   const handleChange = (e) => {
     setisOpen(true);
     settagValue(e.target.value);
@@ -27,6 +40,8 @@ export const FormComponents = ({ formData, onChange,isEditable }) => {
       item.toLowerCase().includes(e.target.value.toString().toLowerCase())
     );
     setfilteredOptions(filteredData);
+    console.log('gg');
+    
   };
   
   const toggleDropdown = () => {
@@ -36,6 +51,11 @@ export const FormComponents = ({ formData, onChange,isEditable }) => {
   const handleClick = (item, index) => {
     settagValue(item);
     setSelectedIndex(index);
+    if (inputRef.current) {
+      const event = { target: { name: formData?.name, value: item } };
+      onChange(event);  // ✅ Call onChange manually
+    }
+  
   };
   
   const handleEyeToggle = () => {
@@ -97,12 +117,14 @@ export const FormComponents = ({ formData, onChange,isEditable }) => {
             <div className="input-dropdown">
               <input
                 type="text"
-                onChange={handleChange}
+                // onChange={changeHandle}
+                onInput={handleChange}
                 value={tagValue}
-                name={formData?.name}
                 autoComplete="off"
                 placeholder={t(formData?.placeholder) || ""}
                 disabled={isEditable}
+                ref={inputRef}
+                name={formData?.name}
               />
               {isOpen && (
                 <div className="dropdown-select">

@@ -8,7 +8,7 @@ export const forgot = (userData) => async (dispatch) => {
     dispatch({
       type: "SET_LOADER", payload: true
     })
-    const response = await axios.get(
+    const response = await axios.post(
       forgotPasswordApi,
       userData,
       {
@@ -17,7 +17,6 @@ export const forgot = (userData) => async (dispatch) => {
         }
       }
     );
-    console.log(response);
 
     if (response.data.success) {
       dispatch({
@@ -33,8 +32,6 @@ export const forgot = (userData) => async (dispatch) => {
       })
     }
   } catch (error) {
-    console.log(error);
-
     dispatch({
       type: "SET_LOADER", payload: false
     })
@@ -124,6 +121,7 @@ export const signupUser = (userData) => async (dispatch) => {
       dispatch({
         type: "SET_LOADER", payload: false
       })
+      dispatch({ type: "SET_NAVIGATE_VERIFICATION", payload: true });
     }
   } catch (error) {
     dispatch({
@@ -131,7 +129,7 @@ export const signupUser = (userData) => async (dispatch) => {
     })
     dispatch({
       type: "SET_SNACKBAR_MESSAGE",
-      payload: { message: error.response.data.error.explanation, endColor: "#f17d73", startColor: "#ffe2e0" },
+      payload: { message: error.message, endColor: "#f17d73", startColor: "#ffe2e0" },
     });
   }
 };
@@ -200,7 +198,7 @@ export const verifyEmail = (userData) => async (dispatch) => {
           "Content-type": "application/json",
         },
         query: {
-          token: JSON.parse(localStorage.setItem("data")).token
+          token: JSON.parse(localStorage.setItem("data")).tokena
         }
       }
     );

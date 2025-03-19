@@ -98,46 +98,53 @@ export const setNewPassword = [
 
 export const organizationDetail = [
     {
-        name: 'Organization Name',
+        name:'organisationName',
+        title: 'Organization Name',
         type: 'text',
         inputType: 'smallerText',
         placeholder: 'organization.organizationName'
     },
     {
-        name: 'Industry Type',
+        title:"Industry Type",
+        name: 'industryType',
         type: 'text',
         inputType: 'smallerText',
         placeholder: 'organization.industryType'
     },
     {
-        name: 'Experience',
+        title:'Experience',
+        name: 'experience',
         type: 'text',
         inputType: 'smallerText',
         placeholder: 'organization.experience'
     },
     {
-        name: 'No. Of Trucks',
+        title: 'No. Of Trucks',
+        name:'numberOfTrucks',
         type: 'dropdown',
         inputType: 'dropdown',
         placeholder: 'organization.numberOfTrucks',
         options: ['0-10', '11-20', '21-30', '31-40', '41-50']
     },
     {
-        name: 'No. Of Drivers',
+        name:'numberOfDrivers',
+        title: 'No. Of Drivers',
         type: 'dropdown',
         inputType: 'dropdown',
         placeholder: 'organization.numberOfDrivers',
         options: ['0-10', '11-20', '21-30', '31-40', '41-50']
     },
     {
-        name: "City",
+        name: "organisationCity",
+        title:'City',
         type: 'dropdown',
         inputType: 'dropdown',
         placeholder: 'organization.city',
         options: cities
     },
     {
-        name: 'Address',
+        name:'address',
+        title: 'Address',
         type: 'text',
         inputType: 'smallerText',
         placeholder: 'organization.address'
@@ -256,7 +263,7 @@ export const fleetOperationDashboardBoxes=[
         img:'',
         value: '',
         type:'graph',
-        buttonText:''
+        buttonText:'15.3% Up from last month'
     },
     {
         title: 'Earnings',
@@ -267,6 +274,10 @@ export const fleetOperationDashboardBoxes=[
     }
 ]
 
-export const fleetHistoryTable=[
+export const fleetListTable=[
     'PROFILE','FLEET NO:','LOAD LIMIT','GROUP','CURRENT LOCATION','JOURNEYS','ALERT','STATUS','ACTIONS'
+]
+
+export const fleetHistoryTable=[
+    'PROFILE','FLEET NO:','FLEET NAME:','LOAD LIMIT','GROUP','JOURNEYS','EARNINGS','TOTAL ORDERS','DAYS'
 ]

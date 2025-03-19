@@ -21,7 +21,11 @@ export const OrganizationDetail = () => {
     setSearchParams({ popup: "true" });
   };
   const handleChange = (e) => {
+    console.log(e);
+    
+    // console.log(e.target.name);
     setformData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData);
   };
   const closePopup = () => {
     setSearchParams({});
@@ -62,7 +66,7 @@ export const OrganizationDetail = () => {
           {Array.isArray(organizationDetail) && organizationDetail.map((item, index) => (
             item ? (
               <div key={index} className="grid-item">
-                <h1>{item.name || ""}</h1>
+                <h1>{item.title || ""}</h1>
                 <FormComponents
                   key={index}
                   formData={item}

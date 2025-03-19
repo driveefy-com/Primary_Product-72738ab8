@@ -4,10 +4,26 @@
     background-color: #ffffff;
     width: 20%;
     // height: 15%;
-    padding: 0.5% 1%;
+    padding: 1.5% ;
     // position: absolute;
     font-family: 'Noto Sans', sans-serif;
     border-radius: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    @media (max-width:1024px) {
+        height: 100%;
+    }
+
+    // @media (max-width:768px) {
+    //     font-size: 10px;
+    // }
+
+    // @media (max-width:500px) {
+    //     font-size: 8px;
+    // }
+
+    // @media (max-width:400px) {
+    //     font-size: 6px;
+    // }
 
     .dashboard-heading-img-container {
         // height: 50%;
@@ -21,6 +37,21 @@
             font-weight: 600;
             color: #202224;
             opacity: 70%;
+            @media (max-width:1024px) {
+                font-size: 14px;
+            }
+        
+            @media (max-width:768px) {
+                font-size: 12px;
+            }
+        
+            @media (max-width:500px) {
+                font-size: 10px;
+            }
+        
+            @media (max-width:400px) {
+                font-size: 8px;
+            }
         }
     }
 
@@ -42,6 +73,21 @@
             font-weight: 700;
             font-size: 32px;
             color: #202224;
+            @media (max-width:1024px) {
+                font-size: 24px;
+            }
+        
+            @media (max-width:768px) {
+                font-size: 18px;
+            }
+        
+            @media (max-width:500px) {
+                font-size: 14px;
+            }
+        
+            @media (max-width:400px) {
+                font-size: 10px;
+            }
         }
 
         .dashboard-box-button {
@@ -57,9 +103,22 @@
             justify-content: center;
             border-radius: 10px;
             padding: 3px 6px;
-           
-            // height: 50px; /* Ensures proper centering */
             box-sizing: border-box; /* Prevents border from affecting alignment */
+            @media (max-width:1024px) {
+                font-size: 12px;
+            }
+        
+            @media (max-width:768px) {
+                font-size: 8px;
+            }
+        
+            @media (max-width:500px) {
+                font-size: 6px;
+            }
+        
+            @media (max-width:400px) {
+                font-size: 5px;
+            }
           }
           
 
@@ -68,6 +127,21 @@
             font-weight: 600;
             font-size: 15px;
             // align-self: flex-end;
+            @media (max-width:1024px) {
+                font-size: 11px;
+            }
+        
+            @media (max-width:768px) {
+                font-size: 9px;
+            }
+        
+            @media (max-width:500px) {
+                font-size: 7px;
+            }
+        
+            @media (max-width:400px) {
+                font-size: 4px;
+            }
         }
     }
 }
