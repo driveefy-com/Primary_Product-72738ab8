@@ -89,7 +89,7 @@ export const setNewPassword = [
         placeholder: 'setNew.newPassword',
     },
     {
-        name: 'recheckNewPassword',
+        name: 'secondPassword',
         type: 'password',
         inputType: 'text',
         placeholder: 'setNew.recheckNewPassword',
@@ -275,7 +275,7 @@ export const fleetOperationDashboardBoxes=[
 ]
 
 export const fleetListTable=[
-    'PROFILE','FLEET NO:','LOAD LIMIT','GROUP','CURRENT LOCATION','JOURNEYS','ALERT','STATUS','ACTIONS'
+    'PROFILE','FLEET NO:','LOAD LIMIT','GROUP','CURRENT LOCATION','JOURNEYS','EARNINGS','ALERTS','STATUS','ACTIONS'
 ]
 
 export const fleetHistoryTable=[

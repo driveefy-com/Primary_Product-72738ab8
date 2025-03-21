@@ -9,22 +9,31 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import pen from "../../assets/icons/editProfilePictureIcon.svg";
 import { userOrganization } from "../../redux/actions/login_signup_Actions";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { uploadImage } from "../../redux/actions/popUpAction";
+import defaultImg from "../../assets/icons/ProfilePictureIcon.svg";
 export const OrganizationDetail = () => {
-  const [formData, setformData] = useState({})
   const [searchParams, setSearchParams] = useSearchParams();
   const { t } = useTranslation();
   const isPopupOpen = searchParams.get("popup") === "true";
   const {savedImage} = useSelector((state) => state?.popup) || "";
   const dispatch = useDispatch();
+  const [formData, setformData] = useState({'profilePhoto':null,'organisationAddress':'gggtg'});
   const openPopup = () => {
     setSearchParams({ popup: "true" });
   };
+  // console.log(savedImage);
+
+  // useEffect(() => {
+  //   formData.profilePhoto=savedImage
+  // }, [savedImage])
+  
   const handleChange = (e) => {
     console.log(e);
     
     // console.log(e.target.name);
     setformData({ ...formData, [e.target.name]: e.target.value });
+
     console.log(formData);
   };
   const closePopup = () => {
@@ -34,6 +43,7 @@ export const OrganizationDetail = () => {
   const handleSubmit = (e) => {
     console.log('rrr');
     e.preventDefault();
+    dispatch(uploadImage(defaultImg));
     dispatch(userOrganization(formData));
   }
 
@@ -60,7 +70,7 @@ export const OrganizationDetail = () => {
           />
         </div>
         <div className="pop-up-container">
-          <PopUpComponent isOpen={isPopupOpen} onClose={closePopup} avatarList={organizationDetailAvatarList} />
+          <PopUpComponent isOpen={isPopupOpen} formData={formData}  onClose={closePopup} avatarList={organizationDetailAvatarList} />
         </div>
         <form onSubmit={handleSubmit} className="organization-form-container">
           {Array.isArray(organizationDetail) && organizationDetail.map((item, index) => (

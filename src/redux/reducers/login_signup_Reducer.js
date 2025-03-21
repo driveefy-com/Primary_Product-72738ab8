@@ -6,6 +6,7 @@ const initialState = {
   startColor: "",
   isNavigateOrganization: false,
   isNavigateVerifyEmail: false,
+  isNavigateCheckEmail:false,
 };
 const login_signup_Slice = createSlice({
   initialState,
@@ -32,6 +33,9 @@ const login_signup_Slice = createSlice({
       })
       .addCase("SET_PASSWORD_FAILURE", (state) => {
         state.loading = false;
+      })
+      .addCase("SET_NAVIGATE_CHECKEMAIL", (state, action) => {
+        state.isNavigateCheckEmail = action.payload;
       })
   },
 });

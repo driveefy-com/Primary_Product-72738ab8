@@ -8,7 +8,7 @@ import AvatarPopUp from "../avatar/AvatarPopUp";
 import { useDispatch, useSelector } from "react-redux";
 import {  uploadImage } from "../../../redux/actions/popUpAction";
 
-const PopUpComponent = ({ isOpen, onClose, avatarList }) => {
+const PopUpComponent = ({ formData,isOpen, onClose, avatarList }) => {
   const { img } = useSelector((state) => state?.popup) || "";
   const { isFirstUpload } = useSelector((state) => state?.popup);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,6 +21,7 @@ const PopUpComponent = ({ isOpen, onClose, avatarList }) => {
 
   const setPicture = (item) => {
     if (item) {
+      // console.log(item);
       dispatch(uploadImage(item));
     }
     isFirstUpload?
@@ -57,11 +58,13 @@ const PopUpComponent = ({ isOpen, onClose, avatarList }) => {
 
   const handleClick = (e) => {
     const file = e?.target?.files?.[0];
+    console.log(file);
     if (!file) return;
-
+    formData.profilePhoto=file;
+    console.log(formData);
+    // formData.append('profilePhoto',file);
     const reader = new FileReader();
     const allowedTypes = ["image/jpeg", "image/png"];
-
     if (!allowedTypes.includes(file.type)) {
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",

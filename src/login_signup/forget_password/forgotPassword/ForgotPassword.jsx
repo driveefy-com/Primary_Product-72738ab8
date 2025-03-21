@@ -4,13 +4,16 @@ import { FormComponents } from "../../../common/form/FormComponents";
 import SubmitButton from "../../../common/buttons/SubmitButton";
 import driveefylogo from "../../../assets/icons/driveefy_logo.svg";
 import "./styles/ForgotPassword.scss";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { forgot } from "../../../redux/actions/login_signup_Actions";
+import { useNavigate } from "react-router-dom";
 export const ForgotPassword = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const navigate=useNavigate();
   const [formData, setformData] = useState({});
+  const {isNavigateCheckEmail}=useSelector(state=>state.login_signup || {})
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -18,6 +21,13 @@ export const ForgotPassword = () => {
     e.preventDefault();
     dispatch(forgot(formData));
   };
+
+   useEffect(() => {
+      isNavigateCheckEmail ? navigate('/checkEmail') : ''
+      dispatch({ type: "SET_NAVIGATE_CHECKEMAIL", payload: false });
+    }, [isNavigateCheckEmail,navigate]);
+
+
   return (
     <div className="forgot-password-main-container">
       <div className="forgot-password-img-container"></div>

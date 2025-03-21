@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import FleetOperationRoutes from "./FleetOperationRoutes";
 import ProfilePage from "../fleet_operations/profilePage/ProfilePage";
 import FleetOperationDashboard from "../fleet_operations/fleet_operation_dashboard/fleetOperationDashboard";
+import FleetOnboardingPage from "../fleet_operations/fleet_Onboarding_Page/FleetOnboardingPage";
 
 export const AllRoutes = () => {
   const storedData = localStorage.getItem("data");
@@ -30,6 +31,7 @@ export const AllRoutes = () => {
       <Route path="/fleet" element={<FleetOperationRoutes />} >
         <Route path="profilePage" element={<ProfilePage />} />
         <Route path="dashboard" element={<FleetOperationDashboard />} />
+        <Route path="onboarding" element={<FleetOnboardingPage/>} />
       </Route>
     </Routes>
   );

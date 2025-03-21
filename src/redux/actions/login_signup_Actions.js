@@ -29,6 +29,7 @@ export const forgot = (userData) => async (dispatch) => {
       dispatch({
         type: "SET_LOADER", payload: false
       })
+      dispatch({ type: "SET_NAVIGATE_CHECKEMAIL", payload: true });
     }
   } catch (error) {
     dispatch({
@@ -36,7 +37,7 @@ export const forgot = (userData) => async (dispatch) => {
     })
     dispatch({
       type: "SET_SNACKBAR_MESSAGE",
-      payload: { message: error.response.data.errors[0].message, endColor: "#f17d73", startColor: "#ffe2e0" },
+      payload: { message: error.response.data.error.explanation, endColor: "#f17d73", startColor: "#ffe2e0" },
     });
 
   }
@@ -134,25 +135,27 @@ export const signupUser = (userData) => async (dispatch) => {
 };
 
 export const resetPassword = (userData) => async (dispatch) => {
-  const updatedUserData = { ...userData, 'resetPasswordToken': JSON.parse(localStorage.getItem("data")).token };
   try {
-    console.log(updatedUserData);
-
+    console.log(userData);
     dispatch({
       type: "SET_LOADER",
       payload: true,
     });
     const response = await axios.post(
       resetPasswordApi,
-      updatedUserData,
+      userData,
       {
         headers: {
           "Content-type": "application/json",
+          
         },
+        params: {
+          resetPasswordToken: JSON.parse(localStorage.getItem("data")).token
+        }
       }
     );
     if (response.data.success) {
-      localStorage.setItem("data", JSON.stringify(response.data.data));
+      // localStorage.setItem("data", JSON.stringify(response.data.data));
       dispatch({
         type: "SET_SNACKBAR_MESSAGE",
         payload: {
@@ -175,7 +178,7 @@ export const resetPassword = (userData) => async (dispatch) => {
     dispatch({
       type: "SET_SNACKBAR_MESSAGE",
       payload: {
-        message: "Retry after sometime!",
+        message: error.message,
         endColor: "#f17d73",
         startColor: "#ffe2e0",
       },
@@ -191,13 +194,12 @@ export const verifyEmail = (userData) => async (dispatch) => {
     });
     const response = await axios.get(
       verifyEmailApi,
-      userData,
-      {
+      {userData},{
         headers: {
           "Content-type": "application/json",
         },
-        query: {
-          token: JSON.parse(localStorage.setItem("data")).tokena
+        params:{
+          "token": JSON.parse(localStorage.getItem("data")).token
         }
       }
     );
