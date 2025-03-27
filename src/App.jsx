@@ -1,7 +1,6 @@
 import { AllRoutes } from "./routes/AllRoutes";
 import { useDispatch, useSelector } from "react-redux";
 import CustomSnackbar from "./common/customSnackbar/customSnackbar";
-import LanguageSwitcher from "./common/languageSwitcher/LanguageSwitcher";
 import Loader from "./common/loader/Loader";
 import { isLoading } from "./redux/actions/loaderAction";
 import { useEffect } from "react";
@@ -30,11 +29,10 @@ function App() {
 
   return (
     <div>
-      <div className="language-switcher-container">
-        <LanguageSwitcher />
-      </div>
       <AllRoutes/>
+      <div className="custom-snackbar-container">
       <CustomSnackbar open={snackbarMessage !== ""} onClose={handleClose} message={snackbarMessage} startColor={startColor} endColor={endColor} />
+      </div>
     </div>
   );
 }

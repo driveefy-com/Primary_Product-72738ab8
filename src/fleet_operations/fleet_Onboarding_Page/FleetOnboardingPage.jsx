@@ -1,4 +1,3 @@
-import SubmitButton from '../../common/buttons/SubmitButton'
 import './styles/FleetOnboardingPage.scss'
 import auto from '../../assets/icons/autoOnboardingIcon.svg'
 import manual from '../../assets/icons/manualOnboardingIcon.svg'

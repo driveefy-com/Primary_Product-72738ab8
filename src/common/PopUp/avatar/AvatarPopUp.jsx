@@ -39,7 +39,7 @@ function AvatarPopUp({ isOpen, onClose, avatarList }) {
         })}
       </div>
       <div className="avatar-button-container">
-        <button onClick={() => handleClick(img)}>Select</button>
+        <button className='avatar-button' onClick={() => handleClick(img)}>Select</button>
       </div>
     </div>
   );

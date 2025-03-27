@@ -1,9 +1,10 @@
 .profile-page-container {
     font-family: 'Noto Sans', sans-serif;
-    margin-top: 70px;
-    margin-left: 20%;
+    // margin-top: 70px;
+    // margin-left: 20%;
     // min-height: 100vh;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     // flex-wrap: wrap;
@@ -88,12 +89,44 @@
                 width: 50%;
                 gap: 5%;
                 margin-right: 2%;
+
                 .cancel-button {
                     background-color: #ffffff;
                     color: #292a6a;
                     border: 1px solid #292a6a;
                     box-sizing: border-box;
-                    padding: 1.75% 4%;
+                    // padding: 1.75% 4%;
+                    padding: 1.5% 5% 2% 5%;
+                    font-weight: 600;
+                    // background-color: #292a6a;
+                    // color: #ffffff;
+                    border-radius: 48px;
+                    // border: none;
+                    // text-align: center;
+                    // display: flex;
+                    // justify-content: center;
+                    // align-items: center;
+                    font-size: large;
+
+                    @media (max-width: 1024px) {
+                        margin-top: 5%;
+                        font-size: medium;
+                    }
+
+                    @media (max-width: 768px) {
+                        margin-top: 10%;
+                        font-size: small;
+                    }
+
+                    @media (max-width: 480px) {
+                        padding: 3% 6%;
+                        font-size: 12px;
+                    }
+
+                    &:hover {
+                        background-color: #263b94;
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -108,6 +141,7 @@
             column-gap: 20px;
             position: relative;
             margin-top: 5%;
+
             @media (max-width: 768px) {
                 // margin-top: -8%;
                 display: flex;
@@ -269,6 +303,7 @@
     // background-position: center;
     background-repeat: no-repeat;
     margin-left: 2%;
+
     // background-color: rosybrown;
     @media (max-width: 1024px) {
         width: 80px;

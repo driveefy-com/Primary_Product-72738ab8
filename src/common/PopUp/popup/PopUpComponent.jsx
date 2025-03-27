@@ -117,8 +117,8 @@ const PopUpComponent = ({ formData,isOpen, onClose, avatarList }) => {
         </button>
         <hr />
         <div className="button-container">
-          <button onClick={() => setPicture(img)}>Save</button>
-          <button onClick={() => setPicture(dp)}>Cancel</button>
+          <button className='pop-up-buttons' onClick={() => setPicture(img)}>Save</button>
+          <button className='pop-up-buttons' onClick={() => setPicture(dp)}>Cancel</button>
         </div>
       </div>
       <div className="avatar-container">

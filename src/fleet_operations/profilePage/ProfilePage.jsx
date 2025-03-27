@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import './styles/ProfilePage.scss'
-import { personalDetails } from '../../common/form/FormData'
+import { personalDetails, profilePageOrganizationDetail } from '../../common/form/FormData'
 import { FormComponents } from '../../common/form/FormComponents'
-import { organizationDetail } from '../../common/form/FormData'
 import { useSelector } from 'react-redux'
 import SubmitButton from '../../common/buttons/SubmitButton'
 function ProfilePage() {
@@ -58,7 +57,7 @@ function ProfilePage() {
                     </div>
                     <h1 className='organization-header'>Organization Detail</h1>
                     <div className="organization-form-container">
-                        {Array.isArray(organizationDetail) && organizationDetail.map((item, index) => (
+                        {Array.isArray(profilePageOrganizationDetail) && profilePageOrganizationDetail.map((item, index) => (
                             item ? (
                                 <div key={index} className="grid-item">
                                     <h1>{item.name || ""}</h1>
@@ -66,7 +65,7 @@ function ProfilePage() {
                                         key={index}
                                         formData={item}
                                         isEditable={!edit}
-                                        onChange={() => { }}
+                                        
                                     />
                                 </div>
                             ) : null

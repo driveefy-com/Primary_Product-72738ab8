@@ -8,17 +8,21 @@ import { Verification } from "../login_signup/verification/Verification";
 import { OrganizationDetail } from "../login_signup/organizationDetail/OrganizationDetail";
 import PrivateRoute from "./PrivateRoute";
 import FleetOperationRoutes from "./FleetOperationRoutes";
-import ProfilePage from "../fleet_operations/profilePage/ProfilePage";
-import FleetOperationDashboard from "../fleet_operations/fleet_operation_dashboard/fleetOperationDashboard";
-import FleetOnboardingPage from "../fleet_operations/fleet_Onboarding_Page/FleetOnboardingPage";
-
+import LanguageSwitcher from "../common/languageSwitcher/LanguageSwitcher";
+import './styles/AllRoutes.scss'
+import EmailVerificationonSignup from "../login_signup/verification/EmailVerificationonSignup";
 export const AllRoutes = () => {
   const storedData = localStorage.getItem("data");
   const parsedData = storedData ? JSON.parse(storedData) : null;
   const isAuthenticated = parsedData?.token ? true : false;
 
   return (
+    <>
+    <div className="language-switcher-container">
+        <LanguageSwitcher />
+       </div>
     <Routes>
+    
       <Route path="/" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgotPassword" element={<ForgotPassword />} />
@@ -26,13 +30,13 @@ export const AllRoutes = () => {
         <Route path="/checkEmail" element={<CheckEmail />} />
         <Route path="/setPassword" element={<SetNewPassword />} />
         <Route path="/verifyEmail" element={<Verification />} />
+        <Route path="/emailVerified" element={<EmailVerificationonSignup/>}/>
         <Route path="/organizationDetail" element={<OrganizationDetail />} />
       </Route>
-      <Route path="/fleet" element={<FleetOperationRoutes />} >
-        <Route path="profilePage" element={<ProfilePage />} />
-        <Route path="dashboard" element={<FleetOperationDashboard />} />
-        <Route path="onboarding" element={<FleetOnboardingPage/>} />
+      <Route path="/fleet/*" element={<FleetOperationRoutes />} >
+       
       </Route>
     </Routes>
+    </>
   );
 };

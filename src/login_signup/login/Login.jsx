@@ -49,7 +49,7 @@ function Login() {
   useEffect(() => {
     isNavigateOrganization?navigate('/organizationDetail'):''
     dispatch({type:"SET_NAVIGATE_ORGANIZATION",payload:false});
-    }, [isNavigateOrganization, navigate]);
+    }, [isNavigateOrganization, navigate,dispatch]);
  return (
   <GoogleOAuthProvider clientId={CLIENT_ID}>
     <div className="login-main-container">

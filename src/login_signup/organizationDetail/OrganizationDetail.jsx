@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import pen from "../../assets/icons/editProfilePictureIcon.svg";
 import { userOrganization } from "../../redux/actions/login_signup_Actions";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { uploadImage } from "../../redux/actions/popUpAction";
 import defaultImg from "../../assets/icons/ProfilePictureIcon.svg";
 export const OrganizationDetail = () => {

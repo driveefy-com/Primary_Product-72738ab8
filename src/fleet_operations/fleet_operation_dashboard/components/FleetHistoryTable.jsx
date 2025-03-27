@@ -8,6 +8,8 @@ import  { useState } from 'react'
 import left from '../../../assets/icons/lessThanSign.svg'
 import right from '../../../assets/icons/greaterThanSign.svg'
 import search from '../../../assets/icons/searchIcon.svg'
+import EyeOpen from "../../../assets/icons/EyeOpen.svg";
+
 function FleetHistoryTable() {
   const dataArray = Array.from({ length: 60 }, (_, index) => ({
     id: index + 1,
@@ -51,9 +53,9 @@ function FleetHistoryTable() {
             <img src={search} alt="" className='search-icon' />
           </div>
           <div className="options-container">
-            <img src={filter} alt="Filter" className='filter-sort-img' />
-            <img src={sort} alt="Sort" className='filter-sort-img' />
-            <img src={reset} alt="Reset" className='filter-sort-img' />
+            <button className='options-container-button'><img src={filter} alt="Filter" className='filter-sort-img' /></button>
+            <button className='options-container-button'><img src={sort} alt="Sort" className='filter-sort-img' /></button>
+            <button className='options-container-button'><img src={reset} alt="Reset" className='filter-sort-img' /></button>
           </div>
         </div>
 
@@ -81,6 +83,7 @@ function FleetHistoryTable() {
                   <td>{row.phone}</td>
                   <td>{row.status}</td>
                   <td>{row.role}</td>
+                  <td ><img src={EyeOpen} alt="" className='fleet-history-eye-icon'/></td>
                 </tr>
               ))}
             </tbody>

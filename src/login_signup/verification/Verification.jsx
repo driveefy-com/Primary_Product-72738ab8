@@ -14,8 +14,8 @@ export const Verification = () => {
           <div className="verification-logo-container">
             <img src={icon} alt="" />
           </div>
-          <h1>{t('verifyEmail.title')}</h1>
-          <p>
+          <h1 className="verification-header">{t('verifyEmail.title')}</h1>
+          <p className="verification-content">
            {t('verifyEmail.message')}
           </p>
         </div>

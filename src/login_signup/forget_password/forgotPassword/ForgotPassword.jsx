@@ -25,7 +25,7 @@ export const ForgotPassword = () => {
    useEffect(() => {
       isNavigateCheckEmail ? navigate('/checkEmail') : ''
       dispatch({ type: "SET_NAVIGATE_CHECKEMAIL", payload: false });
-    }, [isNavigateCheckEmail,navigate]);
+    }, [isNavigateCheckEmail,navigate,dispatch]);
 
 
   return (

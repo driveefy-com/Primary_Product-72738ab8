@@ -83,5 +83,10 @@
       "bengali": "Bengali",
       "marathi": "Marathi",
       "odia": "Odia"
+  },
+  "verificationOnSignup":{
+    "title": "Your Email has been successfully verified",
+    "message": "Please proceed to the login page to access your account",
+    "buttonText":"Click here to Login"
   }
 }

@@ -6,21 +6,26 @@ body {
 
 .sidebar-main-container {
     display: flex;
+    // box-shadow: 2px 2px 4px 0px #D4D4D4;
     // display: none;
-    position: absolute;
+    // position: absolute;
     flex-direction: column;
     font-weight: 600;
     font-size: 14px;
     color: #202224;
     min-height: 100vh;
-    width: 20%;
+    width: 100%;
+    // background-color: red;
     background-color: #ffffff;
+    // background-color: red;
     font-family: "Noto Sans", sans-serif;
-    top: 70px;
+    // top: 70px;
     // padding-right: 1%;
     // bottom: 0;
     // padding-right: 1%;
-
+    // height: 100%;
+    // padding-bottom: 10%;
+    // z-index: 5000;
     @media (max-width:1024px) {
         font-size: 12px;
     }
@@ -111,22 +116,22 @@ body {
         gap: 5%;
         padding: 5%;
         text-align: left;
-        margin-bottom: 2%;
-        @media (max-width:1024px) {
-            margin-top: 30%;
-        }
+        margin-bottom: 30%;
+        // @media (max-width:1024px) {
+        //     margin-top: 30%;
+        // }
 
-        @media (max-width:768px) {
-            margin-top: 20%;
-        }
+        // @media (max-width:768px) {
+        //     margin-top: 20%;
+        // }
 
-        @media (max-width:480px) {
-            margin-top: 20%;
-        }
+        // @media (max-width:480px) {
+        //     margin-top: 20%;
+        // }
 
-        @media (max-width:400px) {
-            margin-top: 15%;
-        }
+        // @media (max-width:400px) {
+        //     margin-top: 15%;
+        // }
 
         // margin-bottom: 10%;
 
@@ -172,8 +177,8 @@ body {
                 font-size: 5px;
             }
         }
-
-        button {
+       
+        .sidebar-footer-button {
             background-color: #ffffff;
             color: #2d3748;
             font-weight: 400;
@@ -182,6 +187,8 @@ body {
             width: 90%;
             align-self: center;
             margin-bottom: 3%;
+            border: 0;
+            border-radius: 12px;
             @media (max-width:1024px) {
                 font-size: 10px;
             }
@@ -222,4 +229,8 @@ body {
         width: 14px;
         width: 14px;
     }
+}
+
+button{
+    border: 0;
 }
