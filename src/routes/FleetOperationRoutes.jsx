@@ -7,31 +7,34 @@ import FleetOperationDashboard from '../fleet_operations/fleet_operation_dashboa
 import FleetOnboardingPage from '../fleet_operations/fleet_Onboarding_Page/FleetOnboardingPage'
 import FleetManualOnboarding from '../fleet_operations/fleet_Onboarding_Page/manualOnboardingPages/FleetManualOnboarding'
 import LanguageSwitcher from '../common/languageSwitcher/LanguageSwitcher'
+import FleetDetailPage from '../fleet_operations/fleet_detail/FleetDetailPage'
+import FleetJourneyHistoryPage from '../fleet_operations/fleet_detail/fleet_journey_list/FleetJourneyHistoryPage'
+import close from '../assets/icons/sidebarCloseButton.svg'
+import { useState } from 'react'
 function FleetOperationRoutes() {
+  const [showSidebar, setshowSidebar] = useState(true);
   return (
     <>
       <div className="language-switcher-fleet-container">
         <LanguageSwitcher />
       </div>
+      <div className="navbar">
+        <Navbar />
+      </div>
       <div className="fleet-container">
-        <div className="navbar-container">
-          <Navbar />
-        </div>
-        <div className="sidebar-routes-container">
-          <div className="sidebar-container">
-            <Sidebar />
-          </div>
-
+       {showSidebar && <div className="sidebar-container">
+          <Sidebar />
+          <img src={close} alt="" className='sidebar-close-icon' onClick={()=>{setshowSidebar(false)}}/>
+        </div>}
+        <div className="routes-container" style={{width: showSidebar ? '80%' : '100%'}}>
           <Routes>
             <Route path="profilePage" element={<ProfilePage />} />
             <Route path="dashboard" element={<FleetOperationDashboard />} />
             <Route path="onboarding" element={<FleetOnboardingPage />} />
             <Route path="manualOnboarding" element={<FleetManualOnboarding />} />
+            <Route path='fleetDetail' element={<FleetDetailPage />} />
+            <Route path='journeyHistory' element={<FleetJourneyHistoryPage/>}/>
           </Routes>
-        </div>
-
-        <div className="routes-container">
-          <Outlet />
         </div>
       </div>
     </>

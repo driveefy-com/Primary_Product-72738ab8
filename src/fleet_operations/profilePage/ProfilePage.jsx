@@ -26,8 +26,8 @@ function ProfilePage() {
     // };
     return (
         <div className="profile-page-container">
-            <div className="profile-page-background-container">
-            </div>
+            {/* <div className="profile-page-background-container">
+            </div> */}
             <div className="profile-page-form-container">
                 <form action="">
                     <div className="dp-button-container">
@@ -60,7 +60,7 @@ function ProfilePage() {
                         {Array.isArray(profilePageOrganizationDetail) && profilePageOrganizationDetail.map((item, index) => (
                             item ? (
                                 <div key={index} className="grid-item">
-                                    <h1>{item.name || ""}</h1>
+                                    <h1 className='organization-detail-profile-header'>{item.title || ""}</h1>
                                     <FormComponents
                                         key={index}
                                         formData={item}

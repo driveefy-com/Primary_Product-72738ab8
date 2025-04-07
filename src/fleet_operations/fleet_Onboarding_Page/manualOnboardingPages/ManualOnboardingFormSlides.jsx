@@ -9,7 +9,9 @@ import ArrowRight from '../../../assets/icons/ArrowRight.svg'
 import './styles/FleetManualOnboarding.scss'
 import leftArrow from '../../../assets/icons/backArrow.svg'
 import PopUpComponent from '../../../common/PopUp/popup/PopUpComponent';
-function ManualOnboardingFormSlides({ onClick, fleetData, pageNo, header, previous }) {
+function ManualOnboardingFormSlides({ onClick, fleetData, pageNo, header,hasPicture, previous,buttonText,isEditable }) {
+    console.log(isEditable);
+    
     const { savedImage } = useSelector((state) => state?.popup) || "";
     const [searchParams, setSearchParams] = useSearchParams();
     const isPopupOpen = searchParams.get("popup") === "true";
@@ -27,9 +29,10 @@ function ManualOnboardingFormSlides({ onClick, fleetData, pageNo, header, previo
     }
     return (
         <div className="manual-onboarding-form-container">
-            {pageNo != 1 && previous && <img src={leftArrow} alt="" className='left-arrow' onClick={previous} />}
-            <h1 className='manual-onboarding-form-header'>{header}</h1>
-            {pageNo == '1' ? <>
+            {pageNo!='1' && previous && <img src={leftArrow} alt="" className='left-arrow' onClick={previous} />}
+            {header && <h1 className='manual-onboarding-form-header'>{header}</h1>}
+            {hasPicture &&
+            <>
                 <div className="manual-onboarding-photo-container">
                     <div
                         className="organization-dp-container"
@@ -45,7 +48,8 @@ function ManualOnboardingFormSlides({ onClick, fleetData, pageNo, header, previo
                 <div className="manual-pop-up-container">
                     <PopUpComponent isOpen={isPopupOpen} formData={formData} onClose={closePopup} avatarList={organizationDetailAvatarList} />
                 </div>
-            </> : ''}
+                </>
+            }
             <form className="manual-onboarding-form" onSubmit={handleSubmit}>
                 {Array.isArray(fleetData) && fleetData.map((item, index) => (
                     item ? (
@@ -54,14 +58,14 @@ function ManualOnboardingFormSlides({ onClick, fleetData, pageNo, header, previo
                             <FormComponents
                                 key={index}
                                 formData={item}
-                                isEditable={false}
+                                isEditable={isEditable}
                             //   onChange={handleChange}
                             />
                         </div>
                     ) : null
                 ))}
-                {header == 'PUCC Details' ? '' : <div className="manual-onboarding-button-container">
-                    <PaddedSubmitButton text={'Next'} type={''} img={ArrowRight} />
+                { buttonText && <div className="manual-onboarding-button-container">
+                    <PaddedSubmitButton text={buttonText} type={''} img={ArrowRight} />
                     <p className='manual-onboarding-skip' onClick={onClick}>Skip</p>
                 </div>}
             </form>

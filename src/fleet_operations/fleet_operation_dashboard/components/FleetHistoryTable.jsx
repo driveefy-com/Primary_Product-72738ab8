@@ -9,7 +9,7 @@ import left from '../../../assets/icons/lessThanSign.svg'
 import right from '../../../assets/icons/greaterThanSign.svg'
 import search from '../../../assets/icons/searchIcon.svg'
 import EyeOpen from "../../../assets/icons/EyeOpen.svg";
-
+import edit from '../../../assets/icons/editIcon.svg';
 function FleetHistoryTable() {
   const dataArray = Array.from({ length: 60 }, (_, index) => ({
     id: index + 1,
@@ -24,7 +24,7 @@ function FleetHistoryTable() {
   }));
   const [list, setlist] = useState(true);
   const [currentPage, setcurrentPage] = useState(0);
-  const itemsPerPage = 6; // Show 6 rows per page
+  const itemsPerPage = 5; // Show 6 rows per page
   const offset = currentPage * itemsPerPage;
   const currentData = dataArray.slice(offset, offset + itemsPerPage);
   const pageCount = Math.ceil(dataArray.length / itemsPerPage);
@@ -83,7 +83,7 @@ function FleetHistoryTable() {
                   <td>{row.phone}</td>
                   <td>{row.status}</td>
                   <td>{row.role}</td>
-                  <td ><img src={EyeOpen} alt="" className='fleet-history-eye-icon'/></td>
+                  <td >{activeTab=='fleetHistory'?<img src={EyeOpen} alt="" className='fleet-history-eye-icon'/>:<img src={edit} alt="" className='fleet-history-edit-icon'/>}</td>
                 </tr>
               ))}
             </tbody>

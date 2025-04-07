@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './styles/DashboardBoxes.scss'
 
 function DashboardBoxes({ title, img, number, type, button }) {
@@ -11,7 +12,7 @@ function DashboardBoxes({ title, img, number, type, button }) {
                     </div>
                     <div className="dashboard-number-container">
                         <h1>{number}</h1>
-                        <button className="dashboard-box-button">{button}</button>
+                        <Link to={'/fleet/onboarding'} className="dashboard-box-button" >{button}</Link>
                     </div>
                 </div>
             )

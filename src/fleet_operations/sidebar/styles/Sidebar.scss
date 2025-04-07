@@ -10,10 +10,14 @@ body {
     // display: none;
     // position: absolute;
     flex-direction: column;
+    // align-items: center;
+    // justify-content: space-between;
+    // margin-top:70px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
     color: #202224;
-    min-height: 100vh;
+    // display: none;
+    height: 100vh;
     width: 100%;
     // background-color: red;
     background-color: #ffffff;
@@ -23,23 +27,23 @@ body {
     // padding-right: 1%;
     // bottom: 0;
     // padding-right: 1%;
-    // height: 100%;
+    // height: 100dvh;
     // padding-bottom: 10%;
     // z-index: 5000;
     @media (max-width:1024px) {
-        font-size: 12px;
-    }
-
-    @media (max-width:768px) {
         font-size: 10px;
     }
 
-    @media (max-width:480px) {
+    @media (max-width:768px) {
         font-size: 8px;
     }
 
-    @media (max-width:400px) {
+    @media (max-width:480px) {
         font-size: 6px;
+    }
+
+    @media (max-width:400px) {
+        font-size: 5px;
     }
 
     .sidebar-dashboard-container {
@@ -51,7 +55,7 @@ body {
         // justify-content: center;
         gap: 10%;
         // padding-left: 10%;
-        padding: 5%;
+        padding: 1%;
         // padding-bottom: 5%;
         // background-color: red;
         text-align: center;
@@ -70,14 +74,13 @@ body {
     .sidebar-items-container {
         display: flex;
         flex-direction: column;
-        margin-top: 10px;
-        padding-left: 5%;
-
-        // width: 80%;
-        // align-items: center;
-        // justify-content: center;
+        height: 50%;
+        // padding-left: 5%;
+        // background-color: red;
+        justify-content: space-evenly;
         .sidebar-item {
-            height: 50px;
+            height: 40px;
+            // height: 100%;
             display: flex;
             align-items: center;
             // background-color: aqua;
@@ -109,17 +112,18 @@ body {
         background-position: center;
         width: 80%;
         // height: 15%;
-        align-self: center;
-        margin-top: 40%;
+        // align-self: center;
+        margin-left: 5%;
+        margin-top: 29%;
         display: flex;
         flex-direction: column;
         gap: 5%;
-        padding: 5%;
+        padding: 3%;
         text-align: left;
-        margin-bottom: 30%;
-        // @media (max-width:1024px) {
-        //     margin-top: 30%;
-        // }
+        // margin-bottom: 25%;
+        @media (max-width:1024px) {
+            margin-top: 40%;
+        }
 
         // @media (max-width:768px) {
         //     margin-top: 20%;
@@ -141,7 +145,7 @@ body {
         // bottom: -40%;
         .sidebar-header {
             font-weight: 400;
-            font-size: 14px;
+            font-size: 12px;
             margin-left: 5%;
             color: #ffffff;
             width: 100%;
@@ -150,31 +154,34 @@ body {
             // background-color: red;
             white-space: nowrap;
          @media (max-width:1024px) {
-            font-size: 12px;
+            font-size: 10px;
          }
          @media (max-width:768px) {
-            font-size: 9px;
+            font-size: 8px;
          }
          @media (max-width:480px) {
-            font-size: 7px;
+            font-size: 6px;
+         }
+         @media (max-width:400px) {
+            font-size: 5px;
          }
         }
 
         .sidebar-content{
             font-weight: 400;
             margin-left: 5%;
-            font-size: 12px;
+            font-size: 10px;
             color: #ffffff;
             margin-bottom: 4%;
             white-space: nowrap;
             @media (max-width:1024px) {
-                font-size: 10px;
+                font-size: 8px;
             }
             @media (max-width:768px) {
-                font-size: 7px;
+                font-size: 6px;
             }
             @media (max-width:480px) {
-                font-size: 5px;
+                font-size: 4px;
             }
         }
        
@@ -182,21 +189,21 @@ body {
             background-color: #ffffff;
             color: #2d3748;
             font-weight: 400;
-            font-size: 10px;
-            padding: 5% 10%;
+            font-size: 8px;
+            padding: 5% 8%;
             width: 90%;
             align-self: center;
             margin-bottom: 3%;
             border: 0;
             border-radius: 12px;
             @media (max-width:1024px) {
-                font-size: 10px;
-            }
-            @media (max-width:768px) {
                 font-size: 8px;
             }
-            @media (max-width:480px) {
+            @media (max-width:768px) {
                 font-size: 6px;
+            }
+            @media (max-width:480px) {
+                font-size: 5px;
             }
         }
     }
@@ -205,29 +212,29 @@ body {
 .sidebar-img {
     margin-left: 5%;
     margin-top: 5%;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     margin-bottom: 5%;
 
     // align-self: end;
     @media (max-width:1024px) {
-        width: 20px;
-        height: 20px;
-    }
-
-    @media (max-width:768px) {
         width: 18px;
         height: 18px;
     }
 
+    @media (max-width:768px) {
+        width: 16px;
+        height: 16px;
+    }
+
     @media (max-width:480px) {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
     }
 
     @media (max-width:400px) {
-        width: 14px;
-        width: 14px;
+        width: 10px;
+        width: 10px;
     }
 }
 

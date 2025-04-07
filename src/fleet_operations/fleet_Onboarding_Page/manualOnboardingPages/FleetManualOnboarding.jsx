@@ -1,11 +1,11 @@
-import  { useRef } from 'react'
+import { useRef } from 'react'
 import './styles/FleetManualOnboarding.scss'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import ManualOnboardingFormSlides from './ManualOnboardingFormSlides';
-import { manualOnboardingItem1, manualOnboardingItem2, manualOnboardingItem3, manualOnboardingItem4, manualOnboardingItem5One, manualOnboardingItem5Two } from '../../../common/form/FormData';
+import { VehicleDataComponents, RegistrationCertificateComponents, InsuranceDetailsComponents, PermitDetailsComponents, PuccDetailsComponents, TaxDetailsComponents, manualOnboardingSlideDetails } from '../../../common/form/FormData';
 import ManualOnboardingSubmitSlide from './ManualOnboaringSubmitSlide';
 function FleetManualOnboarding() {
     const swiperRef = useRef(null);
@@ -26,17 +26,24 @@ function FleetManualOnboarding() {
             </div>
             <div className="swiper-container">
                 <Swiper slidesPerView={1} spaceBetween={5} pagination={true} modules={[Pagination]} onSwiper={(swiper) => (swiperRef.current = swiper)} className='swiper'>
-                    <SwiperSlide><ManualOnboardingFormSlides fleetData={manualOnboardingItem1} onClick={goToNextSlide} previous={goToPreviousSlide} pageNo={'1'} header={'Vehicle Data'} /></SwiperSlide>
-                    <SwiperSlide><ManualOnboardingFormSlides fleetData={manualOnboardingItem2} onClick={goToNextSlide} previous={goToPreviousSlide} pageNo={'2'} header={'Registration certificate data'} /></SwiperSlide>
-                    <SwiperSlide><ManualOnboardingFormSlides fleetData={manualOnboardingItem3} onClick={goToNextSlide} previous={goToPreviousSlide} pageNo={'3'} header={'Insurance Details'} /></SwiperSlide>
-                    <SwiperSlide><ManualOnboardingFormSlides fleetData={manualOnboardingItem4} onClick={goToNextSlide} previous={goToPreviousSlide} pageNo={'4'} header={'Permit'} /></SwiperSlide>
+
+                    {
+                        manualOnboardingSlideDetails.slice(0,4).map((item, index) => {
+                            return (
+                                <SwiperSlide key={index}>
+                                    <ManualOnboardingFormSlides previous={goToPreviousSlide} onClick={goToNextSlide} buttonText={item.buttonText} pageNo={item.pageNo} header={item.header} fleetData={item.fleetDetail} hasPicture={item.hasPicture} key={index} />
+                                </SwiperSlide>
+                            )
+                        })
+                    }
                     <SwiperSlide>
                         <div className="manual-onboarding-page-five">
-                            <ManualOnboardingFormSlides fleetData={manualOnboardingItem5One} onClick={goToNextSlide} previous={goToPreviousSlide} pageNo={'5'} header={'PUCC Details'} />
-                            <ManualOnboardingFormSlides fleetData={manualOnboardingItem5Two} onClick={goToNextSlide}  pageNo={'5'} header={'Tax Details'} />
+                            <ManualOnboardingFormSlides fleetData={PuccDetailsComponents} onClick={goToNextSlide} previous={goToPreviousSlide} pageNo={'5'} header={'PUCC Details'} />
+                            <ManualOnboardingFormSlides fleetData={TaxDetailsComponents} onClick={goToNextSlide} pageNo={'5'} header={'Tax Details'} buttonText={'Next'} />
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide><ManualOnboardingSubmitSlide previous={goToPreviousSlide}/></SwiperSlide>
+                    <SwiperSlide><ManualOnboardingSubmitSlide previous={goToPreviousSlide} /></SwiperSlide>
+
                 </Swiper>
             </div>
         </div>

@@ -1,57 +1,66 @@
-.dashboard-main-container{
+.dashboard-main-container {
     font-family: 'Noto Sans', sans-serif;
     // margin-top: 70px;
     // margin-left: 20%;
     // min-height: 100vh;
-    // height: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    // align-items: center;
+    justify-content: center;
     // flex-wrap: wrap;
-    background-color: #ecf5fe;
+    // background-color: #ecf5fe;
+    // background-color: red;
     position: relative;
-    padding:0.5% 3%;
+    padding: 0% 3%;
     width: 100%;
-    .dashboard-heading{
-        font-size: 60px;
+
+    .dashboard-heading {
+        font-size: 56px;
         font-weight: 700;
-        color:#292a6a ;
+        color: #292a6a;
+        // background: palegreen;
+        // margin-bottom: 5px;
+        // margin-bottom: 1%;
         @media (max-width:1024px) {
-            font-size: 50px;
+            font-size: 46px;
         }
-    
+
         @media (max-width:768px) {
-            font-size: 40px;
+            font-size: 34px;
         }
-    
+
         @media (max-width:500px) {
-            font-size: 30px;
+            font-size: 26px;
         }
-    
+
         @media (max-width:400px) {
-            font-size: 20px;
+            font-size: 16px;
         }
     }
-    .dashboard-box-container{
+
+    .dashboard-box-container {
         // height: 100%;
         display: flex;
         justify-content: space-between;
-        margin-top: 3%;
+        margin-top: 1%;
+
         // background-color: red;
         @media (max-width:1024px) {
             margin-top: 5%;
         }
-    
+
         @media (max-width:768px) {
-            margin-top: 7%;
-        }
-    
-        @media (max-width:500px) {
-          margin-top: 8%;
-        }
-    
-        @media (max-width:400px) {
             margin-top: 9%;
         }
+
+        @media (max-width:500px) {
+            margin-top: 10%;
+        }
+
+        @media (max-width:400px) {
+            margin-top: 12%;
+        }
     }
-   
+
 }

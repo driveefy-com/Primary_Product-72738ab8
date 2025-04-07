@@ -1,12 +1,12 @@
 /* Navbar Container */
 .navbar-container {
   font-family: "Noto Sans", sans-serif;
-  height: 70px;
+  height: 9%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  // position: absolute;
+  position: fixed;
   background-color: #ffffff;
   // background-color: red;
   width: 100%;

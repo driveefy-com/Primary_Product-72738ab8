@@ -1,0 +1,65 @@
+.fleet-journey-header{
+    font-weight: 500;
+    font-size: 24px;
+    color: #353535;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    @media (max-width: 1024px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 12px;
+    }
+
+    @media (max-width:400px) {
+        font-size: 8px;
+    }
+}
+.fleet-journey-tr td{
+    color: #a3a19d;
+    font-size: 14px;
+    border-top: 1px solid #e8e5e5;
+    // padding: 12px;
+    text-align: center; // Centers text in all cells
+    font-weight: 400;
+    // font: bold;
+    @media (max-width:1024px) {
+      font-size: 10px;
+    }
+
+    @media (max-width:768px) {
+      font-size: 8px;
+    }
+
+    @media (max-width:600px) {
+      font-size: 5px;
+    }
+
+    @media (max-width:400px) {
+      font-size: 4px;
+    }
+}
+.custom-table{
+    // border-collapse: collapse;
+    thead{
+        // border-radius: 14px;
+        // background-color: red;
+        tr{
+            // border-radius: 14px;
+            // background-color: red;
+        }
+    }
+}
+.table-container{
+    // border-radius: 14px;
+    // background-color: red;
+    tr{
+        // border-radius: 14px;
+        // background-color: red;
+    }
+}

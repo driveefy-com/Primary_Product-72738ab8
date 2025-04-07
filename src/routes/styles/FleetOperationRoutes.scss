@@ -1,42 +1,70 @@
-*{
-  padding: 0%;
-  margin: 0%;  
-}
 .fleet-container {
+    width: 100vw;
+    height: 91vh;
+    margin-top: 9vh;
+    display: flex;
+    flex-direction: row; // Stack navbar first, then content
+    overflow: hidden; // Prevent unwanted scrollbars
+}
+
+// ✅ Navbar - Fixed at the top, 10% of screen height
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9vh; // Takes 10% of the screen height
+    // background-color: #373281; // Adjust as needed
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    // display:none;
+}
+
+// ✅ Sidebar - Fixed on the left, 20% of screen width
+.sidebar-container {
+    // position: fixed;
+    // top: 9vh; // Start below the navbar
+    // left: 0;
+    width: 20%; // Takes 20% of the screen width
+    // height: 90vh; // Remaining height after navbar
+    // background-color: #f8f9fa; // Adjust color as needed
+    z-index: 50;
     display: flex;
     flex-direction: column;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
     height: 100%;
-    width: 100%;
-    // min-height: 100vh;
-
-    .navbar-container {
-        // position: absolute;
-        // top: 0;
-    }
-
-    .sidebar-routes-container {
-        display: flex;
-        flex-direction: row;
-        height: 100%;
-        
-        // background-color: red;
-        .sidebar-container {
-            display: flex;
-            width: 20%;
-            height: 100%;
-        }
-
-        .routes-container {
-            display: flex;
-            width: 80%;
-            height: 100%;
-            // background-color: red;
-        }
-    }
+    // background-color: red;
+    position: relative;
 }
 
+// ✅ Routes container - Takes the remaining space
+.routes-container {
+    // margin-top: 9vh; // Leave space for navbar
+    // margin-left: 20vw; // Leave space for sidebar
+    // width: 80%;
+    // width: 100vw;
+    // width: 100%;
+    // / Take the remaining width
+    height: 100%; // Take the remaining height
+    overflow-y: auto; // Only scroll if necessary
+    background-color: hsl(210, 90%, 96%);
+    padding-bottom: 10px;
+    // z-index: 1000;
+    display: flex;
+    // background-color: red;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    // padding: 20px; // Optional spacing
+}
+
+
 .language-switcher-fleet-container {
-    position: absolute;
+    position: fixed;
     top: 80px;
     right: 2%;
     display: flex;
@@ -49,4 +77,17 @@
     @media (max-width:480px) {
         top: 60px;
     }
+}
+.sidebar-close-icon{
+    width: 15%;
+    height:15%;
+    position: absolute;
+    top: 1%;
+    cursor: pointer;
+    // left: 90%;
+    right: -7%;
+    // top: -10%;
+    // height: 100%;
+    // box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    // z-index: 100000;
 }

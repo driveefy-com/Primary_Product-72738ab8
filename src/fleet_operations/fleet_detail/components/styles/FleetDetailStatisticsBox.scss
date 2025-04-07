@@ -1,0 +1,40 @@
+.fleet-detail-box{
+    // width: ;
+    padding: 3%;
+    border-radius: 10px;
+    background-color: #ecf5fe;
+    .fleet-detail-box-header{
+        font-weight: 600;
+        font-size: 16px;
+        color: #4c535f;
+        @media (max-width: 1024px) {
+            font-size: 14px;
+          }
+          @media (max-width: 768px) {
+            font-size: 10px;
+          }
+          @media (max-width: 480px) {
+            font-size: 6px;
+          }
+          @media (max-width:400px) {
+            font-size: 4px;
+          }
+    }
+    .fleet-detail-box-count{
+        font-weight: 600;
+        font-size: 22px;
+        color: #007aaf;
+        @media (max-width: 1024px) {
+            font-size: 18px;
+          }
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
+          @media (max-width: 480px) {
+            font-size: 10px;
+          }
+          @media (max-width:400px) {
+            font-size: 6px;
+          }
+    }
+}

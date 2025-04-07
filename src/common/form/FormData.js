@@ -150,7 +150,7 @@ export const organizationDetail = [
         placeholder: 'organization.address'
     }
 ]
-export const profilePageOrganizationDetail=[
+export const profilePageOrganizationDetail = [
     {
         name: 'organisationName',
         title: 'Organization Name',
@@ -278,25 +278,25 @@ export const personalDetails = [
     {
         name: 'First Name',
         type: 'text',
-        placeholder:'First Name',
+        placeholder: 'First Name',
         inputType: 'smallerText'
     },
     {
         name: 'Last Name',
         type: 'text',
-        placeholder:'Last Name',
+        placeholder: 'Last Name',
         inputType: 'smallerText'
     },
     {
         name: 'Email',
         type: 'email',
-        placeholder:'Email',
+        placeholder: 'Email',
         inputType: 'smallerText'
     },
     {
         name: 'Phone Number',
         type: 'text',
-        placeholder:'+91 Please enter yourr phone number',
+        placeholder: '+91 Please enter yourr phone number',
         inputType: 'smallerText'
     }
 ]
@@ -333,14 +333,14 @@ export const fleetOperationDashboardBoxes = [
 ]
 
 export const fleetListTable = [
-    'PROFILE', 'FLEET NO:', 'LOAD LIMIT', 'GROUP', 'CURRENT LOCATION', 'JOURNEYS', 'EARNINGS', 'ALERTS', 'STATUS', 'ACTIONS'
+    'PROFILE', 'FLEET NO:', 'LOAD LIMIT', 'GROUP', 'CURRENT LOCATION', 'JOURNEYS', 'EARNINGS', 'ALERTS', 'STATUS', 'ACTIONS',
 ]
 
 export const fleetHistoryTable = [
-    'PROFILE', 'FLEET NO:', 'FLEET NAME:', 'LOAD LIMIT', 'GROUP', 'JOURNEYS', 'EARNINGS', 'TOTAL ORDERS', 'DAYS'
+    'PROFILE', 'FLEET NO:', 'FLEET NAME:', 'LOAD LIMIT', 'GROUP', 'JOURNEYS', 'EARNINGS', 'TOTAL ORDERS', 'DAYS', ''
 ]
 
-export const manualOnboardingItem1 = [
+export const VehicleDataComponents = [
     {
         name: 'Fleet name',
         type: 'text',
@@ -385,7 +385,7 @@ export const manualOnboardingItem1 = [
     },
 ]
 
-export const manualOnboardingItem2 = [
+export const RegistrationCertificateComponents = [
     {
         name: 'Registration date',
         type: 'text',
@@ -424,7 +424,7 @@ export const manualOnboardingItem2 = [
     }
 ]
 
-export const manualOnboardingItem3=[
+export const InsuranceDetailsComponents = [
     {
         name: 'Insurance Company name',
         type: 'text',
@@ -444,7 +444,7 @@ export const manualOnboardingItem3=[
         placeholder: 'DD/MM/YY',
     }
 ]
-export const manualOnboardingItem4=[
+export const PermitDetailsComponents = [
     {
         name: 'Permit number',
         type: 'text',
@@ -461,7 +461,7 @@ export const manualOnboardingItem4=[
         name: 'Issued date',
         type: 'text',
         inputType: 'smallerText',
-        placeholder: 'DD/MM/YYYY',   
+        placeholder: 'DD/MM/YYYY',
     },
     {
         name: 'Expiry date',
@@ -476,7 +476,7 @@ export const manualOnboardingItem4=[
         placeholder: '000000',
     }
 ]
-export const manualOnboardingItem5One=[
+export const PuccDetailsComponents = [
     {
         name: 'PUCC number',
         type: 'text',
@@ -490,11 +490,211 @@ export const manualOnboardingItem5One=[
         placeholder: 'DD/MM/YYYY',
     },
 ]
-export const manualOnboardingItem5Two=[
+export const TaxDetailsComponents = [
     {
         name: 'TAX Expiry date',
         type: 'text',
         inputType: 'smallerText',
         placeholder: 'DD/MM/YYYY',
     }
+]
+export const fleetDetail = [
+    {
+        name: 'Fleet name',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: ' Fleet Name',
+    },
+    {
+        name: 'Fleet Number*',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: ' XX-00-XX-0000',
+    },
+    {
+        name: 'Chassis number*',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: '000000',
+    },
+    {
+        name: 'Engine number*',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: '000000',
+    },
+    {
+        name: 'Gross weight*',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: ' Gross weight',
+    },
+    {
+        name: 'Fuel type*',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: ' Fuel type',
+    },
+    {
+        name: 'Odometer Reading',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: '000000',
+    },
+]
+export const manualOnboardingSlideDetails = [
+    {
+        header: 'Vehicle Data',
+        fleetDetail: VehicleDataComponents,
+        pageNo: '1',
+        hasPicture: true,
+        buttonText: 'Next',
+    },
+    {
+        header: 'Registration Certificate Data',
+        fleetDetail: RegistrationCertificateComponents,
+        pageNo: '2',
+        hasPicture: false,
+        buttonText: 'Next',
+    },
+    {
+        header: 'Insurance Details',
+        fleetDetail: InsuranceDetailsComponents,
+        pageNo: '3',
+        hasPicture: false,
+        buttonText: 'Next',
+    },
+    {
+        header: 'Permit Details',
+        fleetDetail: PermitDetailsComponents,
+        pageNo: '4',
+        hasPicture: false,
+        buttonText: 'Next',
+    },
+    {
+        header: 'PUCC Details',
+        fleetDetail: PuccDetailsComponents,
+        pageNo: '5',
+        hasPicture: false,
+    },
+    {
+        header: 'Tax Details',
+        fleetDetail: TaxDetailsComponents,
+        pageNo: '5',
+        hasPicture: false,
+        buttonText: 'Next',
+    },
+    {
+        header: 'Upload Files',
+        hasPicture: false,
+        buttonText: 'Submit',
+    }
+]
+export const fleetJourneyList = [
+    'Origin', 'Destination:', 'Driver name:', 'Status:', 'Fuel:', 'Earning:', 'Avg. Mileage', 'Total Order', ''
+]
+
+export const journeyHistoryTitles = [
+    {
+        name: 'Fleet name',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Enter Fleet Name',
+    },
+    {
+        name: 'Fleet number',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Fleet number[XX-00-XX-0000]',
+    },
+    {
+        name: 'Fleet Group',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Fleet group',
+    },
+    {
+        name: 'Origin',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Origin',
+    },
+    {
+        name: 'Destination',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Destination',
+    },
+    {
+        name: 'Drivers Name',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Please enter Drivers name',
+    },
+    {
+        name: 'Avg. Mileage',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Avg.Mileage',
+    },
+    {
+        name: 'Count of Orders',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Count of orders[00]',
+    },
+    {
+        name: 'Total Amount of orders',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Total amount of orders[00]',
+    },
+    {
+        name: 'Gross Weight',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Gross weight[in TON]',
+    },
+    {
+        name: 'Carried Weight',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Carried weight[in TON]',
+    },
+    {
+        name: 'Documents',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Documents',
+    },
+    {
+        name: 'Incident',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Incident',
+    },
+    {
+        name: 'Fuel',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Fuel type',
+    },
+    {
+        name: 'Kilometer ',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Kilometers travelled',
+    },
+    {
+        name: 'Fuel Spent',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Fuel Spent',
+    },
+    {
+        name: 'Account of Orders',
+        type: 'text',
+        inputType: 'smallerText',
+        placeholder: 'Account of Orders',
+    },
 ]
