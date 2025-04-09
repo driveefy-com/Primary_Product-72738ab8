@@ -11,6 +11,10 @@ import FleetDetailPage from '../fleet_operations/fleet_detail/FleetDetailPage'
 import FleetJourneyHistoryPage from '../fleet_operations/fleet_detail/fleet_journey_list/FleetJourneyHistoryPage'
 import close from '../assets/icons/sidebarCloseButton.svg'
 import { useState } from 'react'
+import FleetGroupsContainer from '../fleet_operations/create_fleet_group/FleetGroupsContainer'
+import CreateFleetGroup from '../fleet_operations/create_fleet_group/CreateFleetGroup'
+import CreatedGroupPage from '../fleet_operations/create_fleet_group/CreatedGroupPage'
+import VendorManagementDashboard from '../fleet_operations/vendorManagement/VendorManagementDashboard'
 function FleetOperationRoutes() {
   const [showSidebar, setshowSidebar] = useState(true);
   return (
@@ -22,18 +26,22 @@ function FleetOperationRoutes() {
         <Navbar />
       </div>
       <div className="fleet-container">
-       {showSidebar && <div className="sidebar-container">
+        {showSidebar && <div className="sidebar-container">
           <Sidebar />
-          <img src={close} alt="" className='sidebar-close-icon' onClick={()=>{setshowSidebar(false)}}/>
+          <img src={close} alt="" className='sidebar-close-icon' onClick={() => { setshowSidebar(false) }} />
         </div>}
-        <div className="routes-container" style={{width: showSidebar ? '80%' : '100%'}}>
+        <div className="routes-container" style={{ width: showSidebar ? '80%' : '100%' }}>
           <Routes>
             <Route path="profilePage" element={<ProfilePage />} />
             <Route path="dashboard" element={<FleetOperationDashboard />} />
             <Route path="onboarding" element={<FleetOnboardingPage />} />
             <Route path="manualOnboarding" element={<FleetManualOnboarding />} />
             <Route path='fleetDetail' element={<FleetDetailPage />} />
-            <Route path='journeyHistory' element={<FleetJourneyHistoryPage/>}/>
+            <Route path='journeyHistory' element={<FleetJourneyHistoryPage />} />
+            <Route path='fleetGroups' element={<FleetGroupsContainer />} />
+            <Route path='createFleet' element={<CreateFleetGroup/>} />
+            <Route path='/createdGroup' element={<CreatedGroupPage/>}/>
+            <Route path='/vendorManagement' element={<VendorManagementDashboard/>}/>
           </Routes>
         </div>
       </div>

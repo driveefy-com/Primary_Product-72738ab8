@@ -339,6 +339,9 @@ export const fleetListTable = [
 export const fleetHistoryTable = [
     'PROFILE', 'FLEET NO:', 'FLEET NAME:', 'LOAD LIMIT', 'GROUP', 'JOURNEYS', 'EARNINGS', 'TOTAL ORDERS', 'DAYS', ''
 ]
+export const vendorHistoryTable=[
+    'PROFILE', 'CUSTOMER NAME:', 'CUSTOMER NUMBER', 'ACTIVE ORDERS', 'TOTAL ORDERS', 'ACTIONS',
+]
 
 export const VehicleDataComponents = [
     {
@@ -696,5 +699,28 @@ export const journeyHistoryTitles = [
         type: 'text',
         inputType: 'smallerText',
         placeholder: 'Account of Orders',
+    },
+]
+export const vendorManagementDashboardBoxes = [
+    {
+        title: 'Total Customer',
+        img: '',
+        value: 130,
+        type: 'button',
+        buttonText: '+ Add Customer'
+    },
+    {
+        title: 'Total Revenue',
+        img: '',
+        value: '',
+        type: 'graph',
+        buttonText: '15.3% Up from last month'
+    },
+    {
+        title: 'Pending Payments',
+        img: '',
+        value: '',
+        type: 'graph',
+        buttonText: ''
     },
 ]

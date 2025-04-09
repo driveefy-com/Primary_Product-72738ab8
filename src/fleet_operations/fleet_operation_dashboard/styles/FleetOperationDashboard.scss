@@ -19,6 +19,7 @@
         font-size: 56px;
         font-weight: 700;
         color: #292a6a;
+        margin-top: -1%;
         // background: palegreen;
         // margin-bottom: 5px;
         // margin-bottom: 1%;
@@ -42,7 +43,8 @@
     .dashboard-box-container {
         // height: 100%;
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-evenly;
+        gap: 2%;
         margin-top: 1%;
 
         // background-color: red;

@@ -1,0 +1,309 @@
+.create-fleet-one-main-container {
+    font-family: 'Noto Sans', sans-serif;
+    // margin-top: 70px;
+    // margin-left: 20%;
+    // min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // gap:4%;
+    // align-items: center;
+    // justify-content: center;
+    // flex-wrap: wrap;
+    // background-color: #ecf5fe;
+    // background-color: red;
+    position: relative;
+    padding: 3%;
+    width: 100%;
+}
+
+.create-fleet-header {
+    font-weight: 700;
+    font-size: 32px;
+    color: #292a6a;
+}
+
+.search-fleet-group {
+    border-radius: 40px;
+    border: none;
+    padding-left: 2%;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    @media (max-width:1024px) {
+        font-size: 13px;
+    }
+
+    @media (max-width:768px) {
+        font-size: 10px;
+    }
+
+    @media (max-width:480px) {
+        font-size: 7px;
+    }
+
+    @media (max-width:400px) {
+        font-size: 4px;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+.create-fleet-search-component {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+    border-radius: 40px;
+    padding: 0.3%;
+    margin-top: 3%;
+    // height: 100%;
+}
+
+.search-button {
+    height: 30px;
+    width: 30px;
+
+    @media (max-width:1024px) {
+        height: 25px;
+        width: 25px;
+    }
+
+    @media (max-width:768px) {
+        height: 20px;
+        width: 20px;
+    }
+
+    @media (max-width:480px) {
+        height: 15px;
+        width: 15px;
+    }
+
+    @media (max-width:400px) {
+        height: 10px;
+        width: 10px;
+    }
+}
+.create-fleet-custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0px 12px;
+    // border-radius: 10px;
+    @media (max-width:1024px) {
+        border-spacing: 0px 10px;
+    }
+  
+      @media (max-width:768px) {
+        border-spacing: 0px 8px;
+    }
+  
+      @media (max-width:480px) {
+        border-spacing: 0px 6px;
+    }
+    th,
+    .create-fleet-thead{
+        // border-radius: 10px;
+        // border: #1a2b88;
+      font-size: 24px;
+      font-weight: 400;
+      color: #3a3a49;
+    //   background-color: red;
+      @media (max-width:1024px) {
+        font-size: 20px;
+      }
+  
+      @media (max-width:768px) {
+        font-size: 16px;
+      }
+  
+      @media (max-width:480px) {
+        font-size: 12px;
+      }
+  
+      @media (max-width:400px) {
+        font-size: 8px;
+      }
+    }
+  
+    th {
+      padding-top: 0.5%;
+      padding-bottom:0.5%;
+      background-color: #eeeeee;
+      font-weight: 400;
+    //   border-radius: 10px;
+  
+      @media (max-width:768px) {
+        padding-top: 1%;
+        padding-bottom:1%;
+      }
+    }
+  
+    td {
+      padding:1%;
+    //   border-radius: 10px;
+    //   font-weight: 600;
+    //   background-color: red;
+      // border-radius: 14px;
+    }
+    tbody{
+        // gap: 20px;
+        tr{
+            // width: 100%;
+            // border-radius: 10px;
+            background-color: #ffffff;
+            // border: 4px solid #4d4f5a;
+            // box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+    }
+  }
+  .create-fleet-table-group-header{
+    font-size: 22px;
+    font-weight: 400;
+    color:#1a2b88;
+    @media (max-width:1024px) {
+        font-size: 18px;
+      }
+  
+      @media (max-width:768px) {
+        font-size: 14px;
+      }
+  
+      @media (max-width:600px) {
+        font-size: 10px;
+      }
+  
+      @media (max-width:400px) {
+        font-size: 6px;
+      }
+  }
+  .create-fleet-table-group-title{
+    font-weight: 400;
+    font-size: 12px;
+    color:#979797;
+    @media (max-width:1024px) {
+        font-size: 10px;
+      }
+  
+      @media (max-width:768px) {
+        font-size: 8px;
+      }
+  
+      @media (max-width:600px) {
+        font-size: 6px;
+      }
+  
+      @media (max-width:400px) {
+        font-size: 4px;
+      }
+  }
+  .create-fleet-table-data{
+    font-size: 24px;
+    font-weight: 400;
+    color:#1a2b88;
+    @media (max-width:1024px) {
+        font-size: 20px;
+      }
+  
+      @media (max-width:768px) {
+        font-size: 16px;
+      }
+  
+      @media (max-width:600px) {
+        font-size: 12px;
+      }
+  
+      @media (max-width:400px) {
+        font-size: 8px;
+      }
+  }
+  .fleet-row{
+    // display: flex;
+    // flex-direction: row;
+    // align-items: space-between;
+    // margin-bottom: 15px; // 
+  }
+  .create-fleet-custom-table tbody tr {
+    // Optional background
+    background-color: #fff;
+  
+    // Add spacing if you want rounded corners to show
+    overflow: hidden;
+  }
+  
+  .create-fleet-custom-table tbody tr td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .create-fleet-custom-table tbody tr td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .create-group-button{
+    font-family: 'Nunito Sans',sans-serif;
+    margin-top: 5%;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #ecf5fe;
+    color: #007aff;
+    border: 1px solid #007aff;
+    display: inline-flex;
+    align-items: center;
+    // align-self: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 6px 9px;
+    text-decoration: none;
+    box-sizing: border-box; /* Prevents border from affecting alignment */
+    @media (max-width:1024px) {
+        font-size: 16px;
+    }
+
+    @media (max-width:768px) {
+        font-size: 12px;
+    }
+
+    @media (max-width:480px) {
+        font-size: 8px;
+    }
+
+    @media (max-width:400px) {
+        font-size: 4px;
+    }
+  }
+  
+
+.dashboard-box-graph {
+    margin-top: 10%;
+    font-weight: 600;
+    font-size: 12px;
+    // align-self: flex-end;
+    @media (max-width:1024px) {
+        font-size: 10px;
+    }
+
+    @media (max-width:768px) {
+        font-size: 9px;
+    }
+
+    @media (max-width:500px) {
+        font-size: 7px;
+    }
+
+    @media (max-width:400px) {
+        font-size: 4px;
+    }
+  }
+  
+  .create-fleet-heading-button{
+    display: flex;
+    // background-color: red;
+    align-items: center;
+    justify-content: space-between;
+  }
