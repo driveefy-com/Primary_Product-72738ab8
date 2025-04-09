@@ -4,7 +4,7 @@ import bell from '../../assets/icons/bellIcon.svg'
 import dp from '../../assets/icons/dashboardUserPicture.svg'
 import dropdown from '../../assets/icons/dashboardDropdownIcon.svg'
 import settings from '../../assets/icons/settingsIcon.svg'
-export function Navbar() {
+ function Navbar() {
   return (
     <>
     <div className="navbar-container">
@@ -28,3 +28,5 @@ export function Navbar() {
     </>
   )
 }
+
+export default Navbar;

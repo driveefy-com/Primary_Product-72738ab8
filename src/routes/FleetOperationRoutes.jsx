@@ -15,7 +15,7 @@ import CreateFleetGroup from '../fleet_operations/create_fleet_group/CreateFleet
 import CreatedGroupPage from '../fleet_operations/create_fleet_group/CreatedGroupPage'
 import VendorManagementDashboard from '../fleet_operations/vendorManagement/VendorManagementDashboard'
 import VendorDetailsPage from '../fleet_operations/vendorManagement/VendorDetails'
-import { Navbar } from '../fleet_operations/Navbar/Navbar'
+import Navbar from '../fleet_operations/Navbar/Navbar'
 function FleetOperationRoutes() {
   const [showSidebar, setshowSidebar] = useState(true);
   return (
