@@ -1,4 +1,4 @@
-import { Outlet, Routes, Route } from 'react-router-dom'
+import {  Routes, Route } from 'react-router-dom'
 import './styles/FleetOperationRoutes.scss'
 import Sidebar from '../fleet_operations/sidebar/Sidebar'
 import { Navbar } from '../fleet_operations/Navbar/Navbar'
@@ -15,6 +15,7 @@ import FleetGroupsContainer from '../fleet_operations/create_fleet_group/FleetGr
 import CreateFleetGroup from '../fleet_operations/create_fleet_group/CreateFleetGroup'
 import CreatedGroupPage from '../fleet_operations/create_fleet_group/CreatedGroupPage'
 import VendorManagementDashboard from '../fleet_operations/vendorManagement/VendorManagementDashboard'
+import VendorDetailsPage from '../fleet_operations/vendorManagement/VendorDetails'
 function FleetOperationRoutes() {
   const [showSidebar, setshowSidebar] = useState(true);
   return (
@@ -40,8 +41,9 @@ function FleetOperationRoutes() {
             <Route path='journeyHistory' element={<FleetJourneyHistoryPage />} />
             <Route path='fleetGroups' element={<FleetGroupsContainer />} />
             <Route path='createFleet' element={<CreateFleetGroup/>} />
-            <Route path='/createdGroup' element={<CreatedGroupPage/>}/>
-            <Route path='/vendorManagement' element={<VendorManagementDashboard/>}/>
+            <Route path='createdGroup' element={<CreatedGroupPage/>}/>
+            <Route path='vendorManagement' element={<VendorManagementDashboard/>}/>
+            <Route path='vendorDetails' element={<VendorDetailsPage/>}/>
           </Routes>
         </div>
       </div>

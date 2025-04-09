@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import './styles/CreatedGroupPage.scss'
 import SubmitButton from '../../common/buttons/SubmitButton'
 import { Link } from 'react-router-dom'

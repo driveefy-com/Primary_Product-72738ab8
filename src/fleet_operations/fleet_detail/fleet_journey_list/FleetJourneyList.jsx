@@ -1,4 +1,3 @@
-import React from 'react'
 import './styles/FleetJourneyList.scss'
 import EyeOpen from "../../../assets/icons/EyeOpen.svg";
 import { fleetJourneyList } from '../../../common/form/FormData';

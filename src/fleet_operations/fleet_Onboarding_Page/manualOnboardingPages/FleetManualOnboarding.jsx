@@ -5,7 +5,7 @@ import { Pagination } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import ManualOnboardingFormSlides from './ManualOnboardingFormSlides';
-import { VehicleDataComponents, RegistrationCertificateComponents, InsuranceDetailsComponents, PermitDetailsComponents, PuccDetailsComponents, TaxDetailsComponents, manualOnboardingSlideDetails } from '../../../common/form/FormData';
+import { PuccDetailsComponents, TaxDetailsComponents, manualOnboardingSlideDetails } from '../../../common/form/FormData';
 import ManualOnboardingSubmitSlide from './ManualOnboaringSubmitSlide';
 function FleetManualOnboarding() {
     const swiperRef = useRef(null);

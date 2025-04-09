@@ -1,11 +1,10 @@
 import './styles/VendorHistoryTable.scss'
-import { vendorHistoryTable, fleetListTable } from '../../../common/form/FormData'
+import { vendorHistoryTable } from '../../../common/form/FormData'
 import ReactPaginate from 'react-paginate'
 import  { useState } from 'react'
 import left from '../../../assets/icons/lessThanSign.svg'
 import right from '../../../assets/icons/greaterThanSign.svg'
 import search from '../../../assets/icons/searchIcon.svg'
-import EyeOpen from "../../../assets/icons/EyeOpen.svg";
 import edit from '../../../assets/icons/editIcon.svg';
 function VendorHistoryTable() {
   const dataArray = Array.from({ length: 60 }, (_, index) => ({
@@ -19,18 +18,13 @@ function VendorHistoryTable() {
     status: "NA",
     role: "NA",
   }));
-  const [list, setlist] = useState(true);
   const [currentPage, setcurrentPage] = useState(0);
   const itemsPerPage = 5; // Show 6 rows per page
   const offset = currentPage * itemsPerPage;
   const currentData = dataArray.slice(offset, offset + itemsPerPage);
   const pageCount = Math.ceil(dataArray.length / itemsPerPage);
-  const [activeTab, setActiveTab] = useState("fleetList"); // Default active tab
 
-  const toggleListHistory = () => {
-    setlist(!list);
-  }
-
+ 
   const handlePageClick = ({ selected }) => {
     setcurrentPage(selected);
   };

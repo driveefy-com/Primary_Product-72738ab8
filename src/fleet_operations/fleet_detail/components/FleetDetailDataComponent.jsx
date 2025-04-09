@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import ManualOnboardingFormSlides from '../../fleet_Onboarding_Page/manualOnboardingPages/ManualOnboardingFormSlides'
 import './styles/FleetDetailDataComponent.scss'
-function FleetDetailDataComponent({ title, text, fleetData, pageNo, isEditable }) {
+function FleetDetailDataComponent({ title,  fleetData, pageNo, isEditable }) {
         const [selectedColor, setSelectedColor] = useState("");
         const handleChange = (e) => {
             setSelectedColor(e.target.value);

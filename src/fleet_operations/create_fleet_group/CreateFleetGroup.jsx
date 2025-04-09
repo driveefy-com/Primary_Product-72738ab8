@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './styles/createFleet.scss'
 import leftArrow from '../../assets/icons/backArrow.svg'
 import { Link } from 'react-router-dom';
@@ -19,12 +19,6 @@ function CreateFleetGroup() {
     const removeFleet = (fleet) => {
       setSelectedFleets(selectedFleets.filter(f => f !== fleet));
       setfleets([...fleets, fleet]); // Add back to available fleets
-    };
-  
-    const goToPreviousSlide = () => {
-        if (swiperRef.current) {
-            swiperRef.current.slidePrev(); // Go to the previous slide
-        }
     };
     return (
         <div className="create-fleet-main-container">

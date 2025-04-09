@@ -1,5 +1,4 @@
 import './styles/VendorManagementDashboard.scss'
-import FleetHistoryTable from '../fleet_operation_dashboard/components/FleetHistoryTable'
 import DashboardBoxes from '../fleet_operation_dashboard/components/DashboardBoxes'
 import { vendorManagementDashboardBoxes } from '../../common/form/FormData'
 import VendorHistoryTable from './components/VendorHistoryTable'

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import './styles/AddFleetComponent.scss';
 
 const fleets = ['Fleet E', 'Fleet F', 'Fleet G', 'Fleet H', 'Fleet I'];

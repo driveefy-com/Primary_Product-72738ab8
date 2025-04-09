@@ -1,4 +1,3 @@
-import React from 'react'
 import './styles/FleetGroups.scss'
 import search from '../../assets/icons/searchIcon.svg'
 import eye from '../../assets/icons/eyeIcon.svg';
@@ -6,17 +5,17 @@ import deleteIcon from '../../assets/icons/deleteIcon.svg';
 import { Link } from 'react-router-dom';
 
 function FleetGroupsContainer() {
-    const dataArray = Array.from({ length: 60 }, (_, index) => ({
-        id: index + 1,
-        name: "NA",
-        age: "NA",
-        city: "NA",
-        country: "NA",
-        email: "NA",
-        phone: "NA",
-        status: "NA",
-        role: "NA",
-    }));
+    // const dataArray = Array.from({ length: 60 }, (_, index) => ({
+    //     id: index + 1,
+    //     name: "NA",
+    //     age: "NA",
+    //     city: "NA",
+    //     country: "NA",
+    //     email: "NA",
+    //     phone: "NA",
+    //     status: "NA",
+    //     role: "NA",
+    // }));
     return (
         <div className="create-fleet-one-main-container">
             <h1 className="create-fleet-header">Fleet Groups</h1>

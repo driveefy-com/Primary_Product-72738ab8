@@ -1,21 +1,21 @@
 import  { useRef, useState } from 'react'
-import './styles/FleetDetailPage.scss'
+// import './styles/VendorDetailsPage.scss'
+import './styles/VendorDetails.scss'
 import PopUpComponent from '../../common/PopUp/popup/PopUpComponent';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import pen from "../../assets/icons/editProfilePictureIcon.svg";
-import {  PuccDetailsComponents, TaxDetailsComponents, manualOnboardingSlideDetails, organizationDetailAvatarList } from "../../common/form/FormData";
-import FleetDetailStatisticsBoxes from './components/FleetDetailStatisticsBoxes';
-import FleetDetailDataComponent from './components/FleetDetailDataComponent';
+import { PuccDetailsComponents, TaxDetailsComponents, manualOnboardingSlideDetails, organizationDetailAvatarList } from "../../common/form/FormData";
 // import leftArrow from '../../../assets/icons/backArrow.svg'
 import eye from '../../assets/icons/eyeIcon.svg';
 import deleteIcon from '../../assets/icons/deleteIcon.svg';
 import download from '../../assets/icons/downloadOption.svg';
 import deleteButton from '../../assets/icons/deleteFleetDetail.svg';
 import PaddedSubmitButton from '../../common/buttons/PaddedSubmitButton';
-import FleetJourneyList from './fleet_journey_list/FleetJourneyList';
-function FleetDetailPage() {
-    const [activeTab, setActiveTab] = useState('fleetDetail');
+import FleetDetailStatisticsBoxes from '../fleet_detail/components/FleetDetailStatisticsBoxes';
+import FleetDetailDataComponent from '../fleet_detail/components/FleetDetailDataComponent';
+function VendorDetailsPage() {
+    // const [activeTab, setActiveTab] = useState('fleetDetail');
     const [searchParams, setSearchParams] = useSearchParams();
     const isPopupOpen = searchParams.get("popup") === "true";
     const [edit, setedit] = useState(false);
@@ -95,19 +95,10 @@ function FleetDetailPage() {
     };
     return (
         <div className="fleet-detail-main-container">
-            <div className="fleet-detail-top-container">
-                <div className="fleet-detail-header-container">
-                    <div>
-                        <h1 className={activeTab === "fleetDetail" ? "fleet-detail-active-header" : "fleet-detail-header"}
-                            onClick={() => setActiveTab("fleetDetail")}>Fleet Detail</h1>
-                        <hr className={activeTab === "fleetDetail" ? 'fleet-detail-hr-blue' : 'fleet-detail-hr'} />
-                    </div>
-                    <div>
-                        <h1 className={activeTab === "journeyList" ? "fleet-detail-active-header" : "fleet-detail-header"} onClick={() => setActiveTab("journeyList")}>Jouney List</h1>
-                        <hr className={activeTab === "journeyList" ? 'fleet-detail-hr-blue' : 'fleet-detail-hr'} />
-                    </div>
-                </div>
-                <div className="fleet-detail-edit-container">
+            
+                <div className="fleet-detail-container">
+                    <h2 className='fleet-profile-picture-header'>Fleet Profile Picture</h2>
+                    <div className="vendor-detail-edit-container">
                     <div className="fleet-detail-edit-button">
                         <PaddedSubmitButton text={'Edit'} type={'button'} onClick={handleEditClick} />
                     </div>
@@ -116,10 +107,6 @@ function FleetDetailPage() {
                         <img src={deleteButton} alt="" className='fleet-detail-delete-img' />
                     </div>
                 </div>
-            </div>
-            {activeTab == 'fleetDetail' ? <>
-                <div className="fleet-detail-container">
-                    <h2 className='fleet-profile-picture-header'>Fleet Profile Picture</h2>
                     <div className="fleet-profile-picture-container">
                         <div className="fleet-profile-photo-container">
                             <div
@@ -201,10 +188,10 @@ function FleetDetailPage() {
                 {edit && <div className="fleet-detail-button-container">
                     <PaddedSubmitButton text={'Cancel'} onClick={handleCancel} />
                     <PaddedSubmitButton text={'Update Changes'} />
-                </div>}</> :<FleetJourneyList/>}
+                </div>}
         </div>
 
     )
 }
 
-export default FleetDetailPage
+export default VendorDetailsPage

@@ -1,9 +1,8 @@
-import React from 'react'
 import PopUpComponent from '../../../common/PopUp/popup/PopUpComponent';
 import { useSearchParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import pen from "../../../assets/icons/editProfilePictureIcon.svg";
-import { VehicleDataComponents, fleetJourneyList, fleetListTable, journeyHistoryTitles, organizationDetailAvatarList } from "../../../common/form/FormData";
+import { fleetJourneyList,  journeyHistoryTitles, organizationDetailAvatarList } from "../../../common/form/FormData";
 import './styles/FleetJourneyHistoryPage.scss'
 import EyeOpen from "../../../assets/icons/EyeOpen.svg";
 import ManualOnboardingFormSlides from '../../fleet_Onboarding_Page/manualOnboardingPages/ManualOnboardingFormSlides';

@@ -1,4 +1,3 @@
-import React from 'react'
 import './styles/FleetDetailStatisticsBox.scss'
 function FleetDetailStatisticsBoxes({title}) {
   return (
