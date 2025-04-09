@@ -2,7 +2,6 @@ import {  Routes, Route } from 'react-router-dom'
 import './styles/FleetOperationRoutes.scss'
 import Sidebar from '../fleet_operations/sidebar/Sidebar'
 import ProfilePage from '../fleet_operations/profilePage/ProfilePage'
-import FleetOperationDashboard from '../fleet_operations/fleet_operation_dashboard/fleetOperationDashboard'
 import FleetOnboardingPage from '../fleet_operations/fleet_Onboarding_Page/FleetOnboardingPage'
 import FleetManualOnboarding from '../fleet_operations/fleet_Onboarding_Page/manualOnboardingPages/FleetManualOnboarding'
 import LanguageSwitcher from '../common/languageSwitcher/LanguageSwitcher'
@@ -16,6 +15,7 @@ import CreatedGroupPage from '../fleet_operations/create_fleet_group/CreatedGrou
 import VendorManagementDashboard from '../fleet_operations/vendorManagement/VendorManagementDashboard'
 import VendorDetailsPage from '../fleet_operations/vendorManagement/VendorDetails'
 import Navbar from '../fleet_operations/Navbar/Navbar'
+import FleetOperationDashboard from '../fleet_operations/fleet_operation_dashboard/fleetOperationDashboard'
 function FleetOperationRoutes() {
   const [showSidebar, setshowSidebar] = useState(true);
   return (
