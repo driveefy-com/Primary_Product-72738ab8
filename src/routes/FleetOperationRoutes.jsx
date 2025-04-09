@@ -1,7 +1,7 @@
 import {  Routes, Route } from 'react-router-dom'
 import './styles/FleetOperationRoutes.scss'
 import Sidebar from '../fleet_operations/sidebar/Sidebar'
-import { Navbar } from '../fleet_operations/Navbar/Navbar'
+import Navbar  from '../fleet_operations/Navbar/Navbar'
 import ProfilePage from '../fleet_operations/profilePage/ProfilePage'
 import FleetOperationDashboard from '../fleet_operations/fleet_operation_dashboard/fleetOperationDashboard'
 import FleetOnboardingPage from '../fleet_operations/fleet_Onboarding_Page/FleetOnboardingPage'
