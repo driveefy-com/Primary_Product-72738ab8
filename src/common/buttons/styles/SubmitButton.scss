@@ -1,4 +1,4 @@
-button{
+.submit-button{
     padding: 2% 5% 2% 5%;
     font-weight: 600;
     background-color: #292a6a;
@@ -10,6 +10,9 @@ button{
     justify-content: center;
     align-items: center;
     font-size:large;
+    // white-space: nowrap;
+    // width: 100%;
+    // align-self: center;
     @media (max-width: 1024px) {
         margin-top: 5%;
         font-size: medium;

@@ -1,0 +1,142 @@
+.created-group-page-container {
+    width: 80%;
+    background-color: #ffffff;
+    padding:2%;
+    border-radius: 10px;
+    height: 60%;
+}
+
+.created-group-top {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.created-group-main-container{
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // height: 100vh;
+    height: 100%;
+    width: 100%;
+}
+
+.created-page-header {
+    font-size: 30px;
+    font-weight: 700;
+    color: #292a6a;
+    @media (max-width: 1024px) {
+        font-size: 26px;
+      }
+    
+      @media (max-width: 768px) {
+        font-size: 22px;
+      }
+    
+      @media (max-width: 480px) {
+        font-size: 18px;
+      }
+    
+      @media (max-width: 400px) {
+        font-size: 14px;
+      }
+}
+
+.created-page-desc {
+    font-weight: 400;
+    font-size: 24px;
+    color: #202224;
+    @media (max-width: 1024px) {
+        font-size: 20px;
+      }
+    
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    
+      @media (max-width: 480px) {
+        font-size: 13px;
+      }
+    
+      @media (max-width: 400px) {
+        font-size: 10px;
+      }
+}
+
+.added-fleet {
+    padding: 1% 2%;
+    text-align: center;
+    background-color: #f5f8ff;
+    border-radius: 10px;
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    font-size: 22px;
+    font-weight: 500;
+    border: 1px solid #c4c4c4;
+    @media (max-width: 1024px) {
+        font-size: 19px;
+      }
+    
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    
+      @media (max-width: 480px) {
+        font-size: 13px;
+      }
+    
+      @media (max-width: 400px) {
+        font-size: 10px;
+      }
+}
+
+.added-fleets-container {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    align-items: start;
+    height: 100%;
+}
+.arrow-created{
+    margin-left: -0.5%;
+    width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+  @media (max-width: 1024px) {
+    width: 25px;
+    height: 25px;
+  }
+
+  @media (max-width: 768px) {
+    width: 20px;
+    height: 20px;
+    // left: 5%;
+  }
+
+  @media (max-width: 400px) {
+    width: 15px;
+    height: 15px;
+    left: 10%;
+  }
+}
+.button-container{
+    margin-top: -8%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.add-fleet-component-container{
+    position: absolute;
+    width: 60%;
+    left: 50%;
+    top: 65%;
+    @media (max-width:768px) {
+        top: 85%;
+        left: 48%;
+    }
+    // bottom: 0%;
+}

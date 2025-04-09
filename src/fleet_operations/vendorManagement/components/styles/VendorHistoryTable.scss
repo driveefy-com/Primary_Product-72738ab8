@@ -1,0 +1,453 @@
+.fleet-list-history-container {
+    background-color: #ffffff;
+    width: 100%;
+    margin-top: 3%;
+    border-radius: 14px;
+    // border-radius: ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    @media (max-width:1024px) {
+      margin-top: 5%;
+    }
+  
+    @media (max-width:768px) {
+      margin-top: 11%;
+    }
+  
+    @media (max-width:500px) {
+      margin-top: 13%;
+    }
+  
+    @media (max-width:400px) {
+      margin-top: 15%;
+    }
+  
+    // height: 60%;
+    .vendor-options {
+      padding: 1%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width:768px) {
+        padding: 1%;
+      }
+      .list-history-options {
+        display: flex;
+        border: 1px solid #263b94;
+        border-radius: 45px;
+        // width: 34.5%;
+        // align-items: center;
+        // justify-content: space-between;
+        // gap: 10px;
+        font-size: 14px;
+        font-weight: 600;
+  
+        @media (max-width:1024px) {
+          font-size: 12px;
+          // padding: 0%;
+        }
+  
+        @media (max-width:768px) {
+          font-size: 11px;
+        }
+  
+        @media (max-width:500px) {
+          font-size: 7px;
+        }
+  
+        @media (max-width:400px) {
+          font-size: 5px;
+        }
+      }
+  
+      .search-fleet-no{
+        width: 100%;
+        // height: 100%;
+        // margin-left: 5%;
+        border-radius: 40px;
+        border: 0px;
+        // background-color: red;
+        padding: 0% 5%;
+  
+        @media (max-width:1024px) {
+          font-size: 14px;
+        }
+  
+        @media (max-width:768px) {
+          font-size: 10px;
+          // padding: 0%;
+        }
+  
+        @media (max-width:500px) {
+          font-size: 7px;
+        }
+  
+        @media (max-width:400px) {
+          font-size: 5px;
+        }
+      }
+  
+      .fleet-search-component {
+        display: flex;
+        // align-items: center;
+        height: 90%;
+        justify-content: space-between;
+        border-radius: 45px;
+        border: 1px solid #909090;
+        width: 30%;
+  
+        @media (max-width:1024px) {
+          height: 26px;
+        }
+  
+        @media (max-width:768px) {
+          height: 20px;
+        }
+  
+        @media (max-width:500px) {
+          height: 13px;
+        }
+  
+        @media (max-width:400px) {
+          height: 10px;
+        }
+      }
+  
+      .search-icon {
+        width: auto;
+        height: auto;
+        // display: flex;
+        // align-items: center;
+        // position: absolute;
+        // right: 25%;
+      }
+    }
+  
+    .options-container {
+      display: flex;
+      align-items: center;
+      // background-color: red;
+      justify-content: space-evenly;
+      // gap: 10%;
+      width: 20%;
+      // height: 100%;
+      // padding: 1%;
+      // height: 40px;
+    }
+  
+    .filter-sort-img {
+  
+      // height: 100%;
+      // width: 100%;
+      @media (max-width:1024px) {
+        height: 25px;
+        width: 25px;
+      }
+  
+      @media (max-width:768px) {
+        height: 20px;
+        width: 20px;
+      }
+  
+      @media (max-width:500px) {
+        height: 15px;
+        width: 15px;
+      }
+  
+      @media (max-width:400px) {
+        height: 10px;
+        width: 10px;
+      }
+    }
+  
+  
+  }
+  
+  // Table Container
+  .table-container {
+    width: 100%;
+  //  border-collapse: collapse;
+    // background-color:red ;
+    // overflow-x: auto; // Makes the table scrollable on small screens
+    // padding: 20px;
+  }
+  
+  // Table Styling
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    // border-radius: 14px;
+    // background-color: red;
+    // min-width: 800px;
+  
+    th,
+    td {
+      border-top: 1px solid #e8e5e5;
+      // border-radius: 14px;
+      // padding: 12px;
+      text-align: center; // Centers text in all cells
+      font-size: 12px;
+      font-weight: 800;
+      color: #202224;
+      // background-color: red;
+      // font: bold;
+      @media (max-width:1024px) {
+        font-size: 10px;
+      }
+  
+      @media (max-width:768px) {
+        font-size: 8px;
+      }
+  
+      @media (max-width:600px) {
+        font-size: 5px;
+      }
+  
+      @media (max-width:400px) {
+        font-size: 4px;
+      }
+    }
+  
+    th {
+      padding-top: 0.5%;
+      padding-bottom:0.5%;
+      background-color: #eeeeee;
+      font-weight: 800;
+     
+  
+      @media (max-width:768px) {
+        padding-top: 1%;
+        padding-bottom:1%;
+      }
+    }
+  
+    td {
+      padding:1%;
+      font-weight: 600;
+      // background-color: red;
+      // border-radius: 14px;
+    }
+  }
+  
+  .pagination-container {
+    margin-top: 1%;
+    @media (max-width:768px) {
+      margin-top: 5%;
+    }
+    @media (max-width:480px) {
+      margin-top: 8%;
+    }
+    // margin-bottom:1%;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    // padding: 20px 0;
+    gap: 1%;
+    margin-top: 2%;
+    // background-color: #007aff;
+    width: 100%;
+    // justify-content: space-between;
+  }
+  
+  .page-item {
+    display: inline-block;
+    height: auto;
+    width: auto;
+  }
+  
+  .page-link {
+    padding: 10px 14px;
+    border: 1px solid #b1b3b4;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #ffffff;
+  
+    @media (max-width:1024px) {
+      font-size: 11px;
+      padding: 6px 10px;
+    }
+  
+    @media (max-width:768px) {
+      font-size: 9px;
+      padding: 5px 8px;
+  
+    }
+  
+    @media (max-width:500px) {
+      font-size: 7px;
+      padding: 3px 6px;
+    }
+  
+    @media (max-width:400px) {
+      font-size: 5px;
+      padding: 1px 4px;
+    }
+  
+    // height: 5%;
+  }
+  
+  .page-link:hover {
+    background-color: #007aff;
+    color: #fff;
+  }
+  
+  .active .page-link {
+    border: 1px solid #007aff;
+    color: #007aff;
+  }
+  
+  .break {
+    background-color: #f0f0f0;
+    /* Light gray box */
+    color: black;
+    font-weight: bold;
+    pointer-events: none;
+    /* Disable clicking */
+  }
+  
+  .break-link {
+    text-align: center;
+    padding: 10px 12px;
+    // display: block;
+    text-align: center;
+  
+    @media (max-width:1024px) {
+      font-size: 11px;
+      padding: 6px 10px;
+    }
+  
+    @media (max-width:768px) {
+      font-size: 9px;
+      padding: 5px 8px;
+  
+    }
+  
+    @media (max-width:500px) {
+      font-size: 7px;
+      padding: 3px 6px;
+    }
+  
+    @media (max-width:400px) {
+      font-size: 5px;
+      padding: 1px 4px;
+    }
+  }
+  
+  .list-history-options p {
+    padding: 5px 6px;
+    // padding: 0;
+    cursor: pointer;
+    border-radius: 14px;
+    color: #263b94;
+  
+    // transition: background 0.3s ease-in-out;
+    @media (max-width:1024px) {
+      padding: 4px 5px;
+    }
+  
+    @media (max-width:768px) {
+      padding: 3px 5px;
+    }
+  
+    @media (max-width:480px) {
+      padding: 2px 6px;
+    }
+  
+    @media (max-width:400px) {
+      padding: 1px 6px;
+    }
+  }
+  
+  .list-history-options p.active-tab {
+    background-color: #263b94;
+    color: #ffffff;
+  }
+  
+  .left-right-icon {
+    @media (max-width:1024px) {
+      height: 9px;
+    }
+  
+    @media (max-width:768px) {
+      height: 7px;
+    }
+  
+    @media (max-width:480px) {
+      height: 5px;
+    }
+  
+    @media (max-width:400px) {
+      height: 3px;
+    }
+  }
+  
+  .options-container-button {
+    background-color: transparent;
+  
+    &:hover {
+      background-color: transparent;
+      opacity: 70%;
+    }
+  }
+  
+  .fleet-history-edit-icon {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    @media (max-width:1024px) {
+      width: 12px;
+      height: 12px;
+    }
+  
+    @media (max-width:768px) {
+      width: 10px;
+      height: 10px;
+    }
+  
+    @media (max-width:480px) {
+      width: 8px;
+      height: 8px;
+    }
+  
+    @media (max-width:400px) {
+      width: 5px;
+      height: 5px;
+    }
+  }
+  .fleet-history-eye-icon{
+    // width: 12px;
+    // height: 12px;
+    height: 30%;
+    width: 30%;
+    cursor: pointer;
+  }
+  .vendor-table-header{
+    font-size: 28px;
+    font-weight: 600;
+    color: #202224;
+    @media (max-width:1024px) {
+      font-size: 24px;
+      }
+    
+      @media (max-width:768px) {
+        font-size: 20px;
+
+      }
+    
+      @media (max-width:480px) {
+        font-size: 16px;
+
+      }
+    
+      @media (max-width:400px) {
+        font-size: 12px;
+
+      }
+  }

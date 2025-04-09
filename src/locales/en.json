@@ -23,7 +23,70 @@
   "checkEmail": {
     "title": "Check your email",
     "message": "We have sent a reset link to your email,click the link to reset your password",
-    "resend":"Haven't got the mail yet?",
-    "resendLink":"Resend email"
+    "resend": "Haven't got the mail yet?",
+    "resendLink": "Resend email"
+  },
+  "verifyEmail": {
+    "title": "Verify your email",
+    "message": "Verification link has been sent to your email . Please verify your email."
+  },
+  "setNewPassword": {
+    "title": "Set a New Password",
+    "message": "Create a new password.Ensure it is different from the previous one for security",
+    "password": "Password",
+    "confirm": "Confirm Password"
+  },
+  "organizationDetail": {
+    "title": "Organization Detail",
+    "name": "Organization Name",
+    "type": "Industry Type",
+    "experience": "Experience",
+    "trucks": "No. of Trucks",
+    "drivers": "No. of Drivers",
+    "city": "City",
+    "address": "Address"
+  },
+    "login": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "signup": {
+      "firstName": "First Name*",
+      "lastName": "Last Name*",
+      "email": "Email*",
+      "phoneNumber": "Phone Number*",
+      "password": "Password*",
+      "retypePassword": "Retype Password*"
+    },
+    "forgot": {
+      "enterEmail": "Enter your email"
+    },
+    "setNew": {
+      "newPassword": "Enter your new password",
+      "recheckNewPassword": "Re-enter your new password"
+    },
+    "organization": {
+      "organizationName": "Enter organization name here",
+      "industryType": "Enter industry type here",
+      "experience": "Enter your experience",
+      "numberOfTrucks": "Select",
+      "numberOfDrivers": "Select",
+      "city": "Select Cities",
+      "address": "Enter address here",
+      "trucksOptions": ["0-10", "11-20", "21-30", "31-40", "41-50"],
+      "driversOptions": ["0-10", "11-20", "21-30", "31-40", "41-50"]
+    },
+    "languages": {
+      "english": "English (United States)",
+      "hindi": "Hindi",
+      "gujarati": "Gujarati",
+      "bengali": "Bengali",
+      "marathi": "Marathi",
+      "odia": "Odia"
+  },
+  "verificationOnSignup":{
+    "title": "Your Email has been successfully verified",
+    "message": "Please proceed to the login page to access your account",
+    "buttonText":"Click here to Login"
   }
 }

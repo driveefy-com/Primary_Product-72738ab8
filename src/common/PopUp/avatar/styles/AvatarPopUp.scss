@@ -1,0 +1,153 @@
+.avatar-main-container {
+    width: 40vw;
+    height: 32vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: hsl(0, 0%, 100%);
+    // position: fixed;
+    // right: %;
+    // right: -5%;
+    // right: 0%;
+    right: -60%;
+    top: 0%;
+    box-shadow: 0px 4px 12px 0px #969696;
+    border-radius: 15px;
+    position: absolute;
+    z-index: 5000;
+    @media (max-width: 768px) {
+        // top: 10%;
+    }
+
+    @media (max-width: 680px) {}
+
+    @media (max-width: 490px) {
+
+        // right: 15%;
+    }
+
+    .avatar-cross-icon {
+        cursor: pointer;
+        height: 5%;
+        width: 5%;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: #263b94;
+
+        @media (max-width:1024px) {
+            font-size: 22px;
+        }
+
+        @media (max-width:786px) {
+            font-size: 16px;
+        }
+
+        @media (max-width:480px) {
+            font-size: 10px;
+        }
+    }
+
+    .avatar-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+
+        .img-container {
+
+            width: 30%;
+            height: 35%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                height: 100%;
+                width: 100%;
+
+                @media (max-width:786px) {
+                    font-size: 16px;
+                }
+
+                @media (max-width:480px) {
+                    font-size: 10px;
+                }
+            }
+
+            .checkbox {
+                position: absolute;
+                margin-left: 19%;
+                margin-top: -1%;
+                height: 5%;
+
+                @media (max-width:768px) {
+                    font-size: 12px;
+                }
+
+                @media (max-width:480px) {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+
+    .avatar-button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        margin-top: -5%;
+
+        @media (max-width:1024px) {
+            width: 30%;
+        }
+
+        @media (max-width:786px) {
+            font-size: 16px;
+        }
+
+        @media (max-width:480px) {
+            font-size: 10px;
+        }
+
+        .avatar-button {
+            padding: 2% 5%;
+            font-size: 12px;
+            padding: 2% 5% 2% 5%;
+            font-weight: 600;
+            background-color: #292a6a;
+            color: #ffffff;
+            border-radius: 48px;
+            border: none;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width:1024px) {
+
+                font-size: 12px;
+                padding: 2% 5%;
+            }
+
+            @media (max-width:786px) {
+                font-size: 8px;
+                padding: 5% 8%;
+
+            }
+
+            @media (max-width:480px) {
+                font-size: 6px;
+                padding: 5% 8%;
+
+            }
+        }
+    }
+}

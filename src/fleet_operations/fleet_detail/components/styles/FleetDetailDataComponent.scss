@@ -1,0 +1,88 @@
+.vehicle-data-header {
+  font-weight: 500;
+  font-size: 24px;
+  color: #4c535f;
+
+  // margin-bottom: 2%;
+  @media (max-width: 1024px) {
+    font-size: 21px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 15px;
+  }
+
+  @media (max-width:400px) {
+    font-size: 12px;
+  }
+}
+
+.vehicle-title-option {
+  @media (max-width: 1024px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
+
+  @media (max-width:400px) {
+    font-size: 6px;
+  }
+}
+
+.available {
+
+  // font-size: 24px;
+}
+
+.in-transit {}
+
+.maintenance {
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.select-input {
+  padding: 8px;
+  // background-color: #11ceb2;
+  // color: #188978;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0.5% 2%;
+  border-radius: 4.5px;
+  cursor: pointer;
+
+  &.maintenance {
+    background-color: #ef3826;
+    color: #a50e00;
+    opacity: 70%;
+  }
+
+  &.intransit {
+    background-color: #e8d64d;
+    color: #ae9a02;
+    opacity: 70%;
+  }
+
+  &.available {
+    background-color: #00b69b;
+    color: #26675d;
+    opacity: 70%;
+  }
+}
+
+option {
+  background-color: white !important;
+  color: black !important;
+}
