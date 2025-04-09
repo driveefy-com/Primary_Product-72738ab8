@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './styles/createFleet.scss'
+import './styles/CreateFleet.scss'
 import leftArrow from '../../assets/icons/backArrow.svg'
 import { Link } from 'react-router-dom';
 import cross from "../../assets/icons/popUpCross.svg";
